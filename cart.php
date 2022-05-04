@@ -2,9 +2,18 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Cart</title>
+        <link rel="stylesheet" href="style.css">
+        <title>Brand Spanking NEW Unter Eats</title>
     </head>
 <body>
+
+    <header>
+            <h1>NEW Unter Eats</h1>
+            <a href="cart.php">Cart
+            <img src="./TestImages/cartIcon.png" alt="cart icon"></a>
+            <p>Nome de utilizador</p>
+    </header>
+
     <!--Assumindo que no cart só pode ter coisas de um restaurante--> 
     <!--Depois põe-se lado a lado com css talvez-->
     <h1>Checkout</h1>
@@ -13,10 +22,10 @@
     <section class="shipping">
     <h4>Shipping information</h4>
     <div>
-        <label>Adress:
+        <label>Address:
                 <input type="text" name="name" value="Senhora da hora, Porto" required disabled>
         </label>
-                <button>Edit adress</button>
+                <button>Edit address</button>
         
     </div>
         <p>Method of payment: Personal Card </p>
@@ -26,25 +35,24 @@
     <section class="order">
     <h2>Your order</h2>
     <article>
-        <h4>Fish</h4>
-        <img src="testImages/fish.jpg" alt="foto do prato">
-        <p>Price: 26€</p>
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+        <p>Menu + monkey soup</p>
         
         <label>Quantity: </label>
         <button>+</button><input type="number" name="quantity" placeholder="quantity"><button>-</button>
-        
+
+        <p>Price: 26€</p>
         
     </article>
     <article>
-        <h4>Meat</h4>
-        <img src="testImages/meat.jpg" alt="foto do prato">
-        <p>Price: 30€</p>
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+        <p>Coca-Cola 2L</p>
+        
         <label>Quantity: </label>
-            <button>+</button><input type="number" name="quantity" placeholder="quantity"><button>-</button>
+        <button>+</button><input type="number" name="quantity" placeholder="quantity"><button>-</button>
+
+        <p>Price: 16€</p>
     </article>
-    <h4>Total price: 56€</h4>
+    <hr>
+    <p>Total price: <strong>56€</strong></p>
     </section>
 
     <footer>

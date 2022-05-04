@@ -17,6 +17,35 @@ header > p{
 	color: #ffcfac;
 }
 
+header img{
+	height: 15px;
+	width: 15px;
+}
+
+button{
+	background-color: #ffcfac;
+	color: white;
+	cursor: pointer;
+	margin: 4px 2px;
+	padding: 4px 6px;
+	border: none;
+	border-radius: 12px;
+}
+
+hr{
+	width: 95%;
+}
+
+input{
+	border-color: #ffcfac ;
+	border-style: solid;
+}
+
+button > a{
+	color: white;
+	text-decoration: none;
+}
+
 .category article {
 	border-color:#ffcfac ;
 	border-style: solid;
@@ -24,4 +53,18 @@ header > p{
 	padding: 5px;
 	margin: 5px;
 	width: 6em;
+}
+
+.profile_navbar nav{
+	background-color: #ffcfac;
+}
+
+.profile_navbar a{
+	color: black;
+	text-decoration: none;
+}
+
+ul{
+	list-style-type: none;
+
 }

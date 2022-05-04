@@ -10,7 +10,7 @@
         <header>
             <h1>NEW Unter Eats</h1>
             <a href="cart.php">Cart
-            <img src="./userIcon.png" alt="cart icon"></a>
+            <img src="./TestImages/cartIcon.png" alt="cart icon"></a>
             <p>Nome de utilizador</p>
         </header>
 
