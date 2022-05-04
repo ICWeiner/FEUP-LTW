@@ -1,0 +1,27 @@
+body{
+	margin: 0px;
+}
+
+header{
+	background-color: #dcf5ff;
+	margin: 0px;
+}
+
+header > a{
+	background-color:#ffcfac ;
+	color: black;
+	text-decoration: none;
+}
+
+header > p{
+	color: #ffcfac;
+}
+
+.category article {
+	border-color:#ffcfac ;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	margin: 5px;
+	width: 6em;
+}
