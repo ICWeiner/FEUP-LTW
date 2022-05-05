@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Brand Spanking NEW Unter Eats</title>
+		<link href="register.css" rel="stylesheet">
 	</head>
 	<body>
 		<main>
