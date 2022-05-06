@@ -116,3 +116,74 @@ body > h2{
 }
 
 
+
+/* ================== Responsive 60em =================*/
+
+@media (max-width: 60em) {
+    /*Signup*/
+    body header #signup{
+        top: 7em;
+        left: 2em;
+    }
+
+    /*The image*/
+    #mainImage{
+        width: 287px;
+        top: 10em;
+    }
+
+    /*Discover amazing restaurants*/
+    body > h2{
+        font-size: 2em;
+    }
+
+    /*Título (Register/Login)*/
+    body > main > h2{
+        left: 14em;
+    }
+
+    /*Input boxes*/
+    body > main > form input{
+        width: 20em;
+    }
+    body > main > form{
+        left: 30em;
+    }
+
+}
+
+/* ================== Responsive 30em =================*/
+
+@media (max-width: 32em) {
+    /*Signup*/
+    body header #signup{
+        top: 8em;
+        left: 2em;
+    }
+
+    #mainImage{
+        width: 100px;
+        height: 489px;
+        top: 13em;
+    }
+    /*Discover amazing restaurants*/
+    body > h2{
+        display: none;
+    }
+
+    /*Input boxes*/
+    body > main > form input{
+        width: 20em;
+    }
+    body > main > form{
+        left: 10em;
+        top: 18em;
+    }
+
+    /*Título (Register/Login)*/
+    body > main > h2{
+        top: 5em;
+        left: 6em;
+    }
+
+}
