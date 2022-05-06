@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Poppins:300,200');
+
+
+body{
+    background-color: #9BDAF4;
+}
+
+/*Signup*/
+body header #signup a{
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+    font-size: 20px;
+}
+
+/*New Unter Eats*/
+body > header > h1{
+    color: white;
+    text-shadow: 1px 1px 4px #CD5E0E;
+    font-size: 3em;
+    padding-left: 1em;
+    font-family: 'Poppins';
+}
+
+
+/*Discover amazing restaurants*/
+body > h2{
+    text-shadow: 4px 4px 7px black;
+    background-color: transparent;
+    color: white;
+    font-size: 3em;
+}
+
+/*Title (Register/Login)*/
+body > main > h2{
+    color: #CD5E0E;
+    font-size: 2.5em;
+}
+
+/*The image*/
+#mainImage{
+    width: 487px;
+    height: 589px;
+    object-fit: cover;  /*Para preservar a imagem quando cortada*/
+    box-shadow: 5px 5px 20px black;
+}
+
+
+/*Input boxes*/
+body > main > form input{
+    width: 30em;
+    height: 2.5em;
+    border-radius: 10px;
+    border: 1px solid #CD5E0E;
+    outline: none;
+}
+
+
+/*Button*/
+body > main > form > button{
+    background-color: #FFC499;
+    border: 1px solid #CD5E0E;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 0.5em;
+    width: 7em;
+    margin-top: 1em;
+    color: #FFFFFF;
+    left: 50%;
+}
+
+
+
+/* ====================== Layout =====================*/
+
+/*Signup*/
+body header #signup{
+    position: absolute;
+    top: 4em;
+    left: 80em;
+}
+
+/*Título (Register/Login)*/
+body > main > h2{
+    position: absolute;
+    left: 22em;
+}
+
+/*Input boxes*/
+body > main > form{
+    position: absolute;
+    left: 45em;
+    top: 15em;
+}
+
+/*A imagem*/
+#mainImage{
+    position: absolute;
+    top: 8em;
+    left: 3em;
+}
+
+/*All the inputs*/
+body > main > form > * {
+    display: block;
+    margin: 2em;
+}
+
+/*Discover amazing restaurants*/
+body > h2{
+    margin: 0;
+    width: 8em;
+    position: absolute;
+    top: 7em;
+    left: 5em;
+}
+
+
