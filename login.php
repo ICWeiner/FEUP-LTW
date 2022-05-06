@@ -19,10 +19,10 @@
 		<main>
 			<h2>Login</h2>
 			<form action="action_login.php" method="post" class="login">
-				<input type="text" name="username" placeholder="username">
-				<input type="password" name="password" placeholder="password">
+				<input type="text" name="username" placeholder="Username">
+				<input type="password" name="password" placeholder="Password">
 				<button type="submit">Login</button>
-				<a href="register.php">Dont yet have an account? Register here</a>
+				<a href="register.php">Dont have an account yet? Register here</a>
 			</form>
 		</main>
 	</body>

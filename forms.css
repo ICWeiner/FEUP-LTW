@@ -69,6 +69,11 @@ body > main > form > button{
     left: 50%;
 }
 
+/*Link have/ dont have account*/
+body > main > form > a{
+    color:#CD5E0E;
+}
+
 
 
 /* ====================== Layout =====================*/
