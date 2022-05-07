@@ -9,7 +9,7 @@ body{
 body header #signup a{
     text-decoration: none;
     color: white;
-    padding: 1em;
+    margin: 1em;
     font-size: 20px;
 }
 
@@ -24,7 +24,7 @@ body > header > h1{
 
 
 /*Discover amazing restaurants*/
-body > h2{
+body > main h3{
     text-shadow: 4px 4px 7px black;
     background-color: transparent;
     color: white;
@@ -32,22 +32,22 @@ body > h2{
 }
 
 /*Title (Register/Login)*/
-body > main > h2{
+body > main h2{
     color: #CD5E0E;
     font-size: 2.5em;
 }
 
 /*The image*/
 #mainImage{
-    width: 487px;
-    height: 589px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;  /*Para preservar a imagem quando cortada*/
     box-shadow: 5px 5px 20px black;
 }
 
 
 /*Input boxes*/
-body > main > form input{
+body > main form input{
     width: 30em;
     height: 2.5em;
     border-radius: 10px;
@@ -57,7 +57,7 @@ body > main > form input{
 
 
 /*Button*/
-body > main > form > button{
+body > main form > button{
     background-color: #FFC499;
     border: 1px solid #CD5E0E;
     border-radius: 10px;
@@ -70,125 +70,57 @@ body > main > form > button{
 }
 
 /*Link have/ dont have account*/
-body > main > form > a{
+body > main form > a{
     color:#CD5E0E;
 }
+
+body > main form *{
+    margin: 1em;
+    margin-left: 3em;
+}
+
 
 
 
 /* ====================== Layout =====================*/
 
-/*Signup*/
-body header #signup{
-    position: absolute;
-    top: 4em;
-    left: 80em;
+/*grid, separates the header area from the rest*/
+body{
+    display: grid;
+    grid-template-rows: 20% 80% ; 
+    grid-template-columns: 95%;
+    grid-gap: 1rem;
 }
 
-/*Título (Register/Login)*/
-body > main > h2{
-    position: absolute;
-    left: 22em;
+/* flexbox, used in header area */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/*Input boxes*/
-body > main > form{
-    position: absolute;
-    left: 45em;
-    top: 15em;
+/*question mark*/
+header h1{
+    flex-shrink: 3;/*preeeeety sure this doesnt do anything...*/
 }
 
-/*A imagem*/
-#mainImage{
-    position: absolute;
-    top: 8em;
-    left: 3em;
+/*place login/register header links at the end*/
+header #signup{
+    align-self: flex-end;
 }
 
-/*All the inputs*/
-body > main > form > * {
-    display: block;
-    margin: 2em;
+/*secondary grid , divides the image from the rest of the content*/
+main{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 95%;
+    grid-gap: 1rem;
+    align-content: space-evenly;
 }
 
-/*Discover amazing restaurants*/
-body > h2{
-    margin: 0;
-    width: 8em;
-    position: absolute;
-    top: 7em;
-    left: 5em;
-}
-
-
-
-/* ================== Responsive 60em =================*/
-
-@media (max-width: 60em) {
-    /*Signup*/
-    body header #signup{
-        top: 7em;
-        left: 2em;
-    }
-
-    /*The image*/
-    #mainImage{
-        width: 287px;
-        top: 10em;
-    }
-
-    /*Discover amazing restaurants*/
-    body > h2{
-        font-size: 2em;
-    }
-
-    /*Título (Register/Login)*/
-    body > main > h2{
-        left: 14em;
-    }
-
-    /*Input boxes*/
-    body > main > form input{
-        width: 20em;
-    }
-    body > main > form{
-        left: 30em;
-    }
-
-}
-
-/* ================== Responsive 30em =================*/
-
-@media (max-width: 32em) {
-    /*Signup*/
-    body header #signup{
-        top: 8em;
-        left: 2em;
-    }
-
-    #mainImage{
-        width: 100px;
-        height: 489px;
-        top: 13em;
-    }
-    /*Discover amazing restaurants*/
-    body > h2{
-        display: none;
-    }
-
-    /*Input boxes*/
-    body > main > form input{
-        width: 20em;
-    }
-    body > main > form{
-        left: 10em;
-        top: 18em;
-    }
-
-    /*Título (Register/Login)*/
-    body > main > h2{
-        top: 5em;
-        left: 6em;
-    }
-
+/*flex to display the form vertically*/
+main form{
+    display: flex;
+    flex-direction: column;
 }
