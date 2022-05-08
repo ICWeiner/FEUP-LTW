@@ -20,67 +20,67 @@
 
         <section class="category" id="appetizer">
             <h2>Appetizer</h2>
-            <article>
+            <div>
                 
                 <img src="testImages/bread.jpg" alt="foto do prato">
                 <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                 <p>Bread</p>
                 <p>15,06&euro;</p>
-            </article>
+            </div>
         </section>
 
         <section class="category" id="fish">
             <h2>Fish</h2>
-            <article>
+            <div>
                     
                     <img src="testImages/fish.jpg" alt="foto do prato">
                     <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                     <p>More Grilled fish</p>
                     <p>15,06&euro;</p>
-            </article>
-            <article>
+            </div>
+            <div>
                     
                     <img src="testImages/fish.jpg" alt="foto do prato">
                     <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                     <p>Grilled fish</p>
                     <p>15,06&euro;</p>
-            </article>
+            </div>
         </section>
 
         <section class="category" id="meat">
             <h2>Meat</h2>
-            <article>
+            <div>
                     
                     <img src="testImages/meat.jpg" alt="foto do prato">
                     <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                     <p>Some more meat</p>
                     <p>15,06&euro;</p>
-            </article>
-            <article>
+            </div>
+            <div>
                     
                     <img src="testImages/pasta.jpg" alt="foto do prato">
                     <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                     <p>Fancy pasta</p>
                     <p>15,06&euro;</p>
-            </article>
+            </div>
         </section>
 
         <section class="category" id="soup">
             <h2>Soup</h2>
-            <article>
+            <div>
                     
                     <img src="testImages/soup2.jpg" alt="foto do prato">
                     <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                     <p>Soup</p>
                     <p>15,06&euro;</p>
-            </article>
-            <article>
+            </div>
+            <div>
                     
                     <img src="testImages/soup1.jpg" alt="foto do prato">
                     <p hidden>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                     <p>More soup</p>
                     <p>15,06&euro;</p>
-            </article>
+            </div>
         </section>
     </main>
     <footer>

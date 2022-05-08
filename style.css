@@ -34,6 +34,18 @@ button{
 	border-radius: 12px;
 }
 
+/* <a> tags styled to look like buttons */
+.button{
+	background-color: #ffcfac;
+	color: white;
+	cursor: pointer;
+	margin: 4px 2px;
+	padding: 4px 6px;
+	border: none;
+	border-radius: 12px;
+	text-decoration: none;
+}
+
 hr{
 	width: 95%;
 }
@@ -41,11 +53,6 @@ hr{
 input{
 	border-color: #ffcfac ;
 	border-style: solid;
-}
-
-button > a{
-	color: white;
-	text-decoration: none;
 }
 
 .category article {

@@ -34,7 +34,7 @@
     
     <section class="order">
     <h2>Your order</h2>
-    <article>
+    <div>
         <p>Menu + monkey soup</p>
         
         <label>Quantity: </label>
@@ -42,15 +42,15 @@
 
         <p>Price: 26€</p>
         
-    </article>
-    <article>
+    </div>
+    <div>
         <p>Coca-Cola 2L</p>
         
         <label>Quantity: </label>
         <button>+</button><input type="number" name="quantity" placeholder="quantity"><button>-</button>
 
         <p>Price: 16€</p>
-    </article>
+    </div>
     <hr>
     <p>Total price: <strong>56€</strong></p>
     </section>

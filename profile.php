@@ -16,7 +16,7 @@
     	</header>
 
 		<main>
-			<section class="profile_navbar">
+			<div class="profile_navbar">
 				<nav>
 				<ul>
 					<li><a href= "">My addresses</a></li>
@@ -24,7 +24,7 @@
 					<li><a href= "">Favorites</a></li>
 				</ul>
 				</nav>
-			</section>
+			</div>
 			
 			<h1>Hello user :) </h1>
 			<img src="./testImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
@@ -34,7 +34,7 @@
 				<p>Name: name here </p>
 				<p>Phone:123456789</p>
 				<p>E-mail: stockuser@stockmail.com</p>
-				<button><a href="action_edit_contact_info.php">editar</a></button>
+				<a href="action_edit_contact_info.php" class="button">editar</a>
 			</div><!--added divs to make it clear that i mean for these to be seperate -->
 			<div>
 				<h2>Default address</h2>
@@ -42,7 +42,7 @@
 				<p>Post-code: 1234-789</p>
 				<p>Country: Portugal, probably</p>
 				<p>stockuser@stockmail.com</p>
-				<button><a href="action_edit_contact_info.php">editar</a></button>
+				<a href="action_edit_contact_info.php" class="button">editar</a>
 			</div>
 		</main>
 	</body>
