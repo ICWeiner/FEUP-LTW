@@ -55,7 +55,7 @@ input{
 	border-style: solid;
 }
 
-.category article {
+.category div {
 	border-color:#ffcfac ;
 	border-style: solid;
 	border-width: 1px;
