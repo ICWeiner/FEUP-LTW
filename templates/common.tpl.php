@@ -28,7 +28,7 @@
 	</html>
 <?php } ?>
 
-<?php function drawProfile(array $user) { ?><!-- this really should NOT be an array but oh well -->
+<?php function drawProfile(array $user) { ?>
 			<main>
 				<div class="profile_navbar">
 					<nav>
@@ -61,3 +61,39 @@
 			</main>
 
 <?php } ?>
+
+<?php function drawRestaurant(array $appetizers, array $dishes) { ?><!-- passar tudo por um unico array?-->
+	<main>
+		<!-- TODO get restaurant name and put it below this line-->
+		<h2>Restaurant: Someplace Special - Porto</h2>
+
+		<section class="category">
+			<!-- TODO get category name and put it below this line-->
+			<h2>Appetizer</h2>
+			<?php if( !empty($appetizers)){
+				foreach ($appetizers as $appetizer){ ?>
+				<div>
+				<img src="testImages/bread.jpg" alt="foto do prato">
+				<p><?=$appetizer['name']?></p>
+				<p><?=$appetizer['price']?>&euro;</p>
+				</div>
+				<?php } } ?>
+			
+		</section>
+
+	   <section class="category">
+	   		<!-- TODO get category name and put it below this line-->
+			<h2>Appetizer</h2>
+			<?php if( !empty($dishes)){
+				foreach ($dishes as $dish){ ?>
+
+				<div>
+				<img src="testImages/bread.jpg" alt="foto do prato">
+				<p><?=$dish['name']?></p>
+				<p><?=$dish['price']?>&euro;</p>
+				</div>
+				<?php } } ?>
+		</section>
+	</main>
+<?php } ?>
+
