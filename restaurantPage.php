@@ -6,7 +6,9 @@
     //TODO: take this array out and read this data from DB instead
     $appetizers = array(
         array('name' => 'something something','price'=>'4'),
-        array('name' => 'other other','price'=>'3')
+        array('name' => 'other other','price'=>'3'),
+        array('name' => 'other other','price'=>'6'),
+        array('name' => 'other other','price'=>'1')
     );
 
     $dishes = array(
