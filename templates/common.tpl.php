@@ -6,17 +6,18 @@
 		<head>
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="style.css">
+			<link href="css/style.css" rel="stylesheet">
+			<link href="css/layout.css" rel="stylesheet">
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
 			 <header>
 
-				<h1>NEW Unter Eats</h1>
+				<h1>NEW UNTER EATS</h1>
 				<a href="cart.php">Cart
 				<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
 				<p>Nome de utilizador</p>
-			
+
 			</header>
 <?php } ?>
 
@@ -43,7 +44,7 @@
 				<h1>Hello user :) </h1>
 				<img src="./testImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
 				
-				<?php foreach ($users as $user) ?>
+				<?php foreach ($user as $user) ?>
 				<div>
 					<h2>Informação de contacto</h2>
 					<p><?=$user['name']?><p>
@@ -70,30 +71,78 @@
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
 			<h2>Appetizer</h2>
-			<?php if( !empty($appetizers)){
-				foreach ($appetizers as $appetizer){ ?>
-				<div>
-				<img src="testImages/bread.jpg" alt="foto do prato">
-				<p><?=$appetizer['name']?></p>
-				<p><?=$appetizer['price']?>&euro;</p>
-				</div>
+			<section class="dishes">
+				<?php if( !empty($appetizers)){
+					foreach ($appetizers as $appetizer){ ?>
+					<div>
+						<section class="aspect-ratio-box">
+							<img src="testImages/bread.jpg" alt="foto do prato">
+						</section>
+						<p><?=$appetizer['name']?></p>
+						<p><?=$appetizer['price']?>&euro;</p>
+					</div>
 				<?php } } ?>
-			
+			</section>
 		</section>
 
 	   <section class="category">
 	   		<!-- TODO get category name and put it below this line-->
-			<h2>Appetizer</h2>
-			<?php if( !empty($dishes)){
-				foreach ($dishes as $dish){ ?>
-
-				<div>
-				<img src="testImages/bread.jpg" alt="foto do prato">
-				<p><?=$dish['name']?></p>
-				<p><?=$dish['price']?>&euro;</p>
-				</div>
+			<h2>Dishes</h2>
+			<section class="dishes">
+				<?php if( !empty($dishes)){
+					foreach ($dishes as $dish){ ?>
+					<div>
+						<section class="aspect-ratio-box">
+							<img src="testImages/bread.jpg" alt="foto do prato">
+						</section>
+						<p><?=$dish['name']?></p>
+						<p><?=$dish['price']?>&euro;</p>
+					</div>
 				<?php } } ?>
+			</section>
 		</section>
 	</main>
 <?php } ?>
 
+<?php function drawCart(array $orders) { ?>
+	<main>
+
+        <!--Assumindo que no cart só pode ter coisas de um restaurante--> 
+        <!--Depois põe-se lado a lado com css talvez-->
+        <h1>Checkout</h1>
+        <h2>Restaurant: Someplace Special - Porto</h2>
+        
+        <section class="shipping">
+        <h4>Shipping information</h4>
+        <div>
+            <label>Address:
+                    <input type="text" name="name" value="Senhora da hora, Porto" required disabled>
+            </label>
+                    <button>Edit address</button>
+            
+        </div>
+            <p>Method of payment: Personal Card </p>
+        </section>
+        
+        
+        <section class="orders">
+        <h2>Your order</h2>
+		<?php if( !empty($orders)){
+			foreach ($orders as $order){ ?>
+			<div>
+				<p><?=$order['name']?></p>
+				
+				<label>Quantity: </label>
+				<button>+</button><input type="number" value="1" name="quantity" placeholder="quantity"><button>-</button>
+
+				<p><?=$order['price']?></p>
+				
+			</div>
+		<?php } } ?>
+
+        <hr>
+		<!--O total nao esta a ser alterado quando se aumenta as quantidades, talvez com javascrip?-->
+        <p>Total price: <strong>56€</strong></p>
+        </section>
+    </main>
+<?php } ?> 
