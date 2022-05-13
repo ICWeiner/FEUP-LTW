@@ -42,7 +42,7 @@
 				</div>
 				
 				<h1>Hello user :) </h1>
-				<img src="./testImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
+				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
 				
 				<?php foreach ($user as $user) ?>
 				<div>
@@ -76,7 +76,7 @@
 					foreach ($appetizers as $appetizer){ ?>
 					<div>
 						<section class="aspect-ratio-box">
-							<img src="testImages/bread.jpg" alt="foto do prato">
+							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
 						<p><?=$appetizer['name']?></p>
 						<p><?=$appetizer['price']?>&euro;</p>
@@ -93,7 +93,7 @@
 					foreach ($dishes as $dish){ ?>
 					<div>
 						<section class="aspect-ratio-box">
-							<img src="testImages/bread.jpg" alt="foto do prato">
+							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
