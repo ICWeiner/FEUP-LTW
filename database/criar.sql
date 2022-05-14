@@ -1,15 +1,15 @@
 .mode columns
 .header ON
 
-DROP TABLE IF EXIST Restaurant;
-DROP TABLE IF EXIST User;
-DROP TABLE IF EXIST Dish;
-DROP TABLE IF EXIST FoodOrder;
-DROP TABLE IF EXIST Review;
+DROP TABLE IF EXISTS Restaurant;
+DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Dish;
+DROP TABLE IF EXISTS FoodOrder;
+DROP TABLE IF EXISTS Review;
 
 
 CREATE TABLE Restaurant(
-    RestaurantId INTEGER autoincrement PRIMARY KEY NOT NULL,
+    RestaurantId INTEGER PRIMARY KEY AUTOINCREMENT,
     RestaurantName VARCHAR(100),
     Category VARCHAR(100),
     RestaurantAddress VARCHAR(300),
@@ -18,8 +18,8 @@ CREATE TABLE Restaurant(
 );
 
 CREATE TABLE User(
-    UserId INTEGER autoincrement PRIMARY KEY,
-    Type TEXT CHECK('restaurantOwner', 'Customer') NOT NULL DEFAULT 'Customer',
+    UserId INTEGER PRIMARY KEY AUTOINCREMENT,
+    Type TEXT CHECK('restaurantOwner' OR 'Customer') NOT NULL DEFAULT 'Customer',
     UserName VARCHAR(100),
     Password INTEGER,
     UserAddress VARCHAR(300),
@@ -29,19 +29,19 @@ CREATE TABLE User(
 );
 
 CREATE TABLE Dish(
-    DishId INTEGER autoincrement PRIMARY KEY,
+    DishId INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
     Price FLOAT,
     Photo VARCHAR(10),
-    Category TEXT CHECK('Meat', 'Fish', 'Vegetarian', 'Diet') NOT NULL DEFAULT 'Food',
+    Category TEXT CHECK('Meat' OR 'Fish' OR 'Vegetarian' OR 'Diet') NOT NULL DEFAULT 'Food',
     RestaurantId INTEGER,
     FOREIGN KEY (RestaurantId) REFERENCES Restaurant(RestaurantId)
 );
 
 CREATE TABLE FoodOrder(
-    OrderId INTEGER autoincrement PRIMARY KEY NOT NULL,
+    OrderId INTEGER PRIMARY KEY AUTOINCREMENT,
     OrderDate DATE,
-    OrderState TEXT CHECK('Preparing', 'Ready', 'Delivered', 'Received') NOT NULL DEFAULT 'Preparing',
+    OrderState TEXT CHECK('Preparing' OR 'Ready' OR 'Delivered' OR 'Received') NOT NULL DEFAULT 'Preparing',
     User INTEGER,
     Dish INTEGER,
     FOREIGN KEY (User) REFERENCES User(UserId),
@@ -49,7 +49,7 @@ CREATE TABLE FoodOrder(
 );
 
 CREATE TABLE Review(
-    ReviewId INTEGER PRIMARY KEY autoincrement NOT NULL,
+    ReviewId INTEGER PRIMARY KEY AUTOINCREMENT,
     ReviewText VARCHAR(500),
     ReviewScore INTEGER(5),
     RestaurantId INTEGER,
