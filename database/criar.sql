@@ -19,7 +19,7 @@ CREATE TABLE Restaurant(
 
 CREATE TABLE User(
     UserId INTEGER PRIMARY KEY AUTOINCREMENT,
-    Type TEXT CHECK('restaurantOwner' OR 'Customer') NOT NULL DEFAULT 'Customer',
+    Type TEXT CHECK(Type = 'restaurantOwner' OR  Type ='Customer') NOT NULL DEFAULT 'Customer',
     UserName VARCHAR(100),
     Password INTEGER,
     UserAddress VARCHAR(300),
@@ -33,7 +33,7 @@ CREATE TABLE Dish(
     Name VARCHAR(100),
     Price FLOAT,
     Photo VARCHAR(10),
-    Category TEXT CHECK('Meat' OR 'Fish' OR 'Vegetarian' OR 'Diet') NOT NULL DEFAULT 'Food',
+    Category TEXT CHECK(Category = 'Meat' OR Category = 'Fish' OR Category = 'Vegetarian' OR Category = 'Diet' OR Category = 'Dessert') NOT NULL,
     RestaurantId INTEGER,
     FOREIGN KEY (RestaurantId) REFERENCES Restaurant(RestaurantId)
 );
@@ -41,7 +41,7 @@ CREATE TABLE Dish(
 CREATE TABLE FoodOrder(
     OrderId INTEGER PRIMARY KEY AUTOINCREMENT,
     OrderDate DATE,
-    OrderState TEXT CHECK('Preparing' OR 'Ready' OR 'Delivered' OR 'Received') NOT NULL DEFAULT 'Preparing',
+    OrderState TEXT CHECK(OrderState = 'Preparing' OR OrderState = 'Ready' OR OrderState = 'Delivered' OR OrderState = 'Received') NOT NULL DEFAULT 'Preparing',
     User INTEGER,
     Dish INTEGER,
     FOREIGN KEY (User) REFERENCES User(UserId),

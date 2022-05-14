@@ -19,7 +19,7 @@ INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('re
 
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Big Mc', 4.50, '', 'Meat');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('CBO', 6.50, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Sunday', 1.50, '', 'Food');
+INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Sundae', 1.50, '', 'Dessert');
 
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Bitoque', 7.40, '', 'Meat');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Peixe do dia', 5.30, '', 'Fish');
