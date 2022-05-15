@@ -23,9 +23,7 @@ CREATE TABLE User(
     UserName VARCHAR(100),
     Password INTEGER,
     UserAddress VARCHAR(300),
-    PhoneNumber VARCHAR(9),
-    isOwner BOOLEAN,
-    isDriver BOOLEAN
+    PhoneNumber VARCHAR(9)
 );
 
 CREATE TABLE Dish(

@@ -1,10 +1,10 @@
 PRAGMA foreign_key = on;
 
-INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress) VALUES ( 'McDonnald`s', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal');
-INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress) VALUES ( 'Friends', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal');
-INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress) VALUES ( 'Al Gusto', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal');
-INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress) VALUES ( 'Ching Chong, Bing Bong', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal');
-INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress) VALUES ( 'Rui Rielas', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal');
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'McDonnald`s', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 2);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Friends', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 5);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Al Gusto', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 8);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Ching Chong, Bing Bong', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 3);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
 
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Customer', 'xXxX69420PussySlayer42069XxXx', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+351911234567');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('restaurantOwner', 'wackyjohn', '123', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', '+351915439194');
@@ -37,14 +37,20 @@ INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Bife a casa', 5.00, '', 
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Lulas fritas', 6.50, '', 'Fish');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian');
 
-INSERT INTO FoodOrder(OrderDate, OrderState) VALUES ('2007-01-01 20:01:51', 'Ready');
-INSERT INTO FoodOrder(OrderDate, OrderState) VALUES ('2007-01-01 12:58:15', 'Preparing');
-INSERT INTO FoodOrder(OrderDate, OrderState) VALUES ('2007-01-01 13:43:12', 'Delivered');
-INSERT INTO FoodOrder(OrderDate, OrderState) VALUES ('2007-01-01 13:09:29', 'Ready');
-INSERT INTO FoodOrder(OrderDate, OrderState) VALUES ('2007-01-01 19:43:40', 'Received');
+INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 20:01:51', 'Ready', 2, 11);
+INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 12:58:15', 'Preparing', 4, 2);
+INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 13:43:12', 'Delivered', 7, 8);
+INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 13:09:29', 'Ready', 9, 4);
+INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 19:43:40', 'Received', 10, 15);
 
-INSERT INTO Review(ReviewText, ReviewScore) VALUES ('very good, very nice, me like 10/10', 5);
-INSERT INTO Review(ReviewText, ReviewScore) VALUES ('was alright', 3);
-INSERT INTO Review(ReviewText, ReviewScore) VALUES ('what a shit show', 1);
-INSERT INTO Review(ReviewText, ReviewScore) VALUES ('pretty good not gonna lie', 4);
-INSERT INTO Review(ReviewText, ReviewScore) VALUES ('they better get their shit together fr fr', 2);
+INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('very good, very nice, me like 10/10', 5, 2, 1);
+INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('was alright', 3, 3, 8);
+INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('what a shit show', 1, 1, 6);
+INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('pretty good not gonna lie', 4, 4, 2);
+INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('they better get their shit together fr fr', 2, 5, 10);
+
+INSERT INTO DishOrder(OrderId, DishId) VALUES (1, 11);
+INSERT INTO DishOrder(OrderId, DishId) VALUES (2, 2);
+INSERT INTO DishOrder(OrderId, DishId) VALUES (3, 8);
+INSERT INTO DishOrder(OrderId, DishId) VALUES (4, 4);
+INSERT INTO DishOrder(OrderId, DishId) VALUES (5, 15);
