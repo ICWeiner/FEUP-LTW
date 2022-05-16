@@ -49,6 +49,18 @@
     );
   }
 
+  function getRestaurantsByCategory(PDO $db, string $category){
+    $stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant WHERE Category = ?');
+    $stmt->execute(array($category));
+
+    $restaurant = $stmt->fetch();
+
+    return array(
+      'id' => $restaurant['RestaurantId'], 
+      'name' => $restaurant['RestaurantName'], 
+    );
+  }
+
 
 
   // Pegar categorias em vez de Pratos diretamente?

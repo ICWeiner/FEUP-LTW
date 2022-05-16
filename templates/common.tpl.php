@@ -150,7 +150,7 @@
 
 
 
-<?php function drawRestaurantsCategories(array $categories) { ?><!-- passar tudo por um unico array?-->
+<?php function drawRestaurantsByCategory(array $restaurants) { ?><!-- passar tudo por um unico array?-->
 	<main>
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2>Restaurants</h2>
@@ -159,13 +159,13 @@
 			<!-- TODO get category name and put it below this line-->
 			<h2><?=$category['name']?></h2>
 			<section class="dishes">
-				<?php if( !empty($categories)){
-					foreach ($categories as $category){ ?>
+				<?php if( !empty($restaurants)){
+					foreach ($restaurants as $restaurant){ ?>
 					<div>
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
-						<p><?=$category['name']?></p>
+						<p><?=$restaurant['name']?></p>
 					</div>
 				<?php } } ?>
 			</section>
