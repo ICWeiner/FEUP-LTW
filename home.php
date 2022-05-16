@@ -5,7 +5,7 @@
     require_once('database/connection.db.php');
 
     require_once('templates/common.tpl.php');
-    require_once('templates/testing.tpl.php');
+    require_once('templates/main.tpl.php');
 
     $db = getDatabaseConnection();
     $restaurants = getRestaurants($db, 8);
