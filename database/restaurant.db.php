@@ -18,6 +18,7 @@
   }
 
 
+  // Pegar só o restaurante
   function getRestaurant(PDO $db, int $id) {
     $stmt = $db->prepare('SELECT RestaurantId, RestaurantName, Category, RestaurantAdress FROM Restaurant WHERE RestaurantID = ?');
     $stmt->execute(array($id));
@@ -33,29 +34,30 @@
     );
   }
 
-  
+
 
   // Pegar categorias em vez de Pratos diretamente?
-  function getDishCategories(PDO $db, int $id) {
-    $stmt = $db->prepare('SELECT DishId, Name, Price, Category FROM Dish WHERE RestaurantId = ?');
-    $stmt->execute(array($id));
+  //Agora sinto que está errado
+  function getDishCategories(PDO $db, int $type) {
+    $stmt = $db->prepare('SELECT DishId, Name, Price, Category FROM Dish WHERE Category = ?');
+    $stmt->execute(array($type));
 
-    $categories = [];
+    $dishes = [];
 
-    while ($categorie = $stmt->fetch()) {
-      $categories[] = array(
-        'id' => $restaurant['DishId'],
-        'name' => $restaurant['Name'],
-        'price' => $restaurant['Price'],
-        'category' => $restaurant['Category']
+    while ($dish = $stmt->fetch()) {
+      $dishes[] = array(
+        'id' => $dish['DishId'],
+        'name' => $dish['Name'],
+        'price' => $dish['Price']
+        //'category' => $restaurant['Category']  // Acho que não vai ser preciso porque fica dentro da secção
       );
     }
-
-    return $categories;
+    
+    return $dishes;
   }
 
 
-  /*function getRestaurantDishes(PDO $db, int $id) {
+  function getRestaurantDishes(PDO $db, int $id) {
     $stmt = $db->prepare('SELECT DishId, Name, Price, Category FROM Dish WHERE RestaurantId = ?');
     $stmt->execute(array($id));
 
@@ -63,15 +65,15 @@
 
     while ($dish = $stmt->fetch()) {
       $dishes[] = array(
-        'id' => $restaurant['DishId'],
-        'name' => $restaurant['Name'],
-        'price' => $restaurant['Price'],
-        'category' => $restaurant['Category']
+        'id' => $dish['DishId'],
+        'name' => $dish['Name'],
+        'price' => $dish['Price'],
+        'category' => $dish['Category']
       );
     }
 
     return $dishes;
-  }*/
+  }
 
 
 
