@@ -157,7 +157,7 @@
 
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
-			<h2>Appetizer</h2>
+			<h2><?=$category['name']?></h2>
 			<section class="dishes">
 				<?php if( !empty($categories)){
 					foreach ($categories as $category){ ?>
