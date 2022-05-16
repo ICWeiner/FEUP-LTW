@@ -17,6 +17,21 @@
     return $restaurants;
   }
 
+  function getRestaurantsCategories(PDO $db) {
+    $stmt = $db->prepare('SELECT Category  FROM Restaurant LIMIT 10');
+    $stmt->execute(array());
+
+    $categories = array();
+
+    while ($category = $stmt->fetch()) {
+      $categories[] = array(
+        'name' => $category['Category']
+      );
+    }
+
+    return $categories;
+  }
+
 
   // Pegar só o restaurante
   function getRestaurant(PDO $db, int $id) {

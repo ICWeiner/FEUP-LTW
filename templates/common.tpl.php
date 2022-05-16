@@ -146,3 +146,29 @@
         </section>
     </main>
 <?php } ?> 
+
+
+
+
+<?php function drawRestaurantsCategories(array $categories) { ?><!-- passar tudo por um unico array?-->
+	<main>
+		<!-- TODO get restaurant name and put it below this line-->
+		<h2>Restaurants</h2>
+
+		<section class="category">
+			<!-- TODO get category name and put it below this line-->
+			<h2>Appetizer</h2>
+			<section class="dishes">
+				<?php if( !empty($categories)){
+					foreach ($categories as $category){ ?>
+					<div>
+						<section class="aspect-ratio-box">
+							<img src="TestImages/bread.jpg" alt="foto do prato">
+						</section>
+						<p><?=$category['name']?></p>
+					</div>
+				<?php } } ?>
+			</section>
+		</section>
+	</main>
+<?php } ?>
