@@ -6,6 +6,20 @@ INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VAL
 INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Ching Chong, Bing Bong', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 3);
 INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'FastFood', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
 
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'Mexican', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'Mexican', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'Mexican', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
+
+
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'African', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'African', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
+INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( 'Rui Rielas', 'African', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', 1);
+
+
+
+
+
+
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Customer', 'xXxX69420PussySlayer42069XxXx', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+351911234567');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('restaurantOwner', 'wackyjohn', '123', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', '+351915439194');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Customer', 'child_toucher69', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+35191538729349');

@@ -18,7 +18,7 @@
   }
 
   function getRestaurantsCategories(PDO $db) {
-    $stmt = $db->prepare('SELECT Category  FROM Restaurant LIMIT 10');
+    $stmt = $db->prepare('SELECT DISTINCT Category  FROM Restaurant LIMIT 10');
     $stmt->execute(array());
 
     $categories = array();
