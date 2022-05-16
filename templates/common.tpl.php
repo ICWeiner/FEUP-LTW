@@ -151,13 +151,11 @@
 
 
 <?php function drawRestaurantsByCategory(array $restaurants) { ?><!-- passar tudo por um unico array?-->
-	<main>
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2>Restaurants</h2>
-
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
-			<h2><?=$category['name']?></h2>
+			<h2><?=$restaurant['name']?></h2>
 			<section class="dishes">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
@@ -170,5 +168,4 @@
 				<?php } } ?>
 			</section>
 		</section>
-	</main>
 <?php } ?>

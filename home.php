@@ -12,8 +12,8 @@
     drawHeader();
 
     foreach ($categories as $category) {
-        drawRestaurantsCategories($categories);
-        }
+        drawRestaurantsByCategory($categories);
+    }
         
     drawFooter(); 
 ?>
