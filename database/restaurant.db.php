@@ -32,6 +32,7 @@
     return $restaurants;
   }
 
+  //To get all dishes from a restaurant
   function getRestaurantDishes(PDO $db) {
     $stmt = $db->prepare('SELECT Name, Price FROM Dish LIMIT 10');
     $stmt->execute(array());
@@ -48,5 +49,36 @@
     return $dishes;
   }
 
+  function getDishesCategories(PDO $db) {
+    $stmt = $db->prepare('SELECT DISTINCT Category FROM Dish LIMIT 10');
+    $stmt->execute(array());
+
+    $categories = [];
+
+    while ($category = $stmt->fetch()) {
+      $categories[] = array(
+        'name' => $category['Category'],
+      );
+    }
+
+    return $categories;
+  }
+
+  function getDishesByCategory(PDO $db, string $category){
+    $stmt = $db->prepare('SELECT DishId, Name, Price FROM Dish WHERE Category = ?');
+    $stmt->execute(array($category));
+
+    $dishes = [];
+
+    while($dish = $stmt->fetch()){
+      $dishes[] = array(
+        'id' => $dish['DishId'], 
+        'name' => $dish['Name'],
+        'price' => $dish['Price']
+      );
+    }
+
+    return $dishes;
+  }
  
 ?>

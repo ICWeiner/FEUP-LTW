@@ -126,7 +126,6 @@
             <p>Method of payment: Personal Card </p>
         </section>
         
-        
         <section class="orders">
         <h2>Your order</h2>
 		<?php if( !empty($orders)){
@@ -151,7 +150,6 @@
 
 
 
-
 <?php function drawRestaurantsByCategory(array $restaurants,$category) { ?><!-- passar tudo por um unico array?-->
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2><?=$category?></h2>
@@ -161,7 +159,7 @@
 			<section class="dishes">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
-					<div>
+					<div> 
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
@@ -171,3 +169,30 @@
 			</section>
 		</section>
 <?php } ?>
+
+
+
+
+
+<?php function drawDishesByCategory(array $dishes, $category) { ?>
+	<main>
+		<!-- TODO get restaurant name and put it below this line-->
+	   <section class="category">
+	   		<!-- TODO get category name and put it below this line-->
+			<h3><?=$category?></h3>
+			<section class="dishes">
+				<?php if( !empty($dishes)){
+					foreach ($dishes as $dish){ ?>
+					<div>
+						<section class="aspect-ratio-box">
+							<img src="TestImages/bread.jpg" alt="foto do prato">
+						</section>
+						<p><?=$dish['name']?></p>
+						<p><?=$dish['price']?>&euro;</p>
+					</div>
+				<?php } } ?>
+			</section>
+		</section>
+	</main>
+<?php } ?>
+

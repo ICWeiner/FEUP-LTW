@@ -7,20 +7,17 @@
 
     $db = getDatabaseConnection();
 
-    //TODO: take this array out and read this data from DB instead
-    $appetizers = array(
-        array('name' => 'something something','price'=>'4'),
-        array('name' => 'other other','price'=>'3'),
-        array('name' => 'other other','price'=>'6'),
-        array('name' => 'other other','price'=>'1')
-    );
-
-
-    $dishes = getRestaurantDishes($db);
+    $dishes = getDishesCategories($db);
+    $categories = getDishesCategories($db);
 
 
     drawHeader();
-    drawRestaurant($appetizers,$dishes);
+
+    foreach($categories as $category){
+        $dishes = getDishesByCategory($db, $category['name']);
+        drawDishesByCategory($dishes,$category['name']);
+    }
+
     drawFooter();
 ?>
 
