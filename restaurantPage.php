@@ -10,8 +10,8 @@
     $dishes = getDishesCategories($db);
     $categories = getDishesCategories($db);
 
-
     drawHeader();
+    
 
     foreach($categories as $category){
         $dishes = getDishesByCategory($db, $category['name']);

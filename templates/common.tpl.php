@@ -149,6 +149,11 @@
 <?php } ?> 
 
 
+<!--Depois termino, acho que não pode ficar assim -->
+<?php function drawRestaurantHeader(array $restaurant) { ?>
+	<h1><?=$restaurant['name']?></h1>
+<?php } ?>
+
 
 <?php function drawRestaurantsByCategory(array $restaurants,$category) { ?><!-- passar tudo por um unico array?-->
 		<!-- TODO get restaurant name and put it below this line-->
@@ -159,16 +164,18 @@
 			<section class="dishes">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
+					
 					<div> 
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
-						<p><?=$restaurant['name']?></p>
+						<a href="restaurantPage.php?<?=$restaurant['id']?>"><p><?=$restaurant['name']?></p></a>
 					</div>
 				<?php } } ?>
 			</section>
 		</section>
 <?php } ?>
+
 
 
 

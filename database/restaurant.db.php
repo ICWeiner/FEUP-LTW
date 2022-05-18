@@ -1,6 +1,20 @@
 <?php
   declare(strict_types = 1);
 
+
+  function getRestaurant(PDO $db, int $id) : array {
+    $stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant WHERE RestaurantId = ?');
+    $stmt->execute(array($id));
+
+    $restaurant = $stmt->fetch();
+
+    return array(
+      'id' => $restaurant['RestaurantId'], 
+      'name' => $restaurant['RestaurantName']
+      //'categories' => getRestaurantsCategories($db)
+    );
+  }
+
   function getRestaurantsCategories(PDO $db) {
     $stmt = $db->prepare('SELECT DISTINCT Category  FROM Restaurant LIMIT 10');
     $stmt->execute(array());
