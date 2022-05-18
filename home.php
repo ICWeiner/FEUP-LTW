@@ -12,7 +12,9 @@
     drawHeader();
 
     foreach ($categories as $category) {
-        drawRestaurantsByCategory($categories);
+        $restaurants = getRestaurantsByCategory($db,$category['name']);
+        drawRestaurantsByCategory($restaurants,$category['name']);
+        //print_r($restaurants);
     }
         
     drawFooter(); 

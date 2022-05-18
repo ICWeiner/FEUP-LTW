@@ -53,12 +53,15 @@
     $stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant WHERE Category = ?');
     $stmt->execute(array($category));
 
-    $restaurant = $stmt->fetch();
+    $restaurants = [];
 
-    return array(
-      'id' => $restaurant['RestaurantId'], 
-      'name' => $restaurant['RestaurantName'], 
-    );
+    while($restaurant = $stmt->fetch()){
+      $restaurants[] = array(
+        'id' => $restaurant['RestaurantId'], 
+        'name' => $restaurant['RestaurantName']);
+    }
+
+    return $restaurants;
   }
 
 

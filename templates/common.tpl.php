@@ -150,9 +150,9 @@
 
 
 
-<?php function drawRestaurantsByCategory(array $restaurants) { ?><!-- passar tudo por um unico array?-->
+<?php function drawRestaurantsByCategory(array $restaurants,$category) { ?><!-- passar tudo por um unico array?-->
 		<!-- TODO get restaurant name and put it below this line-->
-		<h2>Restaurants</h2>
+		<h2><?=$category?></h2>
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
 			<h2><?=$restaurant['name']?></h2>
