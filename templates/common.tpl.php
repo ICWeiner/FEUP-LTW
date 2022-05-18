@@ -63,6 +63,8 @@
 
 <?php } ?>
 
+
+
 <?php function drawRestaurant(array $appetizers, array $dishes) { ?><!-- passar tudo por um unico array?-->
 	<main>
 		<!-- TODO get restaurant name and put it below this line-->

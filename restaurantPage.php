@@ -1,7 +1,11 @@
 <?php 
     declare(strict_types = 1); 
 
+    require_once('database/connection.db.php');
+    require_once('database/restaurant.db.php');
     require_once('templates/common.tpl.php');
+
+    $db = getDatabaseConnection();
 
     //TODO: take this array out and read this data from DB instead
     $appetizers = array(
@@ -11,12 +15,9 @@
         array('name' => 'other other','price'=>'1')
     );
 
-    $dishes = array(
-        array('name' => 'main dish','price'=>'12'),
-        array('name' => 'other main dish','price'=>'23')
-    );
 
-    
+    $dishes = getRestaurantDishes($db);
+
 
     drawHeader();
     drawRestaurant($appetizers,$dishes);
