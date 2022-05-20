@@ -169,7 +169,7 @@
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
-						<a href="restaurantPage.php?<?=$restaurant['id']?>"><p><?=$restaurant['name']?></p></a>
+						<a href="restaurantPage.php?id=<?=$restaurant['id']?>"><p><?=$restaurant['name']?></p></a>
 					</div>
 				<?php } } ?>
 			</section>

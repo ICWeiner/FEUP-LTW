@@ -7,8 +7,7 @@
 
     $db = getDatabaseConnection();
 
-    $dishes = getDishesCategories($db);
-    $categories = getDishesCategories($db);
+    $categories = getDishesCategories($db, intval($_GET['id']));
 
     drawHeader();
     

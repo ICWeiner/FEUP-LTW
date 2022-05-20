@@ -63,9 +63,9 @@
     return $dishes;
   }
 
-  function getDishesCategories(PDO $db) {
-    $stmt = $db->prepare('SELECT DISTINCT Category FROM Dish LIMIT 10');
-    $stmt->execute(array());
+  function getDishesCategories(PDO $db, int $id) {
+    $stmt = $db->prepare('SELECT DISTINCT Category FROM Dish WHERE RestaurantId = ? LIMIT 10');
+    $stmt->execute(array($id));
 
     $categories = [];
 
