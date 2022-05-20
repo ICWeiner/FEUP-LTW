@@ -15,5 +15,5 @@
 		$_SESSION['name'] = $customer->name();
 	}
 
-	header('Location: ' . $_SERVER['HTTP_REFERER']);
+	header('Location: ./home.php');//TODO: why doesnt this work?
 ?>
