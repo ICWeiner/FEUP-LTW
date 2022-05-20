@@ -78,9 +78,9 @@
     return $categories;
   }
 
-  function getDishesByCategory(PDO $db, string $category){
-    $stmt = $db->prepare('SELECT DishId, Name, Price FROM Dish WHERE Category = ?');
-    $stmt->execute(array($category));
+  function getRestaurantDishesByCategory(PDO $db, string $category,int $id){
+    $stmt = $db->prepare('SELECT DishId, Name, Price FROM Dish WHERE Category = ? AND RestaurantId =  ?');
+    $stmt->execute(array($category,$id));
 
     $dishes = [];
 

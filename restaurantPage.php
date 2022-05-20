@@ -6,14 +6,15 @@
     require_once('templates/common.tpl.php');
 
     $db = getDatabaseConnection();
+    $id = intval($_GET['id']);
 
-    $categories = getDishesCategories($db, intval($_GET['id']));
+    $categories = getDishesCategories($db, $id);
 
     drawHeader();
     
 
     foreach($categories as $category){
-        $dishes = getDishesByCategory($db, $category['name']);
+        $dishes = getRestaurantDishesByCategory($db, $category['name'],$id);
         drawDishesByCategory($dishes,$category['name']);
     }
 
