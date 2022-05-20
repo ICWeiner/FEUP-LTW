@@ -10,9 +10,9 @@ DROP TABLE IF EXISTS Review;
 
 CREATE TABLE Restaurant(
     RestaurantId INTEGER PRIMARY KEY AUTOINCREMENT,
-    RestaurantName VARCHAR(100),
-    Category VARCHAR(100),
-    RestaurantAddress VARCHAR(300),
+    RestaurantName VARCHAR(100) NOT NULL,
+    Category VARCHAR(100) NOT NULL,
+    RestaurantAddress VARCHAR(300) NOT NULL,
     OwnerId INTEGER,
 	FOREIGN KEY (OwnerId) REFERENCES User(UserId)
 );
@@ -20,16 +20,17 @@ CREATE TABLE Restaurant(
 CREATE TABLE User(
     UserId INTEGER PRIMARY KEY AUTOINCREMENT,
     Type TEXT CHECK(Type = 'restaurantOwner' OR  Type ='Customer') NOT NULL DEFAULT 'Customer',
-    UserName VARCHAR(100),
-    Password INTEGER,
-    UserAddress VARCHAR(300),
+    UserName VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    Password INTEGER NOT NULL,
+    UserAddress VARCHAR(300) NOT NULL,
     PhoneNumber VARCHAR(9)
 );
 
 CREATE TABLE Dish(
     DishId INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
-    Price FLOAT,
+    Price FLOAT NOT NULL,
     Photo VARCHAR(10),
     Category TEXT CHECK(Category = 'Meat' OR Category = 'Fish' OR Category = 'Vegetarian' OR Category = 'Diet' OR Category = 'Dessert') NOT NULL,
     RestaurantId INTEGER,
