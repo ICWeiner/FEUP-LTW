@@ -17,9 +17,6 @@ INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VAL
 
 
 
-
-
-
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Customer', 'xXxX69420PussySlayer42069XxXx', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+351911234567');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('restaurantOwner', 'wackyjohn', '123', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', '+351915439194');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Customer', 'child_toucher69', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+35191538729349');
@@ -31,6 +28,7 @@ INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Cu
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('Customer', 'tommy', '123', 'Praça Don Afonso D`Almier, 3432-542 Porto, Portugal', '+3519118503648');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber) VALUES ('restaurantOwner', 'monkey_soup', '123', 'Rua Santo Antonio, 5421-090 Porto, Portugal', '+3519157829426');
 
+/*
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Big Mc', 4.50, '', 'Meat');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('CBO', 6.50, '', 'Meat');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Sundae', 1.50, '', 'Dessert');
@@ -50,6 +48,33 @@ INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Chop suey de gambas', 7.
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Bife a casa', 5.00, '', 'Meat');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Lulas fritas', 6.50, '', 'Fish');
 INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian');
+*/
+
+
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Big Mc', 4.50, '', 'Meat', 1);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('CBO', 6.50, '', 'Meat', 1);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Sundae', 1.50, '', 'Dessert', 1);
+
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Bitoque', 7.40, '', 'Meat', 2);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Peixe do dia', 5.30, '', 'Fish', 2);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Bacalhau cozido com grao', 6.90, '', 'Fish', 2);
+
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Pizza Margarita', 7.80, '', 'Vegetarian', 3);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Pasta al Neri', 8.00, '', 'Fish', 3);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Lasagna', 6.60, '', 'Meat', 3);
+
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Xau Ming de vaca', 8.70, '', 'Meat', 4);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Pato a Pequim', 9.90, '', 'Meat', 4);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Chop suey de gambas', 7.80, '', 'Fish', 4);
+
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Bife a casa', 5.00, '', 'Meat', 5);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Lulas fritas', 6.50, '', 'Fish', 5);
+INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian', 5);
+
+
+
+
+
 
 INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 20:01:51', 'Ready', 2, 11);
 INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 12:58:15', 'Preparing', 4, 2);
