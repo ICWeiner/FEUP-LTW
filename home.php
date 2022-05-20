@@ -1,21 +1,19 @@
 <?php 
-    declare(strict_types = 1); 
+	declare(strict_types = 1); 
 
-    require_once('database/connection.db.php');
-    require_once('database/restaurant.db.php');
-    require_once('templates/common.tpl.php');
+	require_once('database/connection.db.php');
+	require_once('database/restaurant.class.php');
+	require_once('templates/common.tpl.php');
 
-    $db = getDatabaseConnection();
-    $categories = getRestaurantsCategories($db);
+	$db = getDatabaseConnection();
+	$categories = Restaurant::getRestaurantCategories($db);
 
+	drawHeader();
 
-    drawHeader();
-
-    foreach ($categories as $category) {
-        $restaurants = getRestaurantsByCategory($db,$category['name']);
-        drawRestaurantsByCategory($restaurants,$category['name']);
-        //print_r($restaurants);
-    }
-        
-    drawFooter(); 
+	foreach ($categories as $category) {
+		$restaurants = Restaurant::getRestaurantsByCategory($db,$category);
+		drawRestaurantsByCategory($restaurants,$category);
+	}
+		
+	drawFooter();
 ?>
