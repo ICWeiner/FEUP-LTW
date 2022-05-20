@@ -15,7 +15,8 @@
 			$this->name = $name;
 			$this->email = $email;
 			$this->type = $type;
-			$this->address= $address;
+			$this->address = $address;
+			$this->phone = $phone;
 		}
 
 		static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
@@ -28,10 +29,9 @@
 			if ($customer = $stmt->fetch()) {
 				return new Customer(
 					$customer['UserId'],
-					$customer['Type'],
 					$customer['UserName'],
 					$customer['email'],
-					$customer['Password'],
+					$customer['Type'],
 					$customer['UserAddress'],
 					$customer['PhoneNumber']
 					);

@@ -29,7 +29,7 @@
 	</html>
 <?php } ?>
 
-<?php function drawProfile(array $user) { ?>
+<?php function drawProfile(Customer $user) { ?>
 			<main>
 				<div class="profile_navbar">
 					<nav>
@@ -43,20 +43,16 @@
 				
 				<h1>Hello user :) </h1>
 				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
-				
-				<?php foreach ($user as $user) ?>
 				<div>
 					<h2>Informação de contacto</h2>
-					<p><?=$user['name']?><p>
-					<p><?=$user['phone']?></p>
-					<p><?=$user['email']?></p>
+					<p><?=$user->name?><p>
+					<p><?=$user->phone?></p>
+					<p><?=$user->email?></p>
 					<a href="action_edit_contact_info.php" class="button">editar</a>
 				</div><!--added divs to make it clear that i mean for these to be seperate -->
 				<div>
 					<h2>Default address</h2>
-					<p><?=$user['address']?></p>
-					<p><?=$user['postcode']?></p>
-					<p><?=$user['country']?></p>
+					<p><?=$user->address?></p>
 					<a href="action_edit_contact_info.php" class="button">editar</a>
 				</div>
 			</main>

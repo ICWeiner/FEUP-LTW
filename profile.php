@@ -1,10 +1,13 @@
 <?php 
 	declare(strict_types = 1); 
 
+	require_once('database/connection.db.php');
+	require_once('database/customer.class.php');
 	require_once('templates/common.tpl.php');
 
-	//TODO: take this array out and read this data from DB instead
-	$user = array('name'=> 'Diogo','phone'=> '12321424','email'=> 'diogo@gmail.com','address'=> 'Wouldnt you like to know, weather boy', 'postcode'=> '1234-567', 'country'=> 'Portugal, most of the time' );
+	$db = getDatabaseConnection();
+
+	$user = Customer::getCustomerWithPassword($db,"123@mail.com","123");
 
 	drawHeader();
 	drawProfile($user);
