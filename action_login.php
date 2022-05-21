@@ -12,8 +12,9 @@
 
 	if ($customer) {
 		$_SESSION['id'] = $customer->id;
-		$_SESSION['name'] = $customer->name();
+		$_SESSION['name'] = $customer->name;
 	}
 
-	header('Location: ./home.php');//TODO: why doesnt this work?
+	header('Location: home.php');//TODO: why doesnt this work?
+
 ?>
