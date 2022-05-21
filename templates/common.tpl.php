@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1); ?>
 
-<?php function drawHeader() { ?>
+<?php function drawHeader(string $name) { ?>
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -16,7 +16,10 @@
 				<h1>NEW UNTER EATS</h1>
 				<a href="cart.php">Cart
 				<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
-				<p>Nome de utilizador</p>
+				<form action="action_logout.php" method="post" class="logout">
+					<p><?=$name?></p>
+					<button type="submit">Logout</button>
+				</form>
 
 			</header>
 <?php } ?>
@@ -41,7 +44,7 @@
 					</nav>
 				</div>
 				
-				<h1>Hello user :) </h1>
+				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
 				<div>
 					<h2>Informação de contacto</h2>

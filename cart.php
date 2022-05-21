@@ -11,7 +11,7 @@
         array('name' => 'Coca-Cola 2L','price'=>'16')
     );
 
-    drawHeader();
+    drawHeader($_SESSION['name']);
     drawCart($orders);
     drawFooter();
 ?>

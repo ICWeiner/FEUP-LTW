@@ -12,7 +12,7 @@
 
     $categories = getDishesCategories($db, $id);
 
-    drawHeader();
+    drawHeader($_SESSION['name']);
     
 
     foreach($categories as $category){
