@@ -8,19 +8,19 @@
     }
 
     require_once('database/connection.db.php');
-    require_once('database/restaurant.db.php');
+    require_once('database/dish.class.php');
     require_once('templates/common.tpl.php');
 
     $db = getDatabaseConnection();
     $id = intval($_GET['id']);
 
-    $categories = getDishesCategories($db, $id);
+    $categories = Dish::getDishesCategories($db, $id);
 
     drawHeader($_SESSION['name']);
     
 
     foreach($categories as $category){
-        $dishes = getRestaurantDishesByCategory($db, $category['name'],$id);
+        $dishes = Dish::getRestaurantDishesByCategory($db, $category['name'],$id);
         drawDishesByCategory($dishes,$category['name']);
     }
 
