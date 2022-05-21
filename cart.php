@@ -3,6 +3,10 @@
 
     session_start();
 
+    if(!isset($_SESSION['name']) ){
+        header('Location: login.php');
+    }
+
     require_once('templates/common.tpl.php');
 
     //TODO: take this array out and read this data from DB instead

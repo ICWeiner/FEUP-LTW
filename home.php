@@ -3,6 +3,10 @@
 
 	session_start();
 
+	if(!isset($_SESSION['name']) ){
+        header('Location: login.php');
+    }
+
 	require_once('database/connection.db.php');
 	require_once('database/restaurant.class.php');
 	require_once('templates/common.tpl.php');
