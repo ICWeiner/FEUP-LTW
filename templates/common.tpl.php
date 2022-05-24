@@ -62,49 +62,6 @@
 
 <?php } ?>
 
-
-
-<?php function drawRestaurant(array $appetizers, array $dishes) { ?><!-- passar tudo por um unico array?-->
-	<main id="restaurant">
-		<!-- TODO get restaurant name and put it below this line-->
-		<h2>Restaurant: Someplace Special - Porto</h2>
-
-		<section class="category">
-			<!-- TODO get category name and put it below this line-->
-			<h2>Appetizer</h2>
-			<section class="dishes">
-				<?php if( !empty($appetizers)){
-					foreach ($appetizers as $appetizer){ ?>
-					<div>
-						<section class="aspect-ratio-box">
-							<img src="TestImages/bread.jpg" alt="foto do prato">
-						</section>
-						<p><?=$appetizer['name']?></p>
-						<p><?=$appetizer['price']?>&euro;</p>
-					</div>
-				<?php } } ?>
-			</section>
-		</section>
-
-	   <section class="category">
-	   		<!-- TODO get category name and put it below this line-->
-			<h2>Dishes</h2>
-			<section class="dishes">
-				<?php if( !empty($dishes)){
-					foreach ($dishes as $dish){ ?>
-					<div>
-						<section class="aspect-ratio-box">
-							<img src="TestImages/bread.jpg" alt="foto do prato">
-						</section>
-						<p><?=$dish['name']?></p>
-						<p><?=$dish['price']?>&euro;</p>
-					</div>
-				<?php } } ?>
-			</section>
-		</section>
-	</main>
-<?php } ?>
-
 <?php function drawCart(array $orders) { ?>
 	<main id="cart">
 
@@ -184,8 +141,9 @@
 
 
 
-<?php function drawDishesByCategory(array $dishes, $category) { ?>
+<?php function drawDishesByCategory(array $dishes, $category,$restaurantname) { ?>
 	<main>
+		<!--<h2><?=$restaurantname?></h2>-->
 		<!-- TODO get restaurant name and put it below this line-->
 	   <section class="category">
 	   		<!-- TODO get category name and put it below this line-->
