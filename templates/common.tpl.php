@@ -65,7 +65,7 @@
 
 
 <?php function drawRestaurant(array $appetizers, array $dishes) { ?><!-- passar tudo por um unico array?-->
-	<main>
+	<main id="restaurant">
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2>Restaurant: Someplace Special - Porto</h2>
 
@@ -106,7 +106,7 @@
 <?php } ?>
 
 <?php function drawCart(array $orders) { ?>
-	<main>
+	<main id="cart">
 
         <!--Assumindo que no cart só pode ter coisas de um restaurante--> 
         <!--Depois põe-se lado a lado com css talvez-->
@@ -132,8 +132,12 @@
 			<div>
 				<p><?=$order['name']?></p>
 				
-				<label>Quantity: </label>
-				<button>+</button><input type="number" value="1" name="quantity" placeholder="quantity"><button>-</button>
+				<!--<label>Quantity: </label>-->
+				<div id="quantity">
+					<button id="minus">-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity">
+					<button id="plus">+</button>
+				</div>
 
 				<p><?=$order['price']?></p>
 				
@@ -159,7 +163,7 @@
 		<h2><?=$category?></h2>
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
-			<h2><?=$restaurant['name']?></h2>
+			
 			<section class="dishes">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
