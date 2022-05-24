@@ -2,14 +2,14 @@
 	declare(strict_types = 1);
 
 	class Customer{
-		public string $id;
+		public int $id;
 		public string $name;
 		public string $email;
 		public string $type;
 		public string $address;
 		public string $phone;
 
-		public function __construct(string $id, string $name, string $email
+		public function __construct(int $id, string $name, string $email
 		,string $type, string $address ,string $phone){
 			$this->id = $id;
 			$this->name = $name;
@@ -39,8 +39,8 @@
 		}
 
 		function register($db, $password) {
-			$stmt = $db->prepare( 'INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
-			);
+			$stmt = $db->prepare('INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
+			');
 
 			$stmt->execute(array($this->type, $this->name, $password, $this->address, $this->phone, $this->email));
 			}
