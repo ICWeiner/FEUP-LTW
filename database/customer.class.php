@@ -40,7 +40,7 @@
 
 		function register($db, $password) {
 			$stmt = $db->prepare( 'INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
-			);
+			');
 
 			$stmt->execute(array($this->type, $this->name, $password, $this->address, $this->phone, $this->email));
 			}
