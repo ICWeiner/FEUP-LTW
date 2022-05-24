@@ -39,6 +39,7 @@
 		}
 
 		function register($db, $password) {
+
 			$stmt = $db->prepare('INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
 			');
 
