@@ -28,7 +28,7 @@
 
 			if ($customer = $stmt->fetch()) {
 				return new Customer(
-					$customer['UserId'],
+					intval($customer['UserId']),
 					$customer['UserName'],
 					$customer['email'],
 					$customer['Type'],
