@@ -17,7 +17,7 @@
 				<a href="cart.php">Cart
 				<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
 				<form action="action_logout.php" method="post" class="logout">
-					<p><?=$name?></p>
+					<a href="profile.php"><?=$name?></a>
 					<button type="submit">Logout</button>
 				</form>
 
@@ -30,36 +30,6 @@
 		</footer>
 		</body>
 	</html>
-<?php } ?>
-
-<?php function drawProfile(Customer $user) { ?>
-			<main>
-				<div class="profile_navbar">
-					<nav>
-					<ul>
-						<li><a href= "">My addresses</a></li>
-						<li><a href= "">My payment methods</a></li>
-						<li><a href= "">Favorites</a></li>
-					</ul>
-					</nav>
-				</div>
-				
-				<h1>Hello <?=$user->name?> :) </h1>
-				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
-				<div>
-					<h2>Informação de contacto</h2>
-					<p><?=$user->name?><p>
-					<p><?=$user->phone?></p>
-					<p><?=$user->email?></p>
-					<a href="action_edit_contact_info.php" class="button">editar</a>
-				</div><!--added divs to make it clear that i mean for these to be seperate -->
-				<div>
-					<h2>Default address</h2>
-					<p><?=$user->address?></p>
-					<a href="action_edit_contact_info.php" class="button">editar</a>
-				</div>
-			</main>
-
 <?php } ?>
 
 <?php function drawCart(array $orders) { ?>
@@ -109,13 +79,9 @@
 <?php } ?> 
 
 
-<!--Depois termino, acho que não pode ficar assim -->
-<?php function drawRestaurantHeader(array $restaurant) { ?>
-	<h1><?=$restaurant['name']?></h1>
-<?php } ?>
 
 
-<?php function drawRestaurantsByCategory(array $restaurants,$category) { ?><!-- passar tudo por um unico array?-->
+<?php function drawRestaurantsByCategory(array $restaurants,$category) { ?>
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2><?=$category?></h2>
 		<section class="category">

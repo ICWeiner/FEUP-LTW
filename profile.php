@@ -10,13 +10,14 @@
 	require_once('database/connection.db.php');
 	require_once('database/customer.class.php');
 	require_once('templates/common.tpl.php');
+	require_once('templates/customer.tpl.php');
 
 	$db = getDatabaseConnection();
 
 	$user = Customer::getCustomerWithPassword($db,"123@mail.com","123");
 
 	drawHeader($_SESSION['name']);
-	drawProfile($user);
+	drawEditProfile($user);
 	drawFooter();
 ?>
 
