@@ -1,5 +1,5 @@
 <?php 
-    declare(strip_types = 1);
+    declare(strict_types = 1);
 
     class Dish{
         public int $id;
