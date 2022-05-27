@@ -17,6 +17,7 @@
 	$user = Customer::getCustomerWithPassword($db,"123@mail.com","123");
 
 	drawHeader($_SESSION['name']);
-	drawProfile($user);
+	drawEditProfile($user);
 	drawFooter();
 ?>
+

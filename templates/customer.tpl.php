@@ -17,12 +17,12 @@
 					<p><?=$user->name?><p>
 					<p><?=$user->phone?></p>
 					<p><?=$user->email?></p>
-					<a href="action_edit_profile.php" class="button">editar</a>
+					<a href="profile_edit.php" class="button">editar</a>
 				</div><!--added divs to make it clear that i mean for these to be seperate -->
 				<div>
 					<h2>Default address</h2>
 					<p><?=$user->address?></p>
-					<a href="action_edit_profile.php" class="button">editar</a>
+					<a href="profile_edit.php" class="button">editar</a>
 				</div>
 			</main>
 <?php } ?>
@@ -41,26 +41,25 @@
 				
 				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
-				<div>
+				<form>
 					<h2>Informação de contacto</h2>
+					
 
-					<label for="first_name">First Name:</label>
-  					<input id="first_name" type="text" name="first_name" value="<?=$user->name?>">
+					<label for="first_name">Username:</label>
+  					<input type="text" name="name" value="<?=$user->name?>">
 
-  					<label for="first_name">First Name:</label>
-  					<input id="first_name" type="text" name="first_name" value="<?=$user->phone?>">
+  					<label for="first_name">Phone:</label>
+  					<input type="text" name="phone" value="<?=$user->phone?>">
 
-  					<label for="first_name">First Name:</label>
-  					<input id="first_name" type="text" name="first_name" value="<?=$user->email?>">
+  					<label for="first_name">E-Mail:</label>
+  					<input type="text" name="email" value="<?=$user->email?>">
 
-				</div><!--added divs to make it clear that i mean for these to be seperate -->
-				<div>
 					<h2>Default address</h2>
-					<label for="first_name">First Name:</label>
-  					<input id="first_name" type="text" name="first_name" value="<?=$user->address?>">
+					<label for="first_name">Address:</label>
+  					<input type="text" name="addres" value="<?=$user->address?>">
 
   					<a href="action_edit_profile.php" class="button">Concluir</a><!--Concluir ediçao -->
-				</div>
+				</form>
 			</main>
 
 <?php } ?>
