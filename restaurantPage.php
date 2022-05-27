@@ -17,8 +17,14 @@
     $categories = Dish::getDishesCategories($db, $id);
 
     drawHeader($_SESSION['name']);
-    
 
+    //arranjar a query, esta so a retornar 1 restaurante :<
+    $stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');
+    $stmt->execute(array($id));
+    $row = $stmt->fetch();
+
+    drawDishesRestaurantName($row['RestaurantName']);
+    
     foreach($categories as $category){
         $dishes = Dish::getRestaurantDishesByCategory($db, $category['name'],$id);
         drawDishesByCategory($dishes,$category['name']);

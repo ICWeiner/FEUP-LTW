@@ -65,13 +65,12 @@ header>p{
 	margin-left: 1em;
 }
 
-main > h2{
+body > h2{
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
 body{
-	margin: 0;
 	display: grid;
 	margin-left: 1em;
 	grid-row-start: 1;
@@ -104,7 +103,7 @@ main{
 	margin-bottom: 5em;
 }
 
-.aspect-ratio-box {
+.aspect-ratio-box img{
 	display: flex;
 	max-width: 100%;
 	margin-left: auto;
@@ -118,7 +117,7 @@ main{
 	height: 7em;
 	object-position: center;
 }
-
+*/
 footer{
 	margin-top: 1em;
 }
@@ -149,8 +148,8 @@ footer{
 }
 
 .shipping>div{
-	grid-column-start: 2;
-	grid-column-end: 4;
+	grid-column-start: 3;
+	grid-column-end: 5;
 }
 
 #inputBox{
@@ -164,6 +163,11 @@ footer{
 	grid-gap: 1em;
 	margin-bottom: 2em;
 	align-items: center;
+}
+
+.orders #quantity{
+	grid-column-start: 3;
+	grid-column-end: 4;
 }
 
 #minus{
@@ -192,6 +196,11 @@ hr{
 	font-size: 1.5em;
 }
 
+@media only screen and (max-width: 480px) {
+	body h2{
+		font-size: 5em;
+	}
+}
 
 /*
 header{

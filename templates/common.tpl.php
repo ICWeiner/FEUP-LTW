@@ -127,23 +127,23 @@
 					
 					<div> 
 						<section class="aspect-ratio-box">
-							<img src="TestImages/bread.jpg" alt="foto do prato">
+							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
+								<img src="TestImages/bread.jpg" alt="foto do prato">
+							</a>
 						</section>
-						<a href="restaurantPage.php?id=<?=$restaurant['id']?>"><p><?=$restaurant['name']?></p></a>
+						<p><?=$restaurant['name']?></p>
 					</div>
 				<?php } } ?>
 			</section>
 		</section>
 <?php } ?>
 
+<?php function drawDishesRestaurantName($restaurant) { ?>
+	<h2><?=$restaurant?></h2>
+<?php } ?>
 
-
-
-
-
-<?php function drawDishesByCategory(array $dishes, $category,$restaurantname) { ?>
+<?php function drawDishesByCategory(array $dishes, $category) { ?>
 	<main>
-		<!--<h2><?=$restaurantname?></h2>-->
 		<!-- TODO get restaurant name and put it below this line-->
 	   <section class="category">
 	   		<!-- TODO get category name and put it below this line-->
