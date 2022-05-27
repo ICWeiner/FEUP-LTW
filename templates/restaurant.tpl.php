@@ -28,7 +28,6 @@
 
 <?php function drawDishesByCategory(array $dishes, $category) { ?>
 	<main>
-		<!--<h2><?=$restaurantname?></h2>-->
 		<!-- TODO get restaurant name and put it below this line-->
 	   <section class="category">
 	   		<!-- TODO get category name and put it below this line-->
