@@ -11,8 +11,8 @@
 
     //TODO: take this array out and read this data from DB instead
     $orders = array(
-        array('name' => 'Menu + monkey soup','price'=>'26'),
-        array('name' => 'Coca-Cola 2L','price'=>'16')
+        array('name' => 'Menu','price'=>'26'),
+        array('name' => 'Coca_Cola','price'=>'16')
     );
 
     drawHeader($_SESSION['name']);

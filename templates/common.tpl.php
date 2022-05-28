@@ -63,11 +63,10 @@
 				<!--<label>Quantity: </label>-->
 				
 				<div>
-					<button class="minus">-</button>
-					<!--depois tirar o id se for necessário-->
-					<input type="number" class="qtyBox" value="1" name="quantity" placeholder="quantity">
-					<button class="plus">+</button>
-				</div> 
+					<button onclick="decrease(<?='qtyBox_'.$order['name']?>)" >-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$order['name']?>>
+					<button onclick="increase(<?='qtyBox_'.$order['name']?>)" >+</button>
+				</div>
 
 				<p><?=$order['price']?></p>
 				
@@ -81,21 +80,17 @@
     </main>
 
 	<script>
-			let incrementButtons = document.getElementsByClassName('plus')
-			let decrementButtons = document.getElementsByClassName('minus')
-			let quantityBoxes = document.getElementsByClassName('qtyBox')
+			function increase(inputBox){
+				//let elem = document.getElementById(inputBox); 
+				console.log(inputBox)
+				inputBox.value = parseInt(inputBox.value) + 1; 
+				//elem.value=elem.value +1;
+			} 
 
-			
-			for (var i = 0; i < incrementButtons.length; i++){
-				incrementButtons[i].addEventListener('click', function(e) {
-				quantityBoxes[i].value = parseInt(quantityBoxes[i].value) + 1
-			})}
-
-			for (var j = 0; j < decrementButtons.length; j++){
-				decrementButtons[j].addEventListener('click', function(e) {
-				quantityBoxes[j].value = parseInt(quantityBoxes[i].value) - 1
-			})}
-			
+			function decrease(inputBox){
+				console.log(inputBox)
+				inputBox.value = parseInt(inputBox.value) - 1; 
+			} 
 
 	</script>
 
