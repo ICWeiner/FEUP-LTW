@@ -59,14 +59,15 @@
 			foreach ($orders as $order){ ?>
 			<div class="dishBox">
 				<!--Esses ids são por enquanto-->
-				<p id="prodName"><?=$order['name']?></p>
+				<p><?=$order['name']?></p>
 				<!--<label>Quantity: </label>-->
-				<div id="quantity">
-					<button id="minus">-</button>
+				
+				<div>
+					<button class="minus">-</button>
 					<!--depois tirar o id se for necessário-->
-					<input type="number" id="qtyBox" value="1" name="quantity" placeholder="quantity">
-					<button id="plus">+</button>
-				</div>
+					<input type="number" class="qtyBox" value="1" name="quantity" placeholder="quantity">
+					<button class="plus">+</button>
+				</div> 
 
 				<p><?=$order['price']?></p>
 				
@@ -80,18 +81,21 @@
     </main>
 
 	<script>
+			let incrementButtons = document.getElementsByClassName('plus')
+			let decrementButtons = document.getElementsByClassName('minus')
+			let quantityBoxes = document.getElementsByClassName('qtyBox')
 
-			let incrementButton = document.getElementById('plus')
-			let decrementButton = document.getElementById('minus')
-			let quantity = document.getElementById('qtyBox')
+			
+			for (var i = 0; i < incrementButtons.length; i++){
+				incrementButtons[i].addEventListener('click', function(e) {
+				quantityBoxes[i].value = parseInt(quantityBoxes[i].value) + 1
+			})}
 
-			incrementButton.addEventListener('click', function(e) {
-				quantity.value = parseInt(quantity.value) + 1
-			})
-
-			decrementButton.addEventListener('click', function(e) {
-				quantity.value = parseInt(quantity.value) - 1
-			})
+			for (var j = 0; j < decrementButtons.length; j++){
+				decrementButtons[j].addEventListener('click', function(e) {
+				quantityBoxes[j].value = parseInt(quantityBoxes[i].value) - 1
+			})}
+			
 
 	</script>
 
