@@ -8,6 +8,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
+			<!--<script src="../script.js"></script> not working -->
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
@@ -56,13 +57,14 @@
         <h2>Your order</h2>
 		<?php if( !empty($orders)){
 			foreach ($orders as $order){ ?>
-			<div>
-				<p><?=$order['name']?></p>
-				
+			<div class="dishBox">
+				<!--Esses ids são por enquanto-->
+				<p id="prodName"><?=$order['name']?></p>
 				<!--<label>Quantity: </label>-->
 				<div id="quantity">
 					<button id="minus">-</button>
-					<input type="number" value="1" name="quantity" placeholder="quantity">
+					<!--depois tirar o id se for necessário-->
+					<input type="number" id="qtyBox" value="1" name="quantity" placeholder="quantity">
 					<button id="plus">+</button>
 				</div>
 
@@ -76,4 +78,21 @@
         <p>Total price: <strong>56€</strong></p>
         </section>
     </main>
+
+	<script>
+
+			let incrementButton = document.getElementById('plus')
+			let decrementButton = document.getElementById('minus')
+			let quantity = document.getElementById('qtyBox')
+
+			incrementButton.addEventListener('click', function(e) {
+				quantity.value = parseInt(quantity.value) + 1
+			})
+
+			decrementButton.addEventListener('click', function(e) {
+				quantity.value = parseInt(quantity.value) - 1
+			})
+
+	</script>
+
 <?php } ?> 
