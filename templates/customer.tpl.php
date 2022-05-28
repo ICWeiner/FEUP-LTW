@@ -49,10 +49,10 @@
   					<input type="text" name="newName" value="<?=$user->name?>">
 
   					<label for="first_name">Phone:</label>
-  					<input type="text" name="newPhone" value="<?=$user->phone?>">
+  					<input type="tel" name="newPhone" value="<?=$user->phone?>" pattern="[0-9]{9}">
 
   					<label for="first_name">E-Mail:</label>
-  					<input type="text" name="newEmail" value="<?=$user->email?>">
+  					<input type="email" name="newEmail" value="<?=$user->email?>">
 
 					<h2>Default address</h2>
 					<label for="first_name">Address:</label>

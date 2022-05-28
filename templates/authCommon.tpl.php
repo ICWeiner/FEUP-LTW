@@ -48,10 +48,11 @@
 					<h2>Register</h2>
 					<form action="action_register.php" method="post" class="register">
 						<input type="text" name="username" placeholder="Username">
+						<input type="email" name="email" placeholder="E-Mail">
 						<input type="password" name="password" placeholder="Password">
-						<input type="password" name="confirm_password" placeholder="Confirm password">
+						<input type="password" name="confirmPassword" placeholder="Confirm password">
 						<input type="text" name="address" placeholder="Address">
-						<input type="tel" name="phone" placeholder="Phone number">
+						<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{9}">
 						<button type="submit">Register</button>
 						<a href="login.php">Already have an account? Login here</a>
 					</form>

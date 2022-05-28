@@ -64,12 +64,12 @@
 			$stmt->execute(array($this->UserName, $this->PhoneNumber, $this->email ,$this->id));
 		}
 
-		function register($db, $password) {//TODO: TEST this
+		static function registerCustomer(PDO $db, string $name, string $password, string $email, string $address, string $phone) {//TODO: TEST this
 
-			$stmt = $db->prepare('INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
+			$stmt = $db->prepare('INSERT INTO User (UserName, Password, email, UserAddress, PhoneNumber) VALUES ( ?, ? ,? ,?, ?);
 			');
 
-			$stmt->execute(array($this->type, $this->name, $password, $this->address, $this->phone, $this->email));
+			$stmt->execute(array($name, $password, $email, $address, $phone));
 			}
 
 	}
