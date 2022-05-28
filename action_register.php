@@ -8,7 +8,7 @@
 
 	$db = getDatabaseConnection();
 
-	if( strcmp($_POST['password'], $_POST['confirmPassword'] ) ){ // strcmp doesnt work 
+	if( $_POST['confirmPassword'] == $_POST['password'] ){ //TODO strcmp doesnt work 
 		Customer::registerCustomer($db, $_POST['username'], $_POST['password'],	 $_POST['email'], $_POST['address'], $_POST['phone']);
 		header('Location: login.php');
 	}else{
