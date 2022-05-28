@@ -17,6 +17,7 @@
 		$customer->PhoneNumber = $_POST['newPhone'];
 		$customer->email = $_POST['newEmail'];
 		$customer->add = $_POST['newAddress'];
+		$_SESSION['name'] = $_POST['newName'];
 		
 
 		$customer->updateCustomerInfo($db);
