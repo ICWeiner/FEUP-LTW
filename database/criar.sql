@@ -21,7 +21,7 @@ CREATE TABLE User(
     UserId INTEGER PRIMARY KEY AUTOINCREMENT,
     Type TEXT CHECK(Type = 'restaurantOwner' OR  Type ='Customer') NOT NULL DEFAULT 'Customer',
     UserName VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     Password INTEGER NOT NULL,
     UserAddress VARCHAR(300) NOT NULL,
     PhoneNumber VARCHAR(9)
