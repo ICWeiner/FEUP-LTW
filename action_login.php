@@ -13,8 +13,9 @@
 	if ($customer) {
 		$_SESSION['id'] = $customer->id;
 		$_SESSION['name'] = $customer->name;
+		header('Location: home.php');
+	}else{	//login failed
+		header('Location: login.php');
 	}
-
-	header('Location: home.php');
 
 ?>
