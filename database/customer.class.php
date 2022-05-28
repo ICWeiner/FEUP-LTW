@@ -38,7 +38,33 @@
 			}else return null;
 		}
 
-		function register($db, $password) {
+		static function getCustomer(PDO $db,int $id) : ?Customer {
+			$stmt = $db->prepare( 'SELECT Type, UserName, email, Password, UserAddress, PhoneNumber 
+				FROM User 
+				WHERE UserId = ?');
+
+			$stmt->execute(array($id));
+
+			if ($customer = $stmt->fetch()) {
+				return new Customer(
+					$id,
+					$customer['UserName'],
+					$customer['email'],
+					$customer['Type'],
+					$customer['UserAddress'],
+					$customer['PhoneNumber']);
+			}else return null;
+		}
+
+		function updateCustomerInfo(PDO $db){
+			$stmt = $db->prepare('
+				UPDATE User SET UserName = ?, PhoneNumber = ?, email = ?
+				WHERE UserId = ?');
+
+			$stmt->execute(array($this->UserName, $this->PhoneNumber, $this->email ,$this->id));
+		}
+
+		function register($db, $password) {//TODO: TEST this
 
 			$stmt = $db->prepare('INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
 			');

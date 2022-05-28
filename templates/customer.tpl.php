@@ -41,24 +41,26 @@
 				
 				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
-				<form>
+				<form action="action_edit_profile.php" method="post">
 					<h2>Informação de contacto</h2>
 					
 
 					<label for="first_name">Username:</label>
-  					<input type="text" name="name" value="<?=$user->name?>">
+  					<input type="text" name="newName" value="<?=$user->name?>">
 
   					<label for="first_name">Phone:</label>
-  					<input type="text" name="phone" value="<?=$user->phone?>">
+  					<input type="text" name="newPhone" value="<?=$user->phone?>">
 
   					<label for="first_name">E-Mail:</label>
-  					<input type="text" name="email" value="<?=$user->email?>">
+  					<input type="text" name="newEmail" value="<?=$user->email?>">
 
 					<h2>Default address</h2>
 					<label for="first_name">Address:</label>
-  					<input type="text" name="addres" value="<?=$user->address?>">
+  					<input type="text" name="newAddress" value="<?=$user->address?>">
 
-  					<a href="action_edit_profile.php" class="button">Concluir</a><!--Concluir ediçao -->
+  					<button type="submit">Concluir</button>
+
+  					<!--Concluir ediçao -->
 				</form>
 			</main>
 

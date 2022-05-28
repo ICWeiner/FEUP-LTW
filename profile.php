@@ -14,9 +14,9 @@
 
 	$db = getDatabaseConnection();
 
-	$user = Customer::getCustomerWithPassword($db,"123@mail.com","123");
+	$customer = Customer::getCustomer($db, $_SESSION['id']);
 
 	drawHeader($_SESSION['name']);
-	drawProfile($user);
+	drawProfile($customer);
 	drawFooter();
 ?>
