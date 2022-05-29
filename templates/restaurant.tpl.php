@@ -48,29 +48,4 @@
 		</section>
 	</main>
 
-	<script>
-
-		dishesParent = document.querySelectorAll('.dishes button')
-
-		for (const addToCart of dishesParent){
-			addToCart.addEventListener('click', function(){
-				const dishesClass = this.parentElement
-				console.log(dishesClass)
-				console.log("olá anete")
-
-				name = dishesClass.querySelector('p').textContent
-				price = dishesClass.querySelector('.dishes ').value
-
-				console.log(name)
-				console.log(price)
-
-			})
-		}
-
-		function addItemToCart(name, price, quantity){
-			const section = document.querySelector()
-		}
-
-	</script>
-
 <?php } ?>

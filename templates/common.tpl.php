@@ -8,7 +8,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
-			<!--<script src="../script.js"></script> not working -->
+			<script src="../script.js" defer></script>
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
@@ -78,20 +78,5 @@
         <p>Total price: <strong>56€</strong></p>
         </section>
     </main>
-
-	<script>
-			function increase(inputBox){
-				//let elem = document.getElementById(inputBox); 
-				console.log(inputBox)
-				inputBox.value = parseInt(inputBox.value) + 1; 
-				//elem.value=elem.value +1;
-			} 
-
-			function decrease(inputBox){
-				console.log(inputBox)
-				inputBox.value = parseInt(inputBox.value) - 1; 
-			} 
-
-	</script>
 
 <?php } ?> 
