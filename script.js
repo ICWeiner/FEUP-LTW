@@ -11,23 +11,20 @@ function decrease(inputBox){
 } 
 
 
-function addItemToCart(name, price, quantity){
-  dishesParent = document.querySelectorAll('.dishes button')
+function attachBuyEvents(){
 
-  for (const addToCart of dishesParent){
-    addToCart.addEventListener('click', function(){
-      const dishesClass = this.parentElement
-      console.log(dishesClass)
-      console.log("olá anete")
-
-      name = dishesClass.querySelector('p').textContent
-      price = dishesClass.querySelector('.dishes ').value
-
-      console.log(name)
-      console.log(price)
-
-    })
-  }
-
-  const section = document.querySelector()
+  const buttons = document.querySelectorAll('.dishes button')
+  for (const btn of buttons){
+    btn.addEventListener('click', function(e){
+      dish = this.parentElement
+      const dishImage = dish.querySelector('img')   //<img src="TestImages/bread.jpg" alt="foto do prato">
+      const dishName = dish.querySelector('p')      //<p>Sundae</p>
+      const dishPrice = dish.querySelector('p:nth-of-type(2)')   //<p>1.5€</p>
+      const dishQuantity = dish.querySelector('input')  //<input value="1" ...>
+})}
 }
+
+attachBuyEvents()
+
+
+  
