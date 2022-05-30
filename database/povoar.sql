@@ -17,13 +17,13 @@ INSERT INTO Restaurant(RestaurantName, Category, RestaurantAddress, OwnerId) VAL
 
 
 
-INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'xXxX69420PussySlayer42069XxXx', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+351911234567','123@mail.com');
+INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'PussySlayer', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+351911234567','123@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('restaurantOwner', 'wackyjohn', '123', 'Praça da Liberdade, 126, 4000-322 Porto, Portugal', '+351915439194','1234@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'child_toucher69', '123', 'Rua Doctor Roberto Frias s/n, 4200-465 Porto, Portugal', '+35191538729349' ,'1235@mail.com');
-INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'xXxXsmokeweedeveryday420XxXx', '123', 'Rua professor Duarte Leite , 0583-125 Porto, Portugal', '+3519104818374','1236@mail.com');
+INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'smokeweedeveryday', '123', 'Rua professor Duarte Leite , 0583-125 Porto, Portugal', '+3519104818374','1236@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'my_father_beats_me_everyday', '123', 'Rua Alcunha Da Mata , 7680-102 Porto, Portugal', '+351910473628','1237@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'sir_cums_allot', '123', 'Rua Antonio D`Augusta, 5325-481 Porto, Portugal', '+3519112309573','1238@mail.com');
-INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('restaurantOwner', 'COME_TO_BRASIUUUEUUEUEUEUE', '123', 'Rua Almirante Reis 2344-130 Porto, Portugal', '+3519111239573','1239@mail.com');
+INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('restaurantOwner', 'COME_TO_BRASIUUU', '123', 'Rua Almirante Reis 2344-130 Porto, Portugal', '+3519111239573','1239@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'super_mario', '123', 'Rua ALguidar Bandeiras, 6521-213 Porto, Portugal', '+35191103947532','12310@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('Customer', 'tommy', '123', 'Praça Don Afonso D`Almier, 3432-542 Porto, Portugal', '+3519118503648','12311@mail.com');
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('restaurantOwner', 'monkey_soup', '123', 'Rua Santo Antonio, 5421-090 Porto, Portugal', '+3519157829426','12312@mail.com');
