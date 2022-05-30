@@ -25,7 +25,8 @@ function attachBuyEvents(){
       const dishName = dish.querySelector('p')      //<p>Sundae</p>
       const dishPrice = dish.querySelector('p:nth-of-type(2)')   //<p>1.5€</p>
       const dishQuantity = dish.querySelector('input')  //<input value="1" ...>
-      addItemToCart(dishID, dishName, dishPrice, dishQuantity)
+      
+      addItemToCart(dishID, dishName.textContent, dishPrice.textContent, dishQuantity.value)
 })}
 }
 
