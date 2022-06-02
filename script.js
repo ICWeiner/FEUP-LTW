@@ -15,7 +15,6 @@ function decrease(inputBox){
 } 
 
 function attachBuyEvents(){
-
   const buttons = document.querySelectorAll('.dishes button')
   for (const btn of buttons){
     btn.addEventListener('click', function(e){
