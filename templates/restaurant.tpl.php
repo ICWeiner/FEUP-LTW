@@ -42,7 +42,7 @@
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
 						<input type="number" value="1" name="quantity" placeholder="quantity">
-						<button>Add to cart</button>
+						<a href="action_add_to_cart.php" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
