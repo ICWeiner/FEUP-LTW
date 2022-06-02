@@ -4,8 +4,8 @@
 	session_start();
 
 	if(!isset($_SESSION['name']) ){
-        header('Location: login.php');
-    }
+		header('Location: login.php');
+	}
 
 	require_once('database/connection.db.php');
 	require_once('database/customer.class.php');
@@ -17,6 +17,6 @@
 	$customer = Customer::getCustomer($db, $_SESSION['id']);
 
 	drawHeader($_SESSION['name']);
-	drawProfile($customer);
+	drawEditProfile($customer);
 	drawFooter();
 ?>
