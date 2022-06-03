@@ -16,6 +16,7 @@
     );
 
     drawHeader($_SESSION['name']);
+    echo var_dump($_SESSION['cart']);
     drawCart($orders);
     drawFooter();
 ?>

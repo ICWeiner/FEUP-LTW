@@ -12,9 +12,16 @@
 
   $id = intval($_GET['id']);
 
-  if (!isset($_SESSION['cart'][$id])) 
-        $_SESSION['cart'][$id] = 0;
-  $_SESSION['cart'][$id]++;   //aumentar a quantidade de coisas no carrinho para aquele id 
+  //if (!isset($_SESSION['cart'][$id])) 
+  //$_SESSION['cart'][$id] = 0;
+  //$_SESSION['cart'][$id]++;   //aumentar a quantidade de coisas no carrinho para aquele id 
+
+  if(!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = array($id);
+  }else{
+    array_push($_SESSION['cart'], $id);
+  }
+  
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
