@@ -1,11 +1,9 @@
 function increase(inputBox){
+  console.log(inputBox)
   inputBox.value = parseInt(inputBox.value, 10) + 1
   console.log(inputBox.value)
-  //let elem = document.getElementById(inputBox); 
-  //console.log(inputBox)
-  //inputBox.value = parseInt(inputBox.value) + 1; 
-  //elem.value=elem.value +1;
 } 
+
 
 function decrease(inputBox){
   inputBox.value = parseInt(inputBox.value, 10) - 1
@@ -14,6 +12,15 @@ function decrease(inputBox){
   //inputBox.value = parseInt(inputBox.value) - 1; 
 } 
 
+
+
+/*function updatePrice(quantity){
+  currentValue = document.querySelectorAll('.dishBox p:nth-of-type(2)')
+}*/
+
+
+
+/*
 function attachBuyEvents(){
   const buttons = document.querySelectorAll('.dishes button')
   for (const btn of buttons){
@@ -40,7 +47,7 @@ function addItemToCart(id, name, price, quantity){
   dishName.textContent = name
   dishDiv.appendChild(dishName)
 
-  /* ===========================  For the input box  ============================*/
+  //===========================  For the input box  ============================
   const inputDiv = document.createElement('div')
   const inputQuantity = document.createElement('input')
 
@@ -62,7 +69,7 @@ function addItemToCart(id, name, price, quantity){
   //plusButton.addEventListener('click', increase(inputQuantity)) 
   inputDiv.appendChild(plusButton)
 
-  /* ================================  End of input box  ===============================*/
+  // ================================  End of input box  ===============================
   
 
   //dish price
@@ -76,6 +83,6 @@ function addItemToCart(id, name, price, quantity){
 }
 
 attachBuyEvents()
-
+*/
 
   

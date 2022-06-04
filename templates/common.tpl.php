@@ -54,15 +54,15 @@
         <h2>Your order</h2>
 		<?php if( !empty($order)){
 			foreach ($order as $dish){ ?>
-			<div class="dishBox">
+			<div class="dishBox_<?=$dish['DishId']?>">
 				<!--Esses ids são por enquanto-->
 				<p><?=$dish['Name']?></p>
 				<!--<label>Quantity: </label>-->
 				
 				<div>
-					<button onclick="decrease(<?='qtyBox_'.$dish['Name']?>)" >-</button>
-					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['Name']?>>
-					<button onclick="increase(<?='qtyBox_'.$dish['Name']?>)" >+</button>
+					<button onclick="decrease(<?='qtyBox_'.$dish['DishId']?>)" >-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['DishId']?>>
+					<button onclick="increase(<?='qtyBox_'.$dish['DishId']?>)" >+</button>
 				</div>
 
 				<p><?=$dish['Price']?></p>
