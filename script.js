@@ -1,88 +1,36 @@
-function increase(inputBox){
-  console.log(inputBox)
+function increase(inputBox, originalPrice){
   inputBox.value = parseInt(inputBox.value, 10) + 1
-  console.log(inputBox.value)
+  updateDishPrice(inputBox, originalPrice)
 } 
 
 
-function decrease(inputBox){
+function decrease(inputBox, originalPrice){
   inputBox.value = parseInt(inputBox.value, 10) - 1
-  console.log(inputBox.value)
-  //console.log(inputBox)
-  //inputBox.value = parseInt(inputBox.value) - 1; 
+  updateDishPrice(inputBox, originalPrice)
 } 
 
+function updateDishPrice(quantity, originalPrice){
+  const currentDiv = quantity.parentElement.parentElement  // <div id="dishBox_7"></div>
+  const currentPrice = currentDiv.querySelector('p:nth-of-type(2)')//<p>7.8€</p>
+  
+  const newPrice = (quantity.value * originalPrice).toFixed(2)  // Novo preço de acordo com o preço original e e quantidade inserida
 
-
-/*function updatePrice(quantity){
-  currentValue = document.querySelectorAll('.dishBox p:nth-of-type(2)')
-}*/
-
-
-
-/*
-function attachBuyEvents(){
-  const buttons = document.querySelectorAll('.dishes button')
-  for (const btn of buttons){
-    btn.addEventListener('click', function(e){
-      dish = this.parentElement
-      const dishID = dish.getAttribute('id')
-      const dishImage = dish.querySelector('img')   //<img src="TestImages/bread.jpg" alt="foto do prato">
-      const dishName = dish.querySelector('p')      //<p>Sundae</p>
-      const dishPrice = dish.querySelector('p:nth-of-type(2)')   //<p>1.5€</p>
-      const dishQuantity = dish.querySelector('input')  //<input value="1" ...>
-      
-      addItemToCart(dishID, dishName.textContent, dishPrice.textContent, dishQuantity.value)
-})}
+  currentPrice.innerHTML = newPrice + "€"
+  updateTotal()
 }
 
-function addItemToCart(id, name, price, quantity){
-  const orderSection = document.querySelector('.orders')
-  
-  const dishDiv = document.createElement('div')
-  dishDiv.setAttribute('id', id)  //id único
+function updateTotal(){
+  const totalHTML = document.querySelector('.orders > p > strong') //<strong>0</strong>
+  newTotal = 0
 
-  //dish name
-  const dishName = document.createElement('p') 
-  dishName.textContent = name
-  dishDiv.appendChild(dishName)
+  const dishes = document.querySelectorAll('.orders > div')
+  for (const dish of dishes){
+    dishPrice = dish.querySelector('p:nth-of-type(2)').textContent
+    console.log(dishPrice)
+    newTotal = newTotal + parseFloat(dishPrice)
+  }
 
-  //===========================  For the input box  ============================
-  const inputDiv = document.createElement('div')
-  const inputQuantity = document.createElement('input')
-
-  // minus button
-  const minusButton = document.createElement('button')
-  minusButton.textContent = '-'
-  //minusButton.addEventListener('click', decrease(inputQuantity))
-  inputDiv.appendChild(minusButton)
-
-  // dish quantity
-  inputQuantity.type = 'number'
-  inputQuantity.value = quantity
-  inputDiv.appendChild(inputQuantity)
-  dishDiv.appendChild(inputDiv)
-
-  // plus button
-  const plusButton = document.createElement('button')
-  plusButton.textContent = '+'
-  //plusButton.addEventListener('click', increase(inputQuantity)) 
-  inputDiv.appendChild(plusButton)
-
-  // ================================  End of input box  ===============================
-  
-
-  //dish price
-  const dishPrice = document.createElement('p') 
-  dishPrice.textContent = price
-  dishDiv.appendChild(dishPrice)
-
-
-  orderSection.appendChild(dishDiv)
-  
+  console.log(newTotal)
+  totalHTML.innerHTML = newTotal.toFixed(2) + "€"
 }
 
-attachBuyEvents()
-*/
-
-  

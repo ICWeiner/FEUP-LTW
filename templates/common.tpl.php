@@ -60,19 +60,19 @@
 				<!--<label>Quantity: </label>-->
 				
 				<div>
-					<button onclick="decrease(<?='qtyBox_'.$dish['DishId']?>)" >-</button>
-					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['DishId']?>>
-					<button onclick="increase(<?='qtyBox_'.$dish['DishId']?>)" >+</button>
+					<button onclick="decrease(<?='qtyBox_'.$dish['DishId']?>, <?=$dish['Price']?>)" >-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['DishId']?> disabled>
+					<button onclick="increase(<?='qtyBox_'.$dish['DishId']?>, <?=$dish['Price']?>)" >+</button>
 				</div>
 
-				<p><?=$dish['Price']?></p>
+				<p><?=$dish['Price']?>&euro;</p>
 				
 			</div>
 		<?php } } ?>
 
         <hr>
 		<!--O total nao esta a ser alterado quando se aumenta as quantidades, talvez com javascrip?-->
-        <p>Total price: <strong>56€</strong></p>
+        <p>Total price: <strong>0&euro;</strong></p>
         </section>
     </main>
 
