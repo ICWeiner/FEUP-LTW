@@ -42,3 +42,5 @@ function updateTotal(){
   totalHTML.innerHTML = newTotal.toFixed(2) + "€"
 }
 
+updateTotal()
+
