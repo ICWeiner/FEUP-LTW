@@ -10,6 +10,7 @@
 	require_once('database/connection.db.php');
 	require_once('templates/common.tpl.php');
 	require_once('database/dish.class.php');
+	require_once('database/restaurant.class.php');
 
 	$db = getDatabaseConnection();
 	$order = array();
@@ -19,12 +20,14 @@
 			$dish = Dish::getDishByID($db,$id);
 			array_push($order, $dish);
 		}
+		$rest = Restaurant::getRestaurant($db,$order[0]['RestaurantId']);
+	}else{//car is empty, do something
+
 	}
 
 	
 
 	drawHeader($_SESSION['name']);
-	//echo var_dump($order);
-	drawCart($order);
+	drawCart($order,$rest);
 	drawFooter();
 ?>

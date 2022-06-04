@@ -33,16 +33,16 @@
 	</html>
 <?php } ?>
 
-<?php function drawCart(array $order) { ?>
+<?php function drawCart(array $order,$restaurant) { ?>
 	<main id="cart">
         <h1>Checkout</h1>
-        <h2>Restaurant: Someplace Special - Porto</h2>
+        <h2>Restaurant: <?=$restaurant->name?></h2>
         
         <section class="shipping">
         <h4>Shipping information</h4>
         <div>
             <label>Address:
-                    <input type="text" name="name" value="Senhora da hora, Porto" required disabled>
+                    <input type="text" name="name" value="<?=$restaurant->address?>" required disabled>
             </label>
                     <button>Edit address</button>
             
