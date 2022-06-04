@@ -33,7 +33,7 @@
 	</html>
 <?php } ?>
 
-<?php function drawCart(array $orders) { ?>
+<?php function drawCart(array $order) { ?>
 	<main id="cart">
 
         <!--Assumindo que no cart só pode ter coisas de um restaurante--> 
@@ -55,20 +55,20 @@
         
         <section class="orders">
         <h2>Your order</h2>
-		<?php if( !empty($orders)){
-			foreach ($orders as $order){ ?>
+		<?php if( !empty($order)){
+			foreach ($order as $dish){ ?>
 			<div class="dishBox">
 				<!--Esses ids são por enquanto-->
-				<p><?=$order['name']?></p>
+				<p><?=$dish['Name']?></p>
 				<!--<label>Quantity: </label>-->
 				
 				<div>
-					<button onclick="decrease(<?='qtyBox_'.$order['name']?>)" >-</button>
-					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$order['name']?>>
-					<button onclick="increase(<?='qtyBox_'.$order['name']?>)" >+</button>
+					<button onclick="decrease(<?='qtyBox_'.$dish['Name']?>)" >-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['Name']?>>
+					<button onclick="increase(<?='qtyBox_'.$dish['Name']?>)" >+</button>
 				</div>
 
-				<p><?=$order['price']?></p>
+				<p><?=$dish['Price']?></p>
 				
 			</div>
 		<?php } } ?>

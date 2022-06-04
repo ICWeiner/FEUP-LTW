@@ -18,19 +18,19 @@
 	);*/
 
 	$db = getDatabaseConnection();
-	$orders = array();
+	$order = array();
 
 	if(isset($_SESSION['cart'])){
 		foreach ($_SESSION['cart'] as $id){
 			$dish = Dish::getDishByID($db,$id);
-			echo var_dump($dish);
+			array_push($order, $dish);
 		}
 	}
 
 	
 
 	drawHeader($_SESSION['name']);
-	//echo var_dump($_SESSION['cart']);
-	drawCart($orders);
+	//echo var_dump($order);
+	drawCart($order);
 	drawFooter();
 ?>
