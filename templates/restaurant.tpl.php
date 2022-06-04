@@ -35,14 +35,14 @@
 			<section class="dishes">
 				<?php if( !empty($dishes)){
 					foreach ($dishes as $dish){ ?>
-					<div id=<?=$dish['id']?>>
+					<div >
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
 						<input type="number" value="1" name="quantity" placeholder="quantity">
-						<a href="action_add_to_cart.php" class="button">Add to cart</a>
+						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
