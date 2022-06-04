@@ -1,11 +1,19 @@
 function increase(inputBox, originalPrice){
-  inputBox.value = parseInt(inputBox.value, 10) + 1
+  if (inputBox.value >= 100){
+    inputBox.value = 100
+  }else{
+    inputBox.value = parseInt(inputBox.value, 10) + 1
+  }
   updateDishPrice(inputBox, originalPrice)
 } 
 
 
 function decrease(inputBox, originalPrice){
-  inputBox.value = parseInt(inputBox.value, 10) - 1
+  if (inputBox.value <= 0){
+    inputBox.value = 0
+  }else{
+    inputBox.value = parseInt(inputBox.value, 10) - 1
+  }
   updateDishPrice(inputBox, originalPrice)
 } 
 
