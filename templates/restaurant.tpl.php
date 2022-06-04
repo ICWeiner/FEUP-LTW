@@ -41,7 +41,6 @@
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
-						<input type="number" value="1" name="quantity" placeholder="quantity">
 						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
