@@ -8,8 +8,8 @@ function increase(inputBox){
 } 
 
 function decrease(inputBox){
-  inputBox = inputBox - 1
-  console.log(inputBox)
+  inputBox.value = parseInt(inputBox.value, 10) - 1
+  console.log(inputBox.value)
   //console.log(inputBox)
   //inputBox.value = parseInt(inputBox.value) - 1; 
 } 
