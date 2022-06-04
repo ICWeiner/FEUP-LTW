@@ -35,9 +35,6 @@
 
 <?php function drawCart(array $order) { ?>
 	<main id="cart">
-
-        <!--Assumindo que no cart só pode ter coisas de um restaurante--> 
-        <!--Depois põe-se lado a lado com css talvez-->
         <h1>Checkout</h1>
         <h2>Restaurant: Someplace Special - Porto</h2>
         
