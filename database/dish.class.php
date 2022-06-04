@@ -48,5 +48,14 @@
             return $dishes;
         }
 
+        static function getDishByID(PDO $db,int $id){
+            $stmt = $db->prepare('SELECT Name, Price FROM Dish WHERE DishId = ?');
+            $stmt->execute(array($id));
+
+            $dish = $stmt->fetch();
+
+            return $dish; 
+        }
+
     }
 ?>
