@@ -73,6 +73,8 @@
         <hr>
 		<!--O total nao esta a ser alterado quando se aumenta as quantidades, talvez com javascrip?-->
         <p>Total price: <strong>0&euro;</strong></p>
+
+		<button id="cartCheckout">Checkout</button>
         </section>
     </main>
 
