@@ -80,4 +80,17 @@ function encodeToJSON(){
 }
 
 
+function finalizeCart(){
+  const btn = document.querySelector('#cart .orders #cartCheckout')
+  btn.addEventListener('click', function(e){
+    const jsonToSend = encodeToJSON()
+    console.log(jsonToSend)
+    const request = new XMLHttpRequest()
+    request.open("POST", "testingAjax.php", true)
+    request.setRequestHeader("Content-Type", "application/json")
+    request.send(jsonToSend)
+  })
+
+}
+finalizeCart()
 
