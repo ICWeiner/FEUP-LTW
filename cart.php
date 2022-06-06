@@ -14,6 +14,7 @@
 
 	$db = getDatabaseConnection();
 	$order = array();
+	$customerID = $_SESSION['id'];
 
 	if(isset($_SESSION['cart'])){
 		foreach ($_SESSION['cart'] as $id){
@@ -28,6 +29,6 @@
 	
 
 	drawHeader($_SESSION['name']);
-	drawCart($order,$rest);
+	drawCart($order,$rest,$customerID);
 	drawFooter();
 ?>

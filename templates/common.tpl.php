@@ -33,11 +33,12 @@
 	</html>
 <?php } ?>
 
-<?php function drawCart(array $order,$restaurant) { ?>
+<?php function drawCart(array $order,$restaurant,$customerID) { ?>
 	<main id="cart">
         <h1>Checkout</h1>
         <h2>Restaurant: <?=$restaurant->name?></h2>
-        
+        <p hidden><?=$customerID?></p>  <!--TODO: security encontrar melhor forma de acessar a isso-->
+
         <section class="shipping">
         <h4>Shipping information</h4>
         <div>
@@ -55,7 +56,6 @@
 		<?php if( !empty($order)){
 			foreach ($order as $dish){ ?>
 			<div class="dishBox_<?=$dish['DishId']?>">
-				<!--Esses ids são por enquanto-->
 				<p><?=$dish['Name']?></p>
 				<!--<label>Quantity: </label>-->
 				
@@ -66,6 +66,7 @@
 				</div>
 
 				<p><?=$dish['Price']?>&euro;</p>
+				<p hidden><?=$dish['DishId']?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
 				
 			</div>
 		<?php } } ?>
