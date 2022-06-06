@@ -89,6 +89,13 @@ function finalizeCart(){
     request.open("POST", "testingAjax.php", true)
     request.setRequestHeader("Content-Type", "application/json")
     request.send(jsonToSend)
+
+    request.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+      //alert(request.responseText); // faz um alert com a resposta do servidor
+      alert("Compra finalizada com sucesso")
+     }
+    }
   })
 
 }
