@@ -43,11 +43,10 @@ function updateTotal(){
 updateTotal()
 
 
-function encodeToJSONHelper(dishName, dishPrice, dishQuantity){
+function encodeToJSONHelper(dishId, dishQuantity){
   const dish = {
-      name: dishName, 
-      price:  dishPrice,
-      quantity: dishQuantity
+    dishId: dishId,
+    quantity: dishQuantity
   } 
   return dish;
 }
@@ -62,19 +61,25 @@ function encodeToJSON(){
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   var dateTime = date+' '+time;
 
+  const userId = document.querySelector('#cart p:first-of-type').textContent 
+
   const allDishesDiv = document.querySelectorAll('.orders > div')
     for (const dish of allDishesDiv){  //Para cada prato
       dishjsonId += 1  //ids diferentes para cada prato na string json
-      const dishName = dish.querySelector('p:first-of-type').textContent   //Pizza Margarita
-      const dishPrice = dish.querySelector('p:nth-of-type(2)').textContent  // 39.00€
+      //const dishName = dish.querySelector('p:first-of-type').textContent   //Pizza Margarita
+      //const dishPrice = dish.querySelector('p:nth-of-type(2)').textContent  // 39.00€
       const dishQuantity = dish.querySelector('div input').value  // 4
-      const jsonDish = encodeToJSONHelper(dishName, dishPrice, dishQuantity)
+      const dishId = dish.querySelector('p:nth-of-type(3)').textContent  // 4
+      console.log(dishId)
+      const jsonDish = encodeToJSONHelper(dishId, dishQuantity)
       dishArray.push(jsonDish)
     }
     toSend["items"] = dishArray
     const dishTotal = document.querySelector('.orders > p > strong').textContent
     toSend["total"] = dishTotal
     toSend["date"] = dateTime // data em que se fez a compra
+    toSend["userId"] = userId 
+    toSend["status"] = "Preparing" 
     const jsonToSend = JSON.stringify(toSend)
 
     return jsonToSend;
