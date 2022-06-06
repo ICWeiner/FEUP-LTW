@@ -54,7 +54,7 @@ function encodeToJSONHelper(dishName, dishPrice, dishQuantity){
 
 function encodeToJSON(){
   const toSend = {}
-
+  const dishArray = []
   dishjsonId = 0 
 
   var today = new Date();
@@ -69,11 +69,12 @@ function encodeToJSON(){
       const dishPrice = dish.querySelector('p:nth-of-type(2)').textContent  // 39.00€
       const dishQuantity = dish.querySelector('div input').value  // 4
       const jsonDish = encodeToJSONHelper(dishName, dishPrice, dishQuantity)
-      toSend[dishjsonId] = jsonDish
+      dishArray.push(jsonDish)
     }
+    toSend["items"] = dishArray
     const dishTotal = document.querySelector('.orders > p > strong').textContent
     toSend["total"] = dishTotal
-    toSend["date of purchase"] = dateTime // data em que se fez a compra
+    toSend["date"] = dateTime // data em que se fez a compra
     const jsonToSend = JSON.stringify(toSend)
 
     return jsonToSend;
