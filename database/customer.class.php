@@ -20,13 +20,15 @@
 		}
 
 		static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
-			$stmt = $db->prepare( 'SELECT UserId, Type, UserName, email, Password, UserAddress, PhoneNumber 
+			$stmt = $db->prepare('SELECT UserId, Type, UserName, email, Password, UserAddress, PhoneNumber 
 				FROM User 
-				WHERE lower(email) = ? AND Password = ?');
+				WHERE lower(email) = ? ');
 
-			$stmt->execute(array(strtolower($email), $password));
+			$stmt->execute(array(strtolower($email)));
 
-			if ($customer = $stmt->fetch()) {
+			$customer = $stmt->fetch();
+
+			if ($customer && password_verify($password, $customer['Password'])) {
 				return new Customer(
 					intval($customer['UserId']),
 					$customer['UserName'],
@@ -39,7 +41,7 @@
 		}
 
 		static function getCustomer(PDO $db,int $id) : ?Customer {
-			$stmt = $db->prepare( 'SELECT Type, UserName, email, Password, UserAddress, PhoneNumber 
+			$stmt = $db->prepare( 'SELECT Type, UserName, email, UserAddress, PhoneNumber 
 				FROM User 
 				WHERE UserId = ?');
 
@@ -69,8 +71,9 @@
 			$stmt = $db->prepare('INSERT INTO User (UserName, Password, email, UserAddress, PhoneNumber) VALUES ( ?, ? ,? ,?, ?);
 			');
 
-			$stmt->execute(array($name, $password, $email, $address, $phone));
-			}
+			$options = [];
 
+			$stmt->execute(array($name, password_hash($password, PASSWORD_DEFAULT, $options), $email, $address, $phone));
+			}
 	}
 ?>
