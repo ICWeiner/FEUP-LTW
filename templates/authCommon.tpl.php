@@ -53,6 +53,7 @@
 						<input type="password" name="confirmPassword" placeholder="Confirm password" required>
 						<input type="text" name="address" placeholder="Address" required>
 						<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{9}" required>
+						<input type="file" name="image" required><!--TODO: Style this :^) -->
 						<button type="submit">Register</button>
 						<a href="login.php">Already have an account? Login here</a>
 					</form>
