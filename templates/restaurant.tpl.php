@@ -47,3 +47,15 @@
 		</section>
 	</main>
 <?php } ?>
+
+
+
+<?php function drawReviewSection(array $reviews) { ?>
+	   <section class="review">
+		<?php foreach($reviews as $review) {?>
+			<p><?= $review['text'] ?></p>
+			<p><?= $review['score'] ?></p>
+		<?php }?>
+
+		</section>
+<?php } ?>
