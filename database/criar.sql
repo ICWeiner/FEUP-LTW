@@ -14,7 +14,8 @@ CREATE TABLE Restaurant(
     Category VARCHAR(100) NOT NULL,
     RestaurantAddress VARCHAR(300) NOT NULL,
     OwnerId INTEGER,
-	FOREIGN KEY (OwnerId) REFERENCES User(UserId)
+    Image,
+    FOREIGN KEY (OwnerId) REFERENCES User(UserId)
 );
 
 CREATE TABLE User(
@@ -24,6 +25,7 @@ CREATE TABLE User(
     email VARCHAR(100) NOT NULL UNIQUE,
     Password INTEGER NOT NULL,
     UserAddress VARCHAR(300) NOT NULL,
+    Image VARCHAR,
     PhoneNumber VARCHAR(9)
 );
 
@@ -31,20 +33,18 @@ CREATE TABLE Dish(
     DishId INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
     Price FLOAT NOT NULL,
-    Photo VARCHAR(10),
+    Image VARCHAR,
     Category TEXT CHECK(Category = 'Meat' OR Category = 'Fish' OR Category = 'Vegetarian' OR Category = 'Diet' OR Category = 'Dessert') NOT NULL,
     RestaurantId INTEGER,
     FOREIGN KEY (RestaurantId) REFERENCES Restaurant(RestaurantId)
 );
 
-CREATE TABLE FoodOrder(
+CREATE TABLE FoodOrder(  --Order é uma palavra reservada
     OrderId INTEGER PRIMARY KEY AUTOINCREMENT,
-    OrderDate DATE,
+    OrderDate DATE NOT NULL,
     OrderState TEXT CHECK(OrderState = 'Preparing' OR OrderState = 'Ready' OR OrderState = 'Delivered' OR OrderState = 'Received') NOT NULL DEFAULT 'Preparing',
-    User INTEGER,
-    Dish INTEGER,
-    FOREIGN KEY (User) REFERENCES User(UserId),
-    FOREIGN KEY (Dish) REFERENCES Dish(DishId)
+    User INTEGER NOT NULL,
+    FOREIGN KEY (User) REFERENCES User(UserId)
 );
 
 CREATE TABLE Review(
@@ -59,6 +59,7 @@ CREATE TABLE Review(
 
 CREATE TABLE DishOrder(
     OrderId INTEGER REFERENCES FoodOrder,
-    DishId Integer REFERENCES Dish,
+    DishId INTEGER REFERENCES Dish,
+    quantity INTEGER NOT NULL,
     PRIMARY KEY (OrderId, DishId)
 );

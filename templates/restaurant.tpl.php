@@ -3,7 +3,7 @@
 		<h2><?=$category?></h2>
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
-			
+			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
 			<section class="dishes">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
@@ -35,17 +35,19 @@
 			<section class="dishes">
 				<?php if( !empty($dishes)){
 					foreach ($dishes as $dish){ ?>
-					<div>
+					<div >
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
+						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
 		</section>
 	</main>
+
 <?php } ?>
 
 

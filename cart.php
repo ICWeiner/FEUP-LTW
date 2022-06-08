@@ -1,21 +1,34 @@
 <?php 
-    declare(strict_types = 1);
+	declare(strict_types = 1);
 
-    session_start();
+	session_start();
 
-    if(!isset($_SESSION['name']) ){
-        header('Location: login.php');
-    }
+	if(!isset($_SESSION['name']) ){
+		header('Location: login.php');
+	}
 
-    require_once('templates/common.tpl.php');
+	require_once('database/connection.db.php');
+	require_once('templates/common.tpl.php');
+	require_once('database/dish.class.php');
+	require_once('database/restaurant.class.php');
 
-    //TODO: take this array out and read this data from DB instead
-    $orders = array(
-        array('name' => 'Menu + monkey soup','price'=>'26'),
-        array('name' => 'Coca-Cola 2L','price'=>'16')
-    );
+	$db = getDatabaseConnection();
+	$order = array();
+	$customerID = $_SESSION['id'];
 
-    drawHeader($_SESSION['name']);
-    drawCart($orders);
-    drawFooter();
+	if(isset($_SESSION['cart'])){
+		foreach ($_SESSION['cart'] as $id){
+			$dish = Dish::getDishByID($db,$id);
+			array_push($order, $dish);
+		}
+		$rest = Restaurant::getRestaurant($db,$order[0]['RestaurantId']);
+	}else{//car is empty, do something
+
+	}
+
+	
+
+	drawHeader($_SESSION['name']);
+	drawCart($order,$rest,$customerID);
+	drawFooter();
 ?>
