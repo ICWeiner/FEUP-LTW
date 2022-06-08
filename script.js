@@ -85,6 +85,22 @@ function encodeToJSON(){
     return jsonToSend;
 }
 
+function removeElements(){
+  const removeButtons = document.querySelectorAll('#cart .orders > div > button')
+  for (btn of removeButtons){
+    console.log(btn)
+    const dishBox = btn.parentElement
+    console.log(dishBox)
+    btn.addEventListener('click', function(e){
+      dishBox.remove()
+      updateTotal()
+
+    })
+  }
+}
+
+removeElements()
+
 
 function finalizeCart(){
   const btn = document.querySelector('#cart .orders #cartCheckout')
@@ -100,10 +116,14 @@ function finalizeCart(){
       if (this.readyState == 4 && this.status == 200) {
       //alert(request.responseText); // faz um alert com a resposta do servidor
       alert("Compra finalizada com sucesso")
+      window.location.href = "http://localhost:7000/home.php";
+
      }
     }
   })
 
 }
 finalizeCart()
+
+
 
