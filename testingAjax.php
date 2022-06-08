@@ -1,6 +1,6 @@
 <?php
-
     require_once('database/connection.db.php');
+
 
 
     $db = getDatabaseConnection();
@@ -29,8 +29,8 @@
         $stmt->execute(array($orderId, $dishId, $quantity));
     }
 
-    
-    
+    // session_start();
+    //$_SESSION['cart'] = array();
 
 
     var_dump($cart);

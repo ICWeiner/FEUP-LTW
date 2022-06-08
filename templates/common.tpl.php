@@ -67,7 +67,7 @@
 
 				<p><?=$dish['Price']?>&euro;</p>
 				<p hidden><?=$dish['DishId']?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
-				
+				<button>Remove</button>
 			</div>
 		<?php } } ?>
 
