@@ -55,6 +55,17 @@
 		<?php foreach($reviews as $review) {?>
 			<p><?= $review['text'] ?></p>
 			<p><?= $review['score'] ?></p>
+
+			<h2>Add your review</h2>
+			Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+			<h3>Score</h3>
+			<div class="stars">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+			</div>
 		<?php }?>
 
 		</section>

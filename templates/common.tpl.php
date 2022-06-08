@@ -8,6 +8,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
+			<script src="https://kit.fontawesome.com/8a6a2935ab.js" crossorigin="anonymous"></script>
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
