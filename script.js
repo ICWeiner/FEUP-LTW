@@ -137,8 +137,9 @@ function stickStarRating(){
     star.addEventListener('click', function(e){
       starsDiv.forEach(function(otherStar, otherIndex){
         if (clickedIndex >= otherIndex){
-          otherStar.classList.add("activeStar")
-          
+          otherStar.className = "fas fa-star"
+        }else{
+          otherStar.className = "far fa-star"
         }
       })
       if (clickedIndex == 0){

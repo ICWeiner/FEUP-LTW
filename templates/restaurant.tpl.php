@@ -63,11 +63,13 @@
 				Comment: <textarea name="comment" rows="5" cols="40" required></textarea>
 				<h3>Give your rating:</h3>
 				<div class="stars">
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
+					<!--"fas fa-star" são preenchidas-->
+					<!--"far fa-star" são não preenchidas-->
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
 				</div>
 				Stars given: <input type="number" name="score" disabled> 
 				<button type="submit">Submit review</button>

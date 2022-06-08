@@ -91,27 +91,6 @@ ul{
 
 .stars i{
 	color: rgb(255, 145, 0);
-	opacity: 50%;
 	cursor: pointer;
-}
-
-/*for the stars section*/
-
-.stars:hover i{
-	opacity: 100%;
-}
-
-.stars i:hover{
-	opacity: 100%;
-}
-
-
-.stars i:hover ~ i{
-	opacity: 50%;
-}
-
-/*classe que vai ser adicionada com js*/
-.stars i.activeStar{
-	opacity: 100%;
 }
 
