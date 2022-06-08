@@ -32,7 +32,13 @@
             return $reviews;
         }
 
+        static function addReview(PDO $db, string $comment, int $score, int $restaurant, int $user){
+            $stmt = $db->prepare('INSERT INTO Review (ReviewText, ReviewScore, RestaurantId, User) VALUES ( ?, ?, ?, ?);
+			');
 
+            $stmt->execute(array($comment, $score, $restaurant, $user));
+            }
+            
+        }
 
-    }
 ?>
