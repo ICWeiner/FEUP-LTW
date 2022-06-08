@@ -40,7 +40,6 @@ function updateTotal(){
   totalHTML.innerHTML = newTotal.toFixed(2) + "€"
 }
 
-updateTotal()
 
 
 function encodeToJSONHelper(dishId, dishQuantity){
@@ -99,7 +98,6 @@ function removeElements(){
   }
 }
 
-removeElements()
 
 
 function finalizeCart(){
@@ -123,6 +121,45 @@ function finalizeCart(){
   })
 
 }
+
+
+function stickStarRating(){
+  const reviewSection = document.querySelector('.review')
+  console.log(reviewSection)
+  const starsDiv = reviewSection.querySelectorAll('.stars i')
+  const starClass = reviewSection.querySelector('.stars')
+  var score = reviewSection.querySelector('form > input')
+  console.log(score)
+
+
+  // index a começar em 0
+  starsDiv.forEach(function(star, clickedIndex){
+    star.addEventListener('click', function(e){
+      starsDiv.forEach(function(otherStar, otherIndex){
+        if (clickedIndex >= otherIndex){
+          otherStar.classList.add("activeStar")
+          
+        }
+      })
+      if (clickedIndex == 0){
+        score.value = clickedIndex + 1
+      }else{
+        score.value = clickedIndex + 1
+      }
+      console.log('star' + star + ' of index ' + clickedIndex)
+    })
+  })
+  
+
+}
+
+stickStarRating()
+
+// Algum if para verificar se está na página do carrinho
+updateTotal()
+
+removeElements()
+
 finalizeCart()
 
 

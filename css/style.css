@@ -38,6 +38,9 @@ button{
 	border-radius: 12px;
 }
 
+button:hover{
+	background-color: #ff9a52;
+}
 /* <a> tags styled to look like buttons */
 .button{
 	background-color: #ffcfac;
@@ -48,6 +51,10 @@ button{
 	border: none;
 	border-radius: 12px;
 	text-decoration: none;
+}
+
+.button:hover{
+	background-color: #ff9a52;
 }
 
 hr{
@@ -89,6 +96,7 @@ ul{
 }
 
 /*for the stars section*/
+
 .stars:hover i{
 	opacity: 100%;
 }
@@ -100,5 +108,10 @@ ul{
 
 .stars i:hover ~ i{
 	opacity: 50%;
+}
+
+/*classe que vai ser adicionada com js*/
+.stars i.activeStar{
+	opacity: 100%;
 }
 
