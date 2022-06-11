@@ -36,6 +36,23 @@
 			return $restaurants;
 		}
 
+		// O outro get restaurants não funciona não sei porquê
+
+	static function newGetRestaurants(PDO $db) : array {
+		$stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant');
+		$stmt->execute(array());
+
+		$restaurants = [];
+
+		while($restaurant = $stmt->fetch()){
+			$restaurants[] = array(
+			'id' => $restaurant['RestaurantId'],
+			'name' => $restaurant['RestaurantName']);
+		}
+		
+		return $restaurants;
+	}
+
 		static function getRestaurantCategories(PDO $db) : array {
 			$stmt = $db->prepare('SELECT DISTINCT Category  FROM Restaurant LIMIT 10');
 			$stmt->execute(array());
@@ -80,6 +97,22 @@
 				$restaurant['RestaurantAddress'],
 				$restaurant['OwnerId']
 			);
+		}
+
+		static function searchRestaurants(PDO $db, string $search) : array {
+			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName, Category FROM Restaurant WHERE RestaurantName LIKE ?');			
+			$stmt->execute(array($search . '%'));
+			
+			$restaurants = [];
+			
+			while($restaurant = $stmt->fetch()){		
+				$restaurants[] = array(
+				'id' => $restaurant['RestaurantId'],
+				'name' => $restaurant['RestaurantName'],
+				'category' => $restaurant['Category']);
+				}
+			
+			return $restaurants;
 		}
 
 		
