@@ -7,11 +7,10 @@
 	require_once('database/review.class.php');
 
 	$db = getDatabaseConnection();
-    $restaurantId = intval($_GET['id']);
-    ;
+    $id = intval($_GET['id']);
 
 
-    Review::addReview($db, $_POST['comment'], intval($_POST['score']), $restaurantId, $_SESSION['id']);
+    Review::addReview($db, $_POST['comment'], intval($_POST['score']), $id, $_SESSION['id']);
 
     /*TODO: Ficar no restaurante em vez de ir pra home */
 

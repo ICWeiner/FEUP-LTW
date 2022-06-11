@@ -71,7 +71,7 @@
 					<i class="far fa-star"></i>
 					<i class="far fa-star"></i>
 				</div>
-				Stars given: <input type="number" name="score" disabled> 
+				 <input type="number" name="score" hidden>
 				<button type="submit">Submit review</button>
 			</form>
 		<?php }?>
