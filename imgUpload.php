@@ -27,7 +27,7 @@
         $mediumFileName = "images/$folder/thumbs_medium/$imgName.jpg";
 
         //this function moves the file from a to b... why is it called rename????
-        rename( __DIR__ . "/temp/user.jpg", $originalFileName);
+        rename( __DIR__ . "/temp/$folder.jpg", $originalFileName);
 
         // Crete an image representation of the original image
         $original = imagecreatefromjpeg($originalFileName);
