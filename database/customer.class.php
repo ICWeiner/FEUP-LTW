@@ -80,5 +80,14 @@
 			return $id;
 
 			}
+		
+		function changePassword(PDO $db,string $password){
+			$stmt = $db->prepare('UPDATE User SET Password = ? WHERE UserId = ?');
+
+			$options = [];
+
+			$stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options), $this->id));
+		}
+			
 	}
 ?>
