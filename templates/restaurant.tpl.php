@@ -11,7 +11,7 @@
 					<div> 
 						<section class="aspect-ratio-box">
 							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
-								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do prato">
+								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do restaurante">
 							</a>
 						</section>
 						<p><?=$restaurant['name']?></p>
@@ -37,7 +37,7 @@
 					foreach ($dishes as $dish){ ?>
 					<div >
 						<section class="aspect-ratio-box">
-							<img src="TestImages/bread.jpg" alt="foto do prato">
+							<img src="images/dishes/originals/<?=$dish['id']?>.jpg" alt="foto do prato">
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>

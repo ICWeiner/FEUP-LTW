@@ -87,5 +87,6 @@
 
 			$stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options), $this->id));
 		}
+	}
 
 ?>
