@@ -82,6 +82,16 @@
 			);
 		}
 
-		
+		static function registerRestaurant(PDO $db, string $name, string $category, string $address, int $ownerid) {
+
+			$stmt = $db->prepare('INSERT INTO Restaurant (RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( ?, ? ,?, ?);
+			');
+
+			$stmt->execute(array($name, $category, $address, $ownerid));
+
+			$id = $db->lastInsertId();
+			
+			return $id;
+		}
 	}
 ?>

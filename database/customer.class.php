@@ -78,7 +78,6 @@
 			$id = $db->lastInsertId();
 			
 			return $id;
-
-			}
+		}
 	}
 ?>
