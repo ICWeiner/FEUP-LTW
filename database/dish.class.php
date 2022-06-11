@@ -48,5 +48,16 @@
             return $dishes;
         }
 
+        static function registerDish(PDO $db, string $name, float $price, string $category, int $restaurant) {
+
+			$stmt = $db->prepare('INSERT INTO Dish (Name, Price, Category, RestaurantId) VALUES ( ?, ? ,?, ?);
+			');
+
+			$stmt->execute(array($name, $category, $address, $ownerid));
+
+			$id = $db->lastInsertId();
+			
+			return $id;
+		}
     }
 ?>
