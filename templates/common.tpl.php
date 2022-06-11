@@ -8,6 +8,8 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
+			<script src="https://kit.fontawesome.com/8a6a2935ab.js" crossorigin="anonymous"></script>
+			<script src="../script.js" defer></script>
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
@@ -43,19 +45,17 @@
 	</html>
 <?php } ?>
 
-<?php function drawCart(array $orders) { ?>
+<?php function drawCart(array $order,$restaurant) { ?>
 	<main id="cart">
-
-        <!--Assumindo que no cart só pode ter coisas de um restaurante--> 
-        <!--Depois põe-se lado a lado com css talvez-->
         <h1>Checkout</h1>
-        <h2>Restaurant: Someplace Special - Porto</h2>
-        
+        <h2>Restaurant: <?=$restaurant->name?></h2>
+
         <section class="shipping">
         <h4>Shipping information</h4>
         <div>
             <label>Address:
-                    <input id="inputbox" type="text" name="name" value="Senhora da hora, Porto" required disabled>
+                    <input type="text" name="name" value="<?=$restaurant->address?>" required disabled>
+
             </label>
                     <button>Edit address</button>
             
@@ -65,26 +65,30 @@
         
         <section class="orders">
         <h2>Your order</h2>
-		<?php if( !empty($orders)){
-			foreach ($orders as $order){ ?>
-			<div>
-				<p><?=$order['name']?></p>
-				
+		<?php if( !empty($order)){
+			foreach ($order as $dish){ ?>
+			<div class="dishBox_<?=$dish['DishId']?>">
+				<p><?=$dish['Name']?></p>
 				<!--<label>Quantity: </label>-->
-				<div id="quantity">
-					<button id="minus">-</button>
-					<input type="number" value="1" name="quantity" placeholder="quantity">
-					<button id="plus">+</button>
+				
+				<div>
+					<button onclick="decrease(<?='qtyBox_'.$dish['DishId']?>, <?=$dish['Price']?>)" >-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['DishId']?> disabled>
+					<button onclick="increase(<?='qtyBox_'.$dish['DishId']?>, <?=$dish['Price']?>)" >+</button>
 				</div>
 
-				<p><?=$order['price']?></p>
-				
+				<p><?=$dish['Price']?>&euro;</p>
+				<p hidden><?=$dish['DishId']?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
+				<button>Remove</button>
 			</div>
 		<?php } } ?>
 
         <hr>
 		<!--O total nao esta a ser alterado quando se aumenta as quantidades, talvez com javascrip?-->
-        <p>Total price: <strong>56€</strong></p>
+        <p>Total price: <strong>0&euro;</strong></p>
+
+		<button id="cartCheckout">Checkout</button>
         </section>
     </main>
+
 <?php } ?> 

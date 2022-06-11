@@ -55,9 +55,10 @@
 
 			$stmt->execute(array($name, $price, $category, $restaurant));
 
+
 			$id = $db->lastInsertId();
 			
 			return $id;
-		}
+		  }
     }
 ?>

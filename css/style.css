@@ -38,6 +38,9 @@ button{
 	border-radius: 12px;
 }
 
+button:hover{
+	background-color: #ff9a52;
+}
 /* <a> tags styled to look like buttons */
 .button{
 	background-color: #ffcfac;
@@ -48,6 +51,10 @@ button{
 	border: none;
 	border-radius: 12px;
 	text-decoration: none;
+}
+
+.button:hover{
+	background-color: #ff9a52;
 }
 
 hr{
@@ -82,6 +89,11 @@ ul{
 
 }
 
+.stars i{
+	color: rgb(255, 145, 0);
+	cursor: pointer;
+}
+
 footer{
 	background-color: #dcf5ff;
 	margin: 0;
@@ -98,3 +110,4 @@ footer{
 #profile h2{
 	font-size: 2em;
 }
+

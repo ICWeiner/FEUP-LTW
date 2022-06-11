@@ -76,11 +76,11 @@ INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Prato de l
 
 
 
-INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 20:01:51', 'Ready', 2, 11);
-INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 12:58:15', 'Preparing', 4, 2);
-INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 13:43:12', 'Delivered', 7, 8);
-INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 13:09:29', 'Ready', 9, 4);
-INSERT INTO FoodOrder(OrderDate, OrderState, User, Dish) VALUES ('2007-01-01 19:43:40', 'Received', 10, 15);
+INSERT INTO FoodOrder(OrderDate, OrderState, User) VALUES ('2007-01-01 20:01:51', 'Ready', 2);
+INSERT INTO FoodOrder(OrderDate, OrderState, User) VALUES ('2007-01-01 12:58:15', 'Preparing', 4);
+INSERT INTO FoodOrder(OrderDate, OrderState, User) VALUES ('2007-01-01 13:43:12', 'Delivered', 7);
+INSERT INTO FoodOrder(OrderDate, OrderState, User) VALUES ('2007-01-01 13:09:29', 'Ready', 9);
+INSERT INTO FoodOrder(OrderDate, OrderState, User) VALUES ('2007-01-01 19:43:40', 'Received', 10);
 
 INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('very good, very nice, me like 10/10', 5, 2, 1);
 INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('was alright', 3, 3, 8);
@@ -88,8 +88,8 @@ INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('what a 
 INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('pretty good not gonna lie', 4, 4, 2);
 INSERT INTO Review(ReviewText, ReviewScore, RestaurantId, User) VALUES ('they better get their shit together fr fr', 2, 5, 10);
 
-INSERT INTO DishOrder(OrderId, DishId) VALUES (1, 11);
-INSERT INTO DishOrder(OrderId, DishId) VALUES (2, 2);
-INSERT INTO DishOrder(OrderId, DishId) VALUES (3, 8);
-INSERT INTO DishOrder(OrderId, DishId) VALUES (4, 4);
-INSERT INTO DishOrder(OrderId, DishId) VALUES (5, 15);
+INSERT INTO DishOrder(OrderId, DishId, quantity) VALUES (1, 11, 2);
+INSERT INTO DishOrder(OrderId, DishId, quantity) VALUES (2, 2, 1);
+INSERT INTO DishOrder(OrderId, DishId, quantity) VALUES (3, 8, 3);
+INSERT INTO DishOrder(OrderId, DishId, quantity) VALUES (4, 4, 2);
+INSERT INTO DishOrder(OrderId, DishId, quantity) VALUES (5, 15, 1);
