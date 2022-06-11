@@ -3,7 +3,7 @@
 		<h2><?=$category?></h2>
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
-			
+			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
 			<section class="dishes">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
@@ -35,15 +35,48 @@
 			<section class="dishes">
 				<?php if( !empty($dishes)){
 					foreach ($dishes as $dish){ ?>
-					<div>
+					<div >
 						<section class="aspect-ratio-box">
 							<img src="TestImages/bread.jpg" alt="foto do prato">
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
+						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
 		</section>
 	</main>
+
+<?php } ?>
+
+
+
+<?php function drawReviewSection(array $reviews,int $id) { ?>
+	   <section class="review">
+		<?php foreach($reviews as $review) {?>
+			<p><?= $review['text'] ?></p>
+			<p><?= $review['score'] ?></p>
+			<?php }?>
+
+			<h2>Add your review</h2>
+			<form action="action_add_review.php" method="post" class="addReview">
+				Comment: <textarea name="comment" rows="5" cols="40" required></textarea>
+				<h3>Give your rating:</h3>
+				<div class="stars">
+					<!--"fas fa-star" são preenchidas-->
+					<!--"far fa-star" são não preenchidas-->
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+				</div>
+				 <input type="number" name="score" hidden>
+				 <input type="number" name="restaurantid" value="<?=$id ?>" >
+				<button type="submit">Submit review</button>
+			</form>
+		
+
+		</section>
 <?php } ?>
