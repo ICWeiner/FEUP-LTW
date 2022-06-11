@@ -22,6 +22,7 @@
   					<input id="first_name" type="text" name="first_name" value="<?=$user->address?>">
 
   					<a href="profile_edit.php" class="button">Editar</a>
+					<a href="profile_edit_password.php" class="button">Mudar password</a>
 				</div>
 			</main>
 <?php } ?>
@@ -56,6 +57,25 @@
 					<h2>Default address</h2>
 					<label for="first_name">Address:</label>
   					<input type="text" name="newAddress" value="<?=$user->address?>">
+
+  					<button type="submit">Concluir</button>
+
+  					<!--Concluir ediçao -->
+				</form>
+			</main>
+
+<?php } ?>
+
+<?php function drawEditPassword() { ?>
+				
+				<form action="action_edit_password.php" method="post">
+					<h2>Mudar password</h2>
+					
+					<label for="password">Username:</label>
+  					<input type="password" name="password">
+
+					<label for="confirmPassword">Username:</label>
+  					<input type="password" name="confirmPassword">
 
   					<button type="submit">Concluir</button>
 

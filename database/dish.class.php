@@ -48,14 +48,16 @@
             return $dishes;
         }
 
-        static function getDishByID(PDO $db,int $id){
-            $stmt = $db->prepare('SELECT DishId, Name, Price, RestaurantId FROM Dish WHERE DishId = ?');
-            $stmt->execute(array($id));
+        static function registerDish(PDO $db, string $name, float $price, string $category, int $restaurant) {
 
-            $dish = $stmt->fetch();
+			$stmt = $db->prepare('INSERT INTO Dish (Name, Price, Category, RestaurantId) VALUES ( ?, ? ,?, ?);
+			');
 
-            return $dish; 
-        }
+			$stmt->execute(array($name, $category, $category, $restaurant));
 
+			$id = $db->lastInsertId();
+			
+			return $id;
+		}
     }
 ?>
