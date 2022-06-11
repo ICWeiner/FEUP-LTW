@@ -114,14 +114,12 @@ function finalizeCart(){
       if (this.readyState == 4 && this.status == 200) {
       //alert(request.responseText); // faz um alert com a resposta do servidor
       alert("Compra finalizada com sucesso")
-      window.location.href = "http://localhost:7000/home.php";
-
+      window.location.href = window.location.protocol + "//" + window.location.host + "/" + "home.php";
      }
     }
   })
 
 }
-
 
 function stickStarRating(){
   const reviewSection = document.querySelector('.review')
@@ -154,14 +152,20 @@ function stickStarRating(){
 
 }
 
-stickStarRating()
+// Verifica se está na cart page antes de chamar essas funções: evita erros na consola
+if (window.location.pathname == "/cart.php"){
+  updateTotal()
+  removeElements()
+  finalizeCart()
+}
 
-// Algum if para verificar se está na página do carrinho
-updateTotal()
+if (window.location.pathname == "/restaurantPage.php"){
+  stickStarRating()
+}
 
-removeElements()
 
-finalizeCart()
+
+
 
 
 
