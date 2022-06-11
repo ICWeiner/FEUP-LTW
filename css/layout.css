@@ -55,6 +55,7 @@ header{
 	margin-left: -1em;
 	grid-row-start: 1;
 	grid-row-end: 2;
+	height: fit-content;
 }
 
 header>h1{
@@ -143,8 +144,9 @@ main{
 }
 
 footer{
-	margin-top: 1em;
+	margin-top: auto;
 	margin-left: -1em;
+	height: fit-content;
 }
 
 footer p{
@@ -229,15 +231,29 @@ hr{
 #cart main{
 	margin-right: 1em;
 }
-@media only screen and (max-width: 532px) {
+
+#profile div{
+	/*display: flex;*/
+}
+
+@media only screen and (max-width: 350px) {
+	/*@media only screen and (max-width: 532px*/
 	html{
 		overflow-x: hidden;
 	}
 
 	header>a{
-		display: grid;
-		grid-template-rows: 100%;
-		grid-template-columns: 70% 30%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		margin-left: -1em;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+
+	.shipping{
+		display: flex;
+		flex-direction: column;
 	}
 
 	.shipping>p{
@@ -265,6 +281,24 @@ hr{
 
 	.orders #quantity input{
 		width: 5em;
+	}
+
+	footer{
+		margin-top: 2em;
+	}
+
+	#profile div{
+		display: flex;
+		flex-direction: column;
+		
+	}
+
+	#profile input{
+		width: 80%;
+	}
+
+	#profile .button{
+		width: 22.5%;
 	}
 }
 

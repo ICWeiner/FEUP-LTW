@@ -1,6 +1,6 @@
 <?php function drawProfile(Customer $user) { ?>
 			<main>
-				<div class="profile_navbar">
+				<!--<div class="profile_navbar">
 					<nav>
 					<ul>
 						<li><a href= "">My addresses</a></li>
@@ -8,7 +8,7 @@
 						<li><a href= "">Favorites</a></li>
 					</ul>
 					</nav>
-				</div>
+				</div>-->
 				
 				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
@@ -28,8 +28,8 @@
 <?php } ?>
 
 <?php function drawEditProfile(Customer $user) { ?>
-			<main>
-				<div class="profile_navbar">
+			<main id="profile">
+				<!--<div class="profile_navbar">
 					<nav>
 					<ul>
 						<li><a href= "">My addresses</a></li>
@@ -37,20 +37,20 @@
 						<li><a href= "">Favorites</a></li>
 					</ul>
 					</nav>
-				</div>
+				</div>-->
 				
 				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
-				<div>
+				<div >
 					<h2>Informação de contacto</h2>
 
 					<label for="first_name">First Name:</label>
   					<input id="first_name" type="text" name="first_name" value="<?=$user->name?>">
 
-  					<label for="first_name">First Name:</label>
+  					<label for="first_name">Phone Number:</label>
   					<input id="first_name" type="text" name="first_name" value="<?=$user->phone?>">
 
-  					<label for="first_name">First Name:</label>
+  					<label for="first_name">Email address:</label>
   					<input id="first_name" type="text" name="first_name" value="<?=$user->email?>">
 
 				</div><!--added divs to make it clear that i mean for these to be seperate -->
