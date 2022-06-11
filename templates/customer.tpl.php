@@ -1,35 +1,34 @@
 <?php function drawProfile(Customer $user) { ?>
-			<main>
-				<div class="profile_navbar">
-					<nav>
-					<ul>
-						<li><a href= "">My addresses</a></li>
-						<li><a href= "">My payment methods</a></li>
-						<li><a href= "">Favorites</a></li>
-					</ul>
-					</nav>
-				</div>
-				
+	<main id="profile">
 				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./images/users/originals/<?=$user->id?>.jpg" alt="user profile pic" width="200" height="200">
 				<div>
-					<h2>Informação de contacto</h2>
-					<p><?=$user->name?><p>
-					<p><?=$user->phone?></p>
-					<p><?=$user->email?></p>
-					<a href="profile_edit.php" class="button">editar</a>
-				</div><!--added divs to make it clear that i mean for these to be seperate -->
+					<h2>Contact Information</h2>
+					<div id="profile_info">
+						<label for="first_name">First Name:</label><input id="first_name" type="text" name="first_name" value="<?=$user->name?>">
+					</div>
+					<div id="profile_info">
+						<label for="first_name">Phone Number:</label>
+						<input id="first_name" type="text" name="first_name" value="<?=$user->phone?>">
+					</div>
+					<div id="profile_info">
+						<label for="first_name">Email address:</label>
+						<input id="first_name" type="text" name="first_name" value="<?=$user->email?>">
+					</div>
+				</div>
 				<div>
 					<h2>Default address</h2>
-					<p><?=$user->address?></p>
-					<a href="profile_edit.php" class="button">editar</a>
+					<label for="first_name">First Name:</label>
+  					<input id="first_name" type="text" name="first_name" value="<?=$user->address?>">
+
+  					<a href="profile_edit.php" class="button">Editar</a>
 				</div>
 			</main>
 <?php } ?>
 
 <?php function drawEditProfile(Customer $user) { ?>
 			<main>
-				<div class="profile_navbar">
+				<!--<div class="profile_navbar">
 					<nav>
 					<ul>
 						<li><a href= "">My addresses</a></li>
@@ -37,10 +36,10 @@
 						<li><a href= "">Favorites</a></li>
 					</ul>
 					</nav>
-				</div>
+				</div>-->
 				
 				<h1>Hello <?=$user->name?> :) </h1>
-				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
+				<img src="./images/users/originals/<?=$user->id?>.jpg" alt="user profile pic" width="200" height="200">
 				<form action="action_edit_profile.php" method="post">
 					<h2>Informação de contacto</h2>
 					
