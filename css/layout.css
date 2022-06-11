@@ -128,6 +128,19 @@ main{
 	margin-bottom: 5em;
 }
 
+.restaurants{
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 1.5em;
+}
+
+.restaurants>div{
+	display: grid;
+	grid-template-columns: 100%;
+	width: 9em;
+	margin-bottom: 5em;
+}
+
 .aspect-ratio-box img{
 	display: flex;
 	max-width: 100%;
