@@ -74,6 +74,7 @@
 			$options = [];
 
 			$stmt->execute(array($name, password_hash($password, PASSWORD_DEFAULT, $options), $email, $address, $phone));
+
 			}
 	}
 ?>
