@@ -16,7 +16,7 @@
 
 
 	$db = getDatabaseConnection();
-	$id = intval($_GET['id']);
+	$id = intval($_GET['id']);//Restaurant ID
 
     $categories = Dish::getDishesCategories($db, $id);
     $reviews = Review::getRestaurantReviews($db, $id); 
@@ -35,7 +35,7 @@
 		drawDishesByCategory($dishes,$category['name']);
 	}
 
-    drawReviewSection($reviews);
+    drawReviewSection($reviews,$id);
 
     drawFooter();
 ?>

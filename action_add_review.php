@@ -7,8 +7,7 @@
 	require_once('database/review.class.php');
 
 	$db = getDatabaseConnection();
-    $id = intval($_GET['id']);
-
+    $id = intval($_POST['restaurantid']);
 
     Review::addReview($db, $_POST['comment'], intval($_POST['score']), $id, $_SESSION['id']);
 

@@ -52,11 +52,12 @@
 
 
 
-<?php function drawReviewSection(array $reviews) { ?>
+<?php function drawReviewSection(array $reviews,int $id) { ?>
 	   <section class="review">
 		<?php foreach($reviews as $review) {?>
 			<p><?= $review['text'] ?></p>
 			<p><?= $review['score'] ?></p>
+			<?php }?>
 
 			<h2>Add your review</h2>
 			<form action="action_add_review.php" method="post" class="addReview">
@@ -72,9 +73,10 @@
 					<i class="far fa-star"></i>
 				</div>
 				 <input type="number" name="score" hidden>
+				 <input type="number" name="restaurantid" value="<?=$id ?>" >
 				<button type="submit">Submit review</button>
 			</form>
-		<?php }?>
+		
 
 		</section>
 <?php } ?>
