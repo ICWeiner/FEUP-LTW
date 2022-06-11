@@ -20,6 +20,7 @@
 					<ul class="menu__box">
 						<li><a class="menu__item" href="home.php">Home</a></li>
 						<li><a class="menu__item" href="profile.php">Profile</a></li>
+						<li><a class="menu__item" href="addRestaurantPage.php">Add Restaurant</a></li>
 						<li><a class="menu__item" href="action_logout.php">Logout</a></li>
 					</ul>
 				</div>
