@@ -23,16 +23,13 @@
     foreach ($cart["items"] as $dish){
         $dishId = $dish["dishId"];
         $quantity = $dish["quantity"];
-        $stmt = $db->prepare('INSERT INTO DishOrder (OrderId, DishId, quantity) VALUES ( ?,?, ?);
+        $stmt = $db->prepare('INSERT INTO DishOrder (OrderId, DishId, quantity) VALUES ( ?, ?, ?);
         ');
 
         $stmt->execute(array($orderId, $dishId, $quantity));
     }
 
-    // session_start();
+    session_start();
+    unset($_SESSION['cart']); 
     //$_SESSION['cart'] = array();
-
-
-    var_dump($cart);
-
 ?>
