@@ -12,14 +12,23 @@
 		</head>
 		<body>
 			 <header>
-
+				<div class="hamburger-menu">
+					<input id="menu__toggle" type="checkbox" />
+					<label class="menu__btn" for="menu__toggle">
+						<span></span>
+					</label>
+					<ul class="menu__box">
+						<li><a class="menu__item" href="home.php">Home</a></li>
+						<li><a class="menu__item" href="profile.php">Profile</a></li>
+						<li><a class="menu__item" href="action_logout.php">Logout</a></li>
+					</ul>
+				</div>
 				<h1>NEW UNTER EATS</h1>
-				<a href="cart.php">Cart
-				<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
-				<form action="action_logout.php" method="post" class="logout">
+				<a href="cart.php">Cart<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
+				<!--<form id="logout" action="action_logout.php" method="post" class="logout">
 					<a href="profile.php"><?=$name?></a>
 					<button type="submit">Logout</button>
-				</form>
+				</form>-->
 
 			</header>
 <?php } ?>
@@ -44,7 +53,7 @@
         <h4>Shipping information</h4>
         <div>
             <label>Address:
-                    <input type="text" name="name" value="Senhora da hora, Porto" required disabled>
+                    <input id="inputbox" type="text" name="name" value="Senhora da hora, Porto" required disabled>
             </label>
                     <button>Edit address</button>
             
