@@ -11,7 +11,7 @@
 				</div>
 				
 				<h1>Hello <?=$user->name?> :) </h1>
-				<img src="./TestImages/StockUser.jpg" alt="user profile pic" width="200" height="200">
+				<img src="./images/users/originals/<?=$user->id?>.jpg" alt="user profile pic" width="200" height="200">
 				<div>
 					<h2>Informação de contacto</h2>
 					<p><?=$user->name?><p>

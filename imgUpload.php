@@ -15,18 +15,19 @@
 
     function uploadImage(PDO $db,string $folder,string $imgName){
         // Create folders if they don't exist
-        if (!is_dir('images')) mkdir('images');
-        if (!is_dir('images/originals')) mkdir('images/originals');
-        if (!is_dir('images/thumbs_small')) mkdir('images/thumbs_small');
-        if (!is_dir('images/thumbs_medium')) mkdir('images/thumbs_medium');
+        if (!is_dir("images")) mkdir("images");
+        if (!is_dir("images/$folder")) mkdir("images/$folder");
+        if (!is_dir("images/$folder/originals")) mkdir("images/$folder/originals");
+        if (!is_dir("images/$folder/thumbs_small")) mkdir("images/$folder/thumbs_small");
+        if (!is_dir("images/$folder/thumbs_medium")) mkdir("images/$folder/thumbs_medium");
 
         // Generate filenames for original, small and medium files
-        $originalFileName = "images/originals/$imgName.jpg";
-        $smallFileName = "images/thumbs_small/$imgName.jpg";
-        $mediumFileName = "images/thumbs_medium/$imgName.jpg";
+        $originalFileName = "images/$folder/originals/$imgName.jpg";
+        $smallFileName = "images/$folder/thumbs_small/$imgName.jpg";
+        $mediumFileName = "images/$folder/thumbs_medium/$imgName.jpg";
 
-        // Move the uploaded file to its final destination
-        move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+        //this function moves the file from a to b... why is it called rename????
+        rename( __DIR__ . "/temp/user.jpg", $originalFileName);
 
         // Crete an image representation of the original image
         $original = imagecreatefromjpeg($originalFileName);
@@ -34,7 +35,7 @@
         if (!$original) $original = imagecreatefromgif($originalFileName);
 
         if (!$original) die();
-
+        /* TODO: create smaller version of image
         $width = imagesx($original);     // width of the original image
         $height = imagesy($original);    // height of the original image
         $square = min($width, $height);  // size length of the maximum square
@@ -55,7 +56,7 @@
         // Create and save a medium image
         $medium = imagecreatetruecolor($mediumwidth, $mediumheight);
         imagecopyresized($medium, $original, 0, 0, 0, 0, $mediumwidth, $mediumheight, $width, $height);
-        imagejpeg($medium, $mediumFileName);
+        imagejpeg($medium, $mediumFileName);*/
 
         header("Location: index.php");
     }    
