@@ -53,11 +53,12 @@
 			$stmt = $db->prepare('INSERT INTO Dish (Name, Price, Category, RestaurantId) VALUES ( ?, ? ,?, ?);
 			');
 
-			$stmt->execute(array($name, $category, $category, $restaurant));
+			$stmt->execute(array($name, $price, $category, $restaurant));
+
 
 			$id = $db->lastInsertId();
 			
 			return $id;
-		}
+		  }
     }
 ?>

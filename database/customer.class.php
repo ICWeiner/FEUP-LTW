@@ -78,7 +78,6 @@
 			$id = $db->lastInsertId();
 			
 			return $id;
-
 			}
 		
 		function changePassword(PDO $db,string $password){
@@ -88,6 +87,5 @@
 
 			$stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options), $this->id));
 		}
-			
-	}
+
 ?>

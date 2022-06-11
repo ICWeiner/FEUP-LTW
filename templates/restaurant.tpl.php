@@ -11,7 +11,7 @@
 					<div> 
 						<section class="aspect-ratio-box">
 							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
-								<img src="TestImages/bread.jpg" alt="foto do prato">
+								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do prato">
 							</a>
 						</section>
 						<p><?=$restaurant['name']?></p>
