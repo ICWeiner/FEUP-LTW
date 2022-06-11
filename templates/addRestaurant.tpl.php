@@ -17,7 +17,7 @@
 	</html>
 <?php } ?>
 
-<?php function drawDishRegister() { ?>
+<?php function drawDishRegister($restaurantId) { ?>
 			<main>
 				<div id="">
 					<h2>Register Dish</h2>
@@ -33,6 +33,7 @@
 						</select>
 						<input type="file" name="dishImage" required><!--TODO: Style this :^) -->
 						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+						<input type="number" name="restaurantId" value="<?= $restaurantId?>" hidden>
 					</form>
 				</div>
 			</main>
@@ -44,8 +45,8 @@
 			<main>
 				<div id="draw">
 					<h2>Pick restaurant's name</h2>
-					<form action="action_addDish.php" method="post" enctype="multipart/form-data">
-						<select type="text" name="name" placeholder="name" required>
+					<form action="addDishPage.php" method="post" enctype="multipart/form-data">
+						<select type="text" name="restaurantId" placeholder="name" required>
 							<?php if( !empty($restaurants)){
 								foreach ($restaurants as $restaurant){ ?>
 									<option value="<?=$restaurant['id']?>">
@@ -53,6 +54,7 @@
 									</option>
 							<?php } } ?>
 						</select>
+						<input type="submit" value="Upload">
 					</form>
 				</div>
 			</main>
