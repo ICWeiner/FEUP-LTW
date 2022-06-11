@@ -17,5 +17,5 @@
     move_uploaded_file($_FILES['restaurantImage']['tmp_name'], __DIR__ . "/temp/restaurants.jpg");//move picture into temporary folder
     uploadImage($db,"restaurants",$id);
 
-    header('Location: addDishPage.php');
+    header('Location: home.php');
 ?>
