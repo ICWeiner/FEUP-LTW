@@ -14,6 +14,7 @@ CREATE TABLE Restaurant(
     Category VARCHAR(100) NOT NULL,
     RestaurantAddress VARCHAR(300) NOT NULL,
     OwnerId INTEGER,
+    Image,
 	FOREIGN KEY (OwnerId) REFERENCES User(UserId)
 );
 
@@ -21,9 +22,10 @@ CREATE TABLE User(
     UserId INTEGER PRIMARY KEY AUTOINCREMENT,
     Type TEXT CHECK(Type = 'restaurantOwner' OR  Type ='Customer') NOT NULL DEFAULT 'Customer',
     UserName VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     Password INTEGER NOT NULL,
     UserAddress VARCHAR(300) NOT NULL,
+    Image VARCHAR,
     PhoneNumber VARCHAR(9)
 );
 
@@ -31,7 +33,7 @@ CREATE TABLE Dish(
     DishId INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
     Price FLOAT NOT NULL,
-    Photo VARCHAR(10),
+    Image VARCHAR,
     Category TEXT CHECK(Category = 'Meat' OR Category = 'Fish' OR Category = 'Vegetarian' OR Category = 'Diet' OR Category = 'Dessert') NOT NULL,
     RestaurantId INTEGER,
     FOREIGN KEY (RestaurantId) REFERENCES Restaurant(RestaurantId)

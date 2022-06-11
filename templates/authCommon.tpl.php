@@ -28,8 +28,8 @@
 					<h3>Discover amazing restaurants</h3>
 					<h2>Login</h2>
 					<form action="action_login.php" method="post" class="login">
-						<input type="text" name="email" placeholder="E-Mail">
-						<input type="password" name="password" placeholder="Password">
+						<input type="text" name="email" placeholder="E-Mail" required>
+						<input type="password" name="password" placeholder="Password" required>
 						<button type="submit">Login</button>
 						<a href="register.php">Dont have an account yet? Register here</a>
 					</form>
@@ -46,13 +46,15 @@
 				<div id="">
 					<h3>Discover amazing restaurants</h3>
 					<h2>Register</h2>
-					<form action="action_register.php" method="post" class="register">
-						<input type="text" name="username" placeholder="Username">
-						<input type="password" name="password" placeholder="Password">
-						<input type="password" name="confirm_password" placeholder="Confirm password">
-						<input type="text" name="address" placeholder="Address">
-						<input type="tel" name="phone" placeholder="Phone number">
-						<button type="submit">Register</button>
+					<form action="action_register.php" method="post" enctype="multipart/form-data" class="register" >
+						<input type="text" name="username" placeholder="Username" required>
+						<input type="email" name="email" placeholder="E-Mail" required>
+						<input type="password" name="password" placeholder="Password" required>
+						<input type="password" name="confirmPassword" placeholder="Confirm password" required>
+						<input type="text" name="address" placeholder="Address" required>
+						<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{9}" required>
+						<input type="file" name="userImage" required><!--TODO: Style this :^) -->
+						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
 						<a href="login.php">Already have an account? Login here</a>
 					</form>
 				</div>

@@ -29,47 +29,47 @@ INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALU
 INSERT INTO User(Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES ('restaurantOwner', 'monkey_soup', '123', 'Rua Santo Antonio, 5421-090 Porto, Portugal', '+3519157829426','12312@mail.com');
 
 /*
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Big Mc', 4.50, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('CBO', 6.50, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Sundae', 1.50, '', 'Dessert');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Big Mc', 4.50, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('CBO', 6.50, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Sundae', 1.50, '', 'Dessert');
 
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Bitoque', 7.40, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Peixe do dia', 5.30, '', 'Fish');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Bacalhau cozido com grao', 6.90, '', 'Fish');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Bitoque', 7.40, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Peixe do dia', 5.30, '', 'Fish');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Bacalhau cozido com grao', 6.90, '', 'Fish');
 
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Pizza Margarita', 7.80, '', 'Vegetarian');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Pasta al Neri', 8.00, '', 'Fish');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Lasagna', 6.60, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Pizza Margarita', 7.80, '', 'Vegetarian');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Pasta al Neri', 8.00, '', 'Fish');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Lasagna', 6.60, '', 'Meat');
 
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Xau Ming de vaca', 8.70, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Pato a Pequim', 9.90, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Chop suey de gambas', 7.80, '', 'Fish');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Xau Ming de vaca', 8.70, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Pato a Pequim', 9.90, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Chop suey de gambas', 7.80, '', 'Fish');
 
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Bife a casa', 5.00, '', 'Meat');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Lulas fritas', 6.50, '', 'Fish');
-INSERT INTO Dish(Name, Price, Photo, Category) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Bife a casa', 5.00, '', 'Meat');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Lulas fritas', 6.50, '', 'Fish');
+INSERT INTO Dish(Name, Price, Image, Category) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian');
 */
 
 
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Big Mc', 4.50, '', 'Meat', 1);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('CBO', 6.50, '', 'Meat', 1);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Sundae', 1.50, '', 'Dessert', 1);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Big Mc', 4.50, '', 'Meat', 1);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('CBO', 6.50, '', 'Meat', 1);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Sundae', 1.50, '', 'Dessert', 1);
 
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Bitoque', 7.40, '', 'Meat', 2);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Peixe do dia', 5.30, '', 'Fish', 2);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Bacalhau cozido com grao', 6.90, '', 'Fish', 2);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Bitoque', 7.40, '', 'Meat', 2);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Peixe do dia', 5.30, '', 'Fish', 2);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Bacalhau cozido com grao', 6.90, '', 'Fish', 2);
 
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Pizza Margarita', 7.80, '', 'Vegetarian', 3);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Pasta al Neri', 8.00, '', 'Fish', 3);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Lasagna', 6.60, '', 'Meat', 3);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Pizza Margarita', 7.80, '', 'Vegetarian', 3);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Pasta al Neri', 8.00, '', 'Fish', 3);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Lasagna', 6.60, '', 'Meat', 3);
 
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Xau Ming de vaca', 8.70, '', 'Meat', 4);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Pato a Pequim', 9.90, '', 'Meat', 4);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Chop suey de gambas', 7.80, '', 'Fish', 4);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Xau Ming de vaca', 8.70, '', 'Meat', 4);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Pato a Pequim', 9.90, '', 'Meat', 4);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Chop suey de gambas', 7.80, '', 'Fish', 4);
 
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Bife a casa', 5.00, '', 'Meat', 5);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Lulas fritas', 6.50, '', 'Fish', 5);
-INSERT INTO Dish(Name, Price, Photo, Category, RestaurantId) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian', 5);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Bife a casa', 5.00, '', 'Meat', 5);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Lulas fritas', 6.50, '', 'Fish', 5);
+INSERT INTO Dish(Name, Price, Image, Category, RestaurantId) VALUES ('Prato de legumes', 9.90, '', 'Vegetarian', 5);
 
 
 

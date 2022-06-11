@@ -20,13 +20,15 @@
 		}
 
 		static function getCustomerWithPassword(PDO $db, string $email, string $password) : ?Customer {
-			$stmt = $db->prepare( 'SELECT UserId, Type, UserName, email, Password, UserAddress, PhoneNumber 
+			$stmt = $db->prepare('SELECT UserId, Type, UserName, email, Password, UserAddress, PhoneNumber 
 				FROM User 
-				WHERE lower(email) = ? AND Password = ?');
+				WHERE lower(email) = ? ');
 
-			$stmt->execute(array(strtolower($email), $password));
+			$stmt->execute(array(strtolower($email)));
 
-			if ($customer = $stmt->fetch()) {
+			$customer = $stmt->fetch();
+
+			if ($customer && password_verify($password, $customer['Password'])) {
 				return new Customer(
 					intval($customer['UserId']),
 					$customer['UserName'],
@@ -38,13 +40,45 @@
 			}else return null;
 		}
 
-		function register($db, $password) {
+		static function getCustomer(PDO $db,int $id) : ?Customer {
+			$stmt = $db->prepare( 'SELECT Type, UserName, email, UserAddress, PhoneNumber 
+				FROM User 
+				WHERE UserId = ?');
 
-			$stmt = $db->prepare('INSERT INTO User (Type, UserName, Password, UserAddress, PhoneNumber, email) VALUES (? , ?, ? ,? ,?, ?);
+			$stmt->execute(array($id));
+
+			if ($customer = $stmt->fetch()) {
+				return new Customer(
+					$id,
+					$customer['UserName'],
+					$customer['email'],
+					$customer['Type'],
+					$customer['UserAddress'],
+					$customer['PhoneNumber']);
+			}else return null;
+		}
+
+		function updateCustomerInfo(PDO $db){
+			$stmt = $db->prepare('
+				UPDATE User SET UserName = ?, PhoneNumber = ?, email = ?
+				WHERE UserId = ?');
+
+			$stmt->execute(array($this->UserName, $this->PhoneNumber, $this->email ,$this->id));
+		}
+
+		static function registerCustomer(PDO $db, string $name, string $password, string $email, string $address, string $phone) {
+
+			$stmt = $db->prepare('INSERT INTO User (UserName, Password, email, UserAddress, PhoneNumber) VALUES ( ?, ? ,? ,?, ?);
 			');
 
-			$stmt->execute(array($this->type, $this->name, $password, $this->address, $this->phone, $this->email));
-			}
+			$options = [];
 
+			$stmt->execute(array($name, password_hash($password, PASSWORD_DEFAULT, $options), $email, $address, $phone));
+
+			$id = $db->lastInsertId();
+			
+			return $id;
+
+			}
 	}
 ?>
