@@ -28,11 +28,31 @@
 							<option value="Meat">Meat</option>
 							<option value="Fish">Fish</option>
 							<option value="Vegetarian">Vegetarian</option>
-							<option value="Dieet">Diet</option>
+							<option value="Diet">Diet</option>
 							<option value="Dessert">Dessert</option>
 						</select>
 						<input type="file" name="dishImage" required><!--TODO: Style this :^) -->
 						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+					</form>
+				</div>
+			</main>
+		</body>
+	</html>
+<?php } ?>
+
+<?php function drawRestaurantDropDown($restaurants) { ?>
+			<main>
+				<div id="draw">
+					<h2>Pick restaurant's name</h2>
+					<form action="action_addDish.php" method="post" enctype="multipart/form-data">
+						<select type="text" name="name" placeholder="name" required>
+							<?php if( !empty($restaurants)){
+								foreach ($restaurants as $restaurant){ ?>
+									<option value="<?=$restaurant['id']?>">
+										<?=$restaurant['name']?>
+									</option>
+							<?php } } ?>
+						</select>
 					</form>
 				</div>
 			</main>

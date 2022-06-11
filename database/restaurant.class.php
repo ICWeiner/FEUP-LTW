@@ -93,5 +93,20 @@
 			
 			return $id;
 		}
+
+		static function getRestaurantsByOwner(PDO $db, int $id) : array {
+			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant WHERE OwnerId = ?');
+			$stmt->execute(array($id));
+
+			$restaurants = array();
+			
+			while($restaurant = $stmt->fetch()){
+				$restaurants[] = array(
+				'id' => $restaurant['RestaurantId'], 
+				'name' => $restaurant['RestaurantName']);
+			}
+
+			return $restaurants;
+		}
 	}
 ?>
