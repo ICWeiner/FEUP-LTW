@@ -35,6 +35,11 @@
 		drawDishesByCategory($dishes,$category['name']);
 	}
 
+    /*$stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');
+    $stmt->execute(array($id));
+    $row = $stmt->fetch();*/
+
+
     drawReviewSection($reviews,$id);
 
     drawFooter();

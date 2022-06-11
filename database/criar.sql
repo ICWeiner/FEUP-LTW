@@ -15,7 +15,9 @@ CREATE TABLE Restaurant(
     RestaurantAddress VARCHAR(300) NOT NULL,
     OwnerId INTEGER,
     Image,
-    FOREIGN KEY (OwnerId) REFERENCES User(UserId)
+  
+	FOREIGN KEY (OwnerId) REFERENCES User(UserId)
+
 );
 
 CREATE TABLE User(
