@@ -33,7 +33,7 @@ CREATE TABLE Dish(
     DishId INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
     Price FLOAT NOT NULL,
-    Image VARCHAR,
+    Image VARCHAR, --TO DO
     Category TEXT CHECK(Category = 'Meat' OR Category = 'Fish' OR Category = 'Vegetarian' OR Category = 'Diet' OR Category = 'Dessert') NOT NULL,
     RestaurantId INTEGER,
     FOREIGN KEY (RestaurantId) REFERENCES Restaurant(RestaurantId)
