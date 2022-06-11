@@ -43,11 +43,10 @@
 	</html>
 <?php } ?>
 
-<?php function drawCart(array $order,$restaurant,$customerID) { ?>
+<?php function drawCart(array $order,$restaurant) { ?>
 	<main id="cart">
         <h1>Checkout</h1>
         <h2>Restaurant: <?=$restaurant->name?></h2>
-        <p hidden><?=$customerID?></p>  <!--TODO: security encontrar melhor forma de acessar a isso-->
 
         <section class="shipping">
         <h4>Shipping information</h4>

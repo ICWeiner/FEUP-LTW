@@ -1,7 +1,8 @@
 <?php
+    declare(strict_types = 1);
     require_once('database/connection.db.php');
 
-
+    session_start();
 
     $db = getDatabaseConnection();
 
@@ -12,7 +13,7 @@
     $total = $cart["total"];
     $date = $cart["date"];
     $state = $cart["status"];
-    $user = $cart["userId"];
+    $user = $_SESSION['id'];;
 
     $stmt = $db->prepare('INSERT INTO FoodOrder (OrderDate, OrderState, User) VALUES ( ?, ?, ?);
     ');
@@ -29,7 +30,7 @@
         $stmt->execute(array($orderId, $dishId, $quantity));
     }
 
-    session_start();
+    //session_start();
     unset($_SESSION['cart']); 
     //$_SESSION['cart'] = array();
 ?>

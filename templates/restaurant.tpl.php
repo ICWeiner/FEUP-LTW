@@ -61,7 +61,7 @@
 
 			<h2>Add your review</h2>
 			<form action="action_add_review.php" method="post" class="addReview">
-				Comment: <textarea name="comment" rows="5" cols="40" required></textarea>
+				Comment: <textarea name="comment" rows="5" cols="40" ></textarea>
 				<h3>Give your rating:</h3>
 				<div class="stars">
 					<!--"fas fa-star" são preenchidas-->
@@ -72,8 +72,8 @@
 					<i class="far fa-star"></i>
 					<i class="far fa-star"></i>
 				</div>
-				 <input type="number" name="score" hidden>
-				 <input type="number" name="restaurantid" value="<?=$id ?>" >
+				 <input type="number" name="score" hidden required>
+				 <input type="number" name="restaurantid" value="<?=$id ?>" hidden>
 				<button type="submit">Submit review</button>
 			</form>
 		

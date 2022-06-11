@@ -50,7 +50,7 @@ function encodeToJSONHelper(dishId, dishQuantity){
   return dish;
 }
 
-function encodeToJSON(){
+function encodeCartToJSON(){
   const toSend = {}
   const dishArray = []
   dishjsonId = 0 
@@ -77,11 +77,34 @@ function encodeToJSON(){
     const dishTotal = document.querySelector('.orders > p > strong').textContent
     toSend["total"] = dishTotal
     toSend["date"] = dateTime // data em que se fez a compra
-    toSend["userId"] = userId 
     toSend["status"] = "Preparing" 
     const jsonToSend = JSON.stringify(toSend)
 
     return jsonToSend;
+}
+
+function encodeReviewToJSON(){
+  const toSend = {}
+  const dishArray = []
+  dishjsonId = 0 
+
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+' '+time;
+
+  const userId = document.querySelector('#cart p:first-of-type').textContent 
+
+  const reviewDiv = document.querySelectorAll('.orders > div')
+
+  toSend["items"] = dishArray
+  const dishTotal = document.querySelector('.orders > p > strong').textContent
+  toSend["total"] = dishTotal
+  toSend["date"] = dateTime // data em que se fez a compra
+  toSend["status"] = "Preparing" 
+  const jsonToSend = JSON.stringify(toSend)
+
+  return jsonToSend;
 }
 
 function removeElements(){
@@ -103,7 +126,7 @@ function removeElements(){
 function finalizeCart(){
   const btn = document.querySelector('#cart .orders #cartCheckout')
   btn.addEventListener('click', function(e){
-    const jsonToSend = encodeToJSON()
+    const jsonToSend = encodeCartToJSON()
     console.log(jsonToSend)
     const request = new XMLHttpRequest()
     request.open("POST", "testingAjax.php", true)
