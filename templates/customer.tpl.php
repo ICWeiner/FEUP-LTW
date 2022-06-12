@@ -41,7 +41,7 @@
 				
 				<h1>Hello <?=$user->name?> :) </h1>
 				<img src="./images/users/originals/<?=$user->id?>.jpg" alt="user profile pic" width="200" height="200">
-				<form action="action_edit_profile.php" method="post">
+				<form action="actions/action_edit_profile.php" method="post">
 					<h2>Informação de contacto</h2>
 					
 
@@ -68,7 +68,7 @@
 
 <?php function drawEditPassword() { ?>
 				
-				<form action="action_edit_password.php" method="post">
+				<form action="actions/action_edit_password.php" method="post">
 					<h2>Mudar password</h2>
 					
 					<label for="password">Username:</label>

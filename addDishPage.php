@@ -7,10 +7,10 @@
         header('Location: login.php');
     }
 
-    require_once('database/connection.db.php');
-	require_once('templates/common.tpl.php');
-    require_once('templates/addRestaurant.tpl.php');
-    require_once('database/restaurant.class.php');
+    require_once(__DIR__.'/database/connection.db.php');
+	require_once(__DIR__.'/templates/common.tpl.php');
+    require_once(__DIR__.'/templates/addRestaurant.tpl.php');
+    require_once(__DIR__.'/database/restaurant.class.php');
 
 	$db = getDatabaseConnection();
     $restaurantId = $_POST['restaurantId'];
