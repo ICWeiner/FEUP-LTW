@@ -5,7 +5,7 @@
 
 	require_once(__DIR__.'/../database/connection.db.php');
 	require_once(__DIR__.'/../database/restaurant.class.php');
-	require_once(__DIR__.'/imgUpload.php');//where is this?
+	require_once(__DIR__.'/../imgUpload.php');
 
 	$db = getDatabaseConnection();
 
