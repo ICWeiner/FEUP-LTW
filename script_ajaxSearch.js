@@ -57,11 +57,9 @@ if (searchRestaurant) {
   searchRestaurant.addEventListener('input', async function() {
   const restaurantResponse = await fetch('api_restaurants.php?search=' + this.value)
   const restaurants = await restaurantResponse.json()
-  console.log(restaurants)
 
   const dishResponse = await fetch('api_dishes.php?search=' + this.value)
   const dishes = await dishResponse.json()
-  console.log(dishes)
 
   const section = document.querySelector('#mainBody')
   const sectionCategory = document.querySelectorAll('#mainBody > section')
@@ -82,14 +80,8 @@ if (searchRestaurant) {
   const restaurantSection = document.createElement('section')
   restaurantSection.classList.add("restaurants")
 
-  
-
-
   // Para cada restaurant que vem da DB desenha o seu div e adiciona à section
   for (const rest of restaurants) {
-
-    
-
     const restaurantDiv = createRestaurantDiv(rest)
     restaurantSection.appendChild(restaurantDiv)
     restaurantCategory.appendChild(restaurantSection)
@@ -103,9 +95,18 @@ if (searchRestaurant) {
     restaurantCategory.appendChild(restaurantSection)
     section.appendChild(restaurantSection)
   }
+
+  // faz reload à página se a input bbox não tiver nada escrito
+  if (searchRestaurant.value.length == 0){
+    location.reload();
+  }
   
 })
 }
+
+
+
+
 
 
 
