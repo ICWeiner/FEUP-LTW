@@ -55,11 +55,42 @@
 							<?php } } ?>
 						</select>
 						<!--<input type="submit" value="Upload"> onchange='this.form.submit()'-->
-						<button type="submit" hidden>addDish</button>
-						<button type="submit" hidden>dish</button>
+						<button type="submit" hidden>Add Dish</button>
+						<button type="submit" hidden>Edit Dish</button>
 					</form>
 				</div>
 			</main>
 		</body>
 	</html>
+<?php } ?>
+
+<?php function drawRestaurantsEditPage(array $restaurants) { ?>
+		<!-- TODO get restaurant name and put it below this line-->
+		<h2>Your Restaurants</h2>
+		<section class="category">
+			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
+			<section class="dishes">
+				<?php if( !empty($restaurants)){
+					foreach ($restaurants as $restaurant){ ?>
+					<div> 
+						<section class="aspect-ratio-box">
+								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do restaurante">
+						</section>
+						<p><?=$restaurant['name']?></p>
+						
+						<!--<a class="button" href="addDishPage.php?restaurantId=<?=$restaurant['id']?>">Add Dish</a>
+						<a class="button" href="editDishPage.php?restaurantId=<?=$restaurant['id']?>">Edit Dish</a>-->
+
+						<form action="addDishPage.php" method="post">
+							<button type="submit">Edit Dish</button>
+							<input type="number" name="restaurantId" value="<?=$id ?>" hidden>
+						</form>
+						<form action="editDishPage.php" method="post">
+							<button type="submit">Add Dish</button>
+							<input type="number" name="restaurantId" value="<?=$id ?>" hidden>
+						</form>
+					</div>
+				<?php } } ?>
+			</section>
+		</section>
 <?php } ?>

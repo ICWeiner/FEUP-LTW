@@ -13,10 +13,9 @@
     require_once('database/restaurant.class.php');
 
 	$db = getDatabaseConnection();
-
-    $restaurants = Restaurant::getRestaurantsByOwner($db, $_SESSION['id']);
+    $restaurantId = $_POST['restaurantId'];
 
     drawHeader($_SESSION['name']);
-    drawRestaurantsEditPage($restaurants);
+    drawDishRegister($restaurantId);
     drawFooter();
 ?>
