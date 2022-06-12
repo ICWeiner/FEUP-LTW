@@ -60,5 +60,14 @@
 			
 			return $id;
 		  }
+
+        static function getDishByID(PDO $db,int $id){
+            $stmt = $db->prepare('SELECT DishId, Name, Price, RestaurantId FROM Dish WHERE DishId = ?');
+            $stmt->execute(array($id));
+
+            $dish = $stmt->fetch();
+
+            return $dish; 
+        }
     }
 ?>
