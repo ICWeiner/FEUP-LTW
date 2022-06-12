@@ -23,7 +23,7 @@
 					<h2>Register Dish</h2>
 					<form action="action_addDish.php" method="post" enctype="multipart/form-data" class="register" >
 						<input type="text" name="dishName" placeholder="Dish name" required>
-						<input type="number" name="price" placeholder="Price" required>
+						<input type="number" name="price" placeholder="Price" step="0.01" min="0" required>
 						<select type="text" name="category" placeholder="category" required>
 							<option value="Meat">Meat</option>
 							<option value="Fish">Fish</option>

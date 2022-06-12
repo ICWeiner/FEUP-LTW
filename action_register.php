@@ -9,13 +9,14 @@
 
 	$db = getDatabaseConnection();
 
-	if( $_POST['confirmPassword'] == $_POST['password'] ){ //TODO strcmp doesnt work 
+	if( $_POST['confirmPassword'] == $_POST['password'] ){ 
 		$id = Customer::registerCustomer($db, $_POST['username'], $_POST['password'], $_POST['email'], $_POST['address'], $_POST['phone']);
 		if (!is_dir('images')) mkdir('temp');
-		move_uploaded_file($_FILES['userImage']['tmp_name'], __DIR__ . "/temp/user.jpg");//move picture into temporary folder
+		move_uploaded_file($_FILES['userImage']['tmp_name'], __DIR__ . "/temp/users.jpg");//move picture into temporary folder
 		uploadImage($db,"users",$id);
 		header('Location: login.php');
 	}else{
 		header('Location: register.php');
 	}
+
 ?>
