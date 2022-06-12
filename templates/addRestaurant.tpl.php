@@ -78,16 +78,13 @@
 						</section>
 						<p><?=$restaurant['name']?></p>
 						
-						<!--<a class="button" href="addDishPage.php?restaurantId=<?=$restaurant['id']?>">Add Dish</a>
-						<a class="button" href="editDishPage.php?restaurantId=<?=$restaurant['id']?>">Edit Dish</a>-->
-
 						<form action="addDishPage.php" method="post">
 							<button type="submit">Edit Dish</button>
-							<input type="number" name="restaurantId" value="<?=$id ?>" hidden>
+							<input type="number" name="restaurantId" value="<?=$restaurant['id']?>" hidden>
 						</form>
 						<form action="editDishPage.php" method="post">
 							<button type="submit">Add Dish</button>
-							<input type="number" name="restaurantId" value="<?=$id ?>" hidden>
+							<input type="number" name="restaurantId" value="<?=$restaurant['id']?>" hidden>
 						</form>
 					</div>
 				<?php } } ?>

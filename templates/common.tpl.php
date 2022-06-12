@@ -22,17 +22,12 @@
 					<ul class="menu__box">
 						<li><a class="menu__item" href="home.php">Home</a></li>
 						<li><a class="menu__item" href="profile.php">Profile</a></li>
-						<!--<li><a class="menu__item" href="addRestaurantPage.php">Add Restaurant</a></li>-->
-						<li><a class="menu__item" href="restaurantPickerPage.php">Manage Restaurants</a></li>
+						<li><a class="menu__item" href="restaurantPickerPage.php">Your Restaurants</a></li>
 						<li><a class="menu__item" href="action_logout.php">Logout</a></li>
 					</ul>
 				</div>
 				<h1>NEW UNTER EATS</h1>
 				<a href="cart.php">Cart<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
-				<!--<form id="logout" action="action_logout.php" method="post" class="logout">
-					<a href="profile.php"><?=$name?></a>
-					<button type="submit">Logout</button>
-				</form>-->
 
 			</header>
 <?php } ?>
@@ -84,7 +79,6 @@
 		<?php } } ?>
 
         <hr>
-		<!--O total nao esta a ser alterado quando se aumenta as quantidades, talvez com javascrip?-->
         <p>Total price: <strong>0&euro;</strong></p>
 
 		<button id="cartCheckout">Checkout</button>
