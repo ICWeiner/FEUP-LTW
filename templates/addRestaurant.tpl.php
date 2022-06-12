@@ -45,8 +45,8 @@
 			<main>
 				<div id="draw">
 					<h2>Pick restaurant's name</h2>
-					<form action="addDishPage.php" method="post" enctype="multipart/form-data">
-						<select type="text" name="restaurantId" placeholder="name" required>
+					<form action="" method="post" enctype="multipart/form-data">
+						<select id="restaurantSelector" type="text" name="restaurantId" placeholder="name" required>
 							<?php if( !empty($restaurants)){
 								foreach ($restaurants as $restaurant){ ?>
 									<option value="<?=$restaurant['id']?>">
@@ -54,7 +54,9 @@
 									</option>
 							<?php } } ?>
 						</select>
-						<input type="submit" value="Upload">
+						<!--<input type="submit" value="Upload"> onchange='this.form.submit()'-->
+						<button type="submit" hidden>addDish</button>
+						<button type="submit" hidden>dish</button>
 					</form>
 				</div>
 			</main>

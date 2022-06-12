@@ -152,7 +152,6 @@ function stickStarRating(){
   var score = reviewSection.querySelector('form > input')
   console.log(score)
 
-
   // index a começar em 0
   starsDiv.forEach(function(star, clickedIndex){
     star.addEventListener('click', function(e){
@@ -173,6 +172,29 @@ function stickStarRating(){
   })
   
 
+}
+
+function unhidde(){
+  const inputBox = document.querySelector("#restaurantSelector")
+  const form = document.querySelector("#draw > form")
+
+  inputBox.addEventListener('change', function(e){
+    const addDish = document.querySelector("#draw > form button:first-of-type") 
+    const Dish = document.querySelector("#draw > form button:nth-of-type(2)")
+    addDish.style.display = "block"
+    Dish.style.display = "block"
+    
+    addDish.addEventListener('click', function(e){
+      form.action = "addDishPage.php"
+    })
+    Dish.addEventListener('click', function(e){
+      form.action = "editDishPage.php"
+    })
+  })
+}
+
+if(window.location.pathname == "/restaurantPickerPage.php"){
+  unhidde()
 }
 
 // Verifica se está na cart page antes de chamar essas funções: evita erros na consola
