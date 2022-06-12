@@ -41,7 +41,7 @@
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
-						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
+						<a href="actions/action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
@@ -60,7 +60,7 @@
 			<?php }?>
 
 			<h2>Add your review</h2>
-			<form action="action_add_review.php" method="post" class="addReview">
+			<form action="actions/action_add_review.php" method="post" class="addReview">
 				Comment: <textarea name="comment" rows="5" cols="40" ></textarea>
 				<h3>Give your rating:</h3>
 				<div class="stars">

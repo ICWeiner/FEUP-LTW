@@ -4,7 +4,7 @@
 			<main>
 				<div id="">
 					<h2>Register Restaurant</h2>
-					<form action="action_addRestaurant.php" method="post" enctype="multipart/form-data" class="register" >
+					<form action="actions/action_addRestaurant.php" method="post" enctype="multipart/form-data" class="register" >
 						<input type="text" name="restaurantName" placeholder="Restaurant name" required>
 						<input type="text" name="category" placeholder="Category" required>
 						<input type="text" name="address" placeholder="Address" required>
@@ -21,7 +21,7 @@
 			<main>
 				<div id="">
 					<h2>Register Dish</h2>
-					<form action="action_addDish.php" method="post" enctype="multipart/form-data" class="register" >
+					<form action="actions/action_addDish.php" method="post" enctype="multipart/form-data" class="register" >
 						<input type="text" name="dishName" placeholder="Dish name" required>
 						<input type="number" name="price" placeholder="Price" step="0.01" min="0" required>
 						<select type="text" name="category" placeholder="category" required>

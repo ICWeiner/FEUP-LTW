@@ -7,11 +7,11 @@
 		header('Location: login.php');
 	}
 
-    require_once('database/connection.db.php');
-    require_once('database/dish.class.php');
-    require_once('templates/common.tpl.php');
-    require_once('templates/restaurant.tpl.php');
-    require_once('database/review.class.php');
+    require_once(__DIR__.'/database/connection.db.php');
+    require_once(__DIR__.'/database/dish.class.php');
+    require_once(__DIR__.'/templates/common.tpl.php');
+    require_once(__DIR__.'/templates/restaurant.tpl.php');
+    require_once(__DIR__.'/database/review.class.php');
 
 
 
