@@ -1,3 +1,5 @@
+const searchRestaurant = document.querySelector('#searchrestaurant')
+
 // Cria o div com o restaurante quando o custumer procura por um restaurant
 function createRestaurantDiv(rest){
   const restaurantDiv = document.createElement('div')
@@ -51,58 +53,118 @@ function createRestaurantDishDiv(dish){
 
 
 
-
-const searchRestaurant = document.querySelector('#searchrestaurant')
-if (searchRestaurant) {
+function getRestaurantAPI(){
   searchRestaurant.addEventListener('input', async function() {
-  const restaurantResponse = await fetch('api_restaurants.php?search=' + this.value)
-  const restaurants = await restaurantResponse.json()
 
-  const dishResponse = await fetch('api_dishes.php?search=' + this.value)
-  const dishes = await dishResponse.json()
+    const section = document.querySelector('#mainBody')
+    const sectionCategory = document.querySelectorAll('#mainBody > section')
+    const categoryName = document.querySelectorAll('#mainBody > .categoryName')
+    const restaurantCategory = document.createElement('section')
+    restaurantCategory.classList.add("category")
+    const restaurantSection = document.createElement('section')
+    restaurantSection.classList.add("restaurants")
+    // Limpar o body todo quando se começa a pesquisa
 
-  const section = document.querySelector('#mainBody')
-  const sectionCategory = document.querySelectorAll('#mainBody > section')
-  const categoryName = document.querySelectorAll('#mainBody > .categoryName')
+    //============
+    
+    const restaurantResponse = await fetch('api_restaurants.php?search=' + this.value)
+    const restaurants = await restaurantResponse.json()
+    console.log(restaurants)
 
-  // Limpar o body todo quando se começa a pesquisa
-  for (cat of categoryName){
-    cat.innerHTML = ''
-  }
-  for (sect of sectionCategory){
-    sect.innerHTML = ''
-  }
-  //============
+      for (cat of categoryName){
+        cat.innerHTML = ''
+      }
+      for (sect of sectionCategory){
+        sect.innerHTML = ''
+      }
 
-  const restaurantCategory = document.createElement('section')
-  restaurantCategory.classList.add("category")
+    for (const rest of restaurants) {
+      const restaurantDiv = createRestaurantDiv(rest)
+      restaurantSection.appendChild(restaurantDiv)
+      restaurantCategory.appendChild(restaurantSection)
+      section.appendChild(restaurantSection)
+    }
+    if (searchRestaurant.value.length == 0){
+      location.reload();
+    }
 
-  const restaurantSection = document.createElement('section')
-  restaurantSection.classList.add("restaurants")
+  })
 
-  // Para cada restaurant que vem da DB desenha o seu div e adiciona à section
-  for (const rest of restaurants) {
-    const restaurantDiv = createRestaurantDiv(rest)
-    restaurantSection.appendChild(restaurantDiv)
-    restaurantCategory.appendChild(restaurantSection)
-    section.appendChild(restaurantSection)
-  }
-
-
-  for (dish of dishes){
-    const restaurantDishDiv = createRestaurantDishDiv(dish)
-    restaurantSection.appendChild(restaurantDishDiv)
-    restaurantCategory.appendChild(restaurantSection)
-    section.appendChild(restaurantSection)
-  }
-
-  // faz reload à página se a input bbox não tiver nada escrito
-  if (searchRestaurant.value.length == 0){
-    location.reload();
-  }
-  
-})
 }
+
+
+function getDishAPI(){
+  searchRestaurant.addEventListener('input', async function() {
+
+    const section = document.querySelector('#mainBody')
+    const sectionCategory = document.querySelectorAll('#mainBody > section')
+    const categoryName = document.querySelectorAll('#mainBody > .categoryName')
+
+    const restaurantCategory = document.createElement('section')
+    restaurantCategory.classList.add("category")
+  
+    const restaurantSection = document.createElement('section')
+    restaurantSection.classList.add("restaurants")
+
+    // Limpar o body todo quando se começa a pesquisa
+
+    //============
+    const dishResponse = await fetch('api_dishes.php?search=' + this.value)
+    const dishes = await dishResponse.json()
+
+    for (dish of dishes){
+      const restaurantDishDiv = createRestaurantDishDiv(dish)
+      restaurantSection.appendChild(restaurantDishDiv)
+      restaurantCategory.appendChild(restaurantSection)
+      section.appendChild(restaurantSection)
+    }
+
+    for (cat of categoryName){
+      cat.innerHTML = ''
+    }
+    for (sect of sectionCategory){
+      sect.innerHTML = ''
+    }
+
+    if (searchRestaurant.value.length == 0){
+      location.reload();
+    }
+
+  })
+}
+
+/*function getScoreAPI(){
+  
+}*/
+
+function searchLogic(){
+  const selectBox = document.querySelector('[name="searchOptions"]')
+
+  selectBox.addEventListener('change', function(e){
+
+    // Verifica qual é o input selecionado
+    const selectedOption = selectBox.options[selectBox.selectedIndex].text
+
+    if (selectedOption == 'Restaurant name'){
+        console.log('Anete and restaurant')
+        searchRestaurant.disabled = false
+        getRestaurantAPI()
+    }else if(selectedOption == 'Dish name'){
+        searchRestaurant.disabled = false
+        console.log('Anete and dish')
+        getDishAPI()
+    }else if(selectedOption == 'Score'){
+        searchRestaurant.disabled = false
+        console.log('Anete and score')
+    }
+  })
+}
+
+
+searchLogic();
+
+
+
 
 
 
