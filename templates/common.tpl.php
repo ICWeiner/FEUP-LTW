@@ -37,9 +37,12 @@
 				</form>-->
 
 			</header>
+
+		<main id="mainBody">
 <?php } ?>
 
 <?php function drawFooter() { ?>
+	</main>
 		<footer>
 			<p>Copyright &copy; LTW Project, 2022</p>
 		</footer>

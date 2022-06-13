@@ -9,8 +9,8 @@ function createRestaurantDiv(rest){
     insideSection.classList.add("aspect-ratio-box")
 
     const restaurantLink = document.createElement('a')
-    const restaurantImg = document.createElement('img')
-    restaurantImg.src = 'TestImages/bread.jpg'  //-> substituir depois pelo path e imagem correta
+    const restaurantImg = document.createElement('img') 
+    restaurantImg.src = 'images/restaurants/originals/' + rest.id + ".jpg" 
     restaurantImg.style.width = '8.17em'
     restaurantImg.style.height = '7em'
     restaurantLink.href = 'restaurantPage.php?id=' + rest.id 
@@ -36,7 +36,7 @@ function createRestaurantDishDiv(dish){
 
     const restaurantLink = document.createElement('a')
     const restaurantImg = document.createElement('img')
-    restaurantImg.src = 'TestImages/bread.jpg'  //-> substituir depois pelo path e imagem correta
+    restaurantImg.src = 'images/restaurants/originals/' + dish.restaurant + ".jpg"  
     restaurantImg.style.width = '8.17em'
     restaurantImg.style.height = '7em'
     restaurantLink.href = 'restaurantPage.php?id=' + dish.restaurant 

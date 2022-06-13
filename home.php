@@ -16,6 +16,7 @@
 	$db = getDatabaseConnection();
 	$categories = Restaurant::getRestaurantCategories($db);
 
+
 	drawHeader($_SESSION['name']);
 	drawHomeHeader();
 
