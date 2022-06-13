@@ -11,7 +11,7 @@
 					<div class="restaurantBox" > 
 						<section class="aspect-ratio-box">
 							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
-								<img src="TestImages/bread.jpg" alt="foto do prato">
+								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do restaurante">
 							</a>
 						</section>
 						<p><?=$restaurant['name']?></p>
@@ -37,11 +37,11 @@
 					foreach ($dishes as $dish){ ?>
 					<div >
 						<section class="aspect-ratio-box">
-							<img src="TestImages/bread.jpg" alt="foto do prato">
+							<img src="images/dishes/originals/<?=$dish['id']?>.jpg" alt="foto do prato">
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
-						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
+						<a href="actions/action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
@@ -60,7 +60,7 @@
 			<?php }?>
 
 			<h2>Add your review</h2>
-			<form action="action_add_review.php" method="post" class="addReview">
+			<form action="actions/action_add_review.php" method="post" class="addReview">
 				Comment: <textarea name="comment" rows="5" cols="40" ></textarea>
 				<h3>Give your rating:</h3>
 				<div class="stars">
