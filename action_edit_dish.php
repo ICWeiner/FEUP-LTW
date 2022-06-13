@@ -19,5 +19,5 @@
         uploadImage($db,"dishes",$dishId);
     }
 
-    header('Location: editRestaurantPage.php');    
+    header('Location: restaurantPickerPage.php');    
 ?>
