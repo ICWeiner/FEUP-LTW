@@ -66,18 +66,18 @@
         <h2>Your order</h2>
 		<?php if( !empty($order)){
 			foreach ($order as $dish){ ?>
-			<div class="dishBox_<?=$dish['DishId']?>">
-				<p><?=$dish['Name']?></p>
+			<div class="dishBox_<?=$dish->id?>">
+				<p><?=$dish->name?></p>
 				<!--<label>Quantity: </label>-->
 				
 				<div>
-					<button onclick="decrease(<?='qtyBox_'.$dish['DishId']?>, <?=$dish['Price']?>)" >-</button>
-					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish['DishId']?> disabled>
-					<button onclick="increase(<?='qtyBox_'.$dish['DishId']?>, <?=$dish['Price']?>)" >+</button>
+					<button onclick="decrease(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >-</button>
+					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish->id?> disabled>
+					<button onclick="increase(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >+</button>
 				</div>
 
-				<p><?=$dish['Price']?>&euro;</p>
-				<p hidden><?=$dish['DishId']?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
+				<p><?=$dish->price?>&euro;</p>
+				<p hidden><?=$dish->id?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
 				<button>Remove</button>
 			</div>
 		<?php } } ?>

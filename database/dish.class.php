@@ -61,7 +61,7 @@
 		    return $id;
 		}
 
-        static function getDishById(PDO $db, string $id) : Dish {
+        static function getDishById(PDO $db, $id) : Dish {
             $stmt = $db->prepare('SELECT Name, Price, Category, RestaurantId FROM Dish WHERE DishId = ?');
 
             $stmt->execute(array($id));

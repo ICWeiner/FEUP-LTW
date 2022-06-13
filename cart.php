@@ -16,19 +16,18 @@
 	$order = array();
 	$customerID = $_SESSION['id'];
 
+	drawHeader($_SESSION['type']);
+
 	if(isset($_SESSION['cart'])){
 		foreach ($_SESSION['cart'] as $id){
 			$dish = Dish::getDishByID($db,$id);
 			array_push($order, $dish);
 		}
-		$rest = Restaurant::getRestaurant($db,$order[0]['RestaurantId']);
-	}else{//car is empty, do something
-
+		$rest = Restaurant::getRestaurant($db,$order[0]->restaurant);
+		drawCart($order,$rest);
+	}else{//TODO: draw something if cart is empty
+		
 	}
 
-	
-
-	drawHeader($_SESSION['type']);
-	drawCart($order,$rest);
 	drawFooter();
 ?>
