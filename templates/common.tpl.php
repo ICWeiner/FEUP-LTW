@@ -9,7 +9,9 @@
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
 			<script src="https://kit.fontawesome.com/8a6a2935ab.js" crossorigin="anonymous"></script>
-			<script src="../script.js" defer></script>
+			<script src="../script_ajaxSearch.js" defer></script>
+			<script src="../script_cart.js" defer></script>
+			<script src="../script_reviews.js" defer></script>
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
@@ -22,22 +24,19 @@
 					<ul class="menu__box">
 						<li><a class="menu__item" href="home.php">Home</a></li>
 						<li><a class="menu__item" href="profile.php">Profile</a></li>
-						<li <?php if($type != "restaurantOwner") {?> hidden <?php } ?> ><a class="menu__item" href="addRestaurantPage.php"> Add Restaurant</a></li>
-						<li <?php if($type != "restaurantOwner") {?> hidden <?php } ?> ><a class="menu__item" href="restaurantPickerPage.php">Add Dish</a></li>
+						<li <?php if($type != "restaurantOwner") {?> hidden <?php } ?>><a class="menu__item" href="restaurantPickerPage.php">Manage Restaurants</a></li>
 						<li><a class="menu__item" href="actions/action_logout.php">Logout</a></li>
 					</ul>
 				</div>
 				<h1>NEW UNTER EATS</h1>
 				<a href="cart.php">Cart<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
-				<!--<form id="logout" action="action_logout.php" method="post" class="logout">
-					<a href="profile.php"></a>
-					<button type="submit">Logout</button>
-				</form>-->
-
 			</header>
+
+		<main id="mainBody">
 <?php } ?>
 
 <?php function drawFooter() { ?>
+	</main>
 		<footer>
 			<p>Copyright &copy; LTW Project, 2022</p>
 		</footer>
@@ -84,7 +83,6 @@
 		<?php } } ?>
 
         <hr>
-		<!--O total nao esta a ser alterado quando se aumenta as quantidades, talvez com javascrip?-->
         <p>Total price: <strong>0&euro;</strong></p>
 
 		<button id="cartCheckout">Checkout</button>

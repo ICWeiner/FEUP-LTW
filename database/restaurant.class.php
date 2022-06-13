@@ -36,6 +36,23 @@
 			return $restaurants;
 		}
 
+		// O outro get restaurants não funciona não sei porquê
+
+	static function newGetRestaurants(PDO $db) : array {
+		$stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant');
+		$stmt->execute(array());
+
+		$restaurants = [];
+
+		while($restaurant = $stmt->fetch()){
+			$restaurants[] = array(
+			'id' => $restaurant['RestaurantId'],
+			'name' => $restaurant['RestaurantName']);
+		}
+		
+		return $restaurants;
+	}
+
 		static function getRestaurantCategories(PDO $db) : array {
 			$stmt = $db->prepare('SELECT DISTINCT Category  FROM Restaurant LIMIT 10');
 			$stmt->execute(array());
@@ -82,6 +99,23 @@
 			);
 		}
 
+		static function searchRestaurants(PDO $db, string $search) : array {
+			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName, Category FROM Restaurant WHERE RestaurantName LIKE ?');			
+			$stmt->execute(array($search . '%'));
+			
+			$restaurants = [];
+			
+			while($restaurant = $stmt->fetch()){		
+				$restaurants[] = array(
+				'id' => $restaurant['RestaurantId'],
+				'name' => $restaurant['RestaurantName'],
+				'category' => $restaurant['Category']);
+				}
+			
+			return $restaurants;
+		}
+
+		
 		static function registerRestaurant(PDO $db, string $name, string $category, string $address, int $ownerid) {
 
 			$stmt = $db->prepare('INSERT INTO Restaurant (RestaurantName, Category, RestaurantAddress, OwnerId) VALUES ( ?, ? ,?, ?);
@@ -107,6 +141,31 @@
 			}
 
 			return $restaurants;
+		}
+
+		static function getRestaurantById(PDO $db, string $id) : Restaurant {
+            $stmt = $db->prepare('SELECT RestaurantName, Category, RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
+
+            $stmt->execute(array($id));
+
+            if($restaurant = $stmt->fetch())
+            return new Restaurant(
+				$id,
+                $restaurant['RestaurantName'],
+                $restaurant['Category'],
+                $restaurant['RestaurantAddress'],
+				strval($restaurant['OwnerId'])
+            );
+        }
+        
+        static function updateRestaurant(PDO $db, string $name,  string $category, string $address, int $id) {
+
+			$stmt = $db->prepare('UPDATE Restaurant SET RestaurantName = ?, Category = ?, RestaurantAddress = ?  WHERE RestaurantId = ?;
+			');
+
+			$stmt->execute(array($name, $category, $address, $id));
+			
+            return true;
 		}
 	}
 ?>

@@ -16,7 +16,10 @@
 	$db = getDatabaseConnection();
 	$categories = Restaurant::getRestaurantCategories($db);
 
+
 	drawHeader($_SESSION['type']);
+	drawHomeHeader();
+
 
 	foreach ($categories as $category) {
 		$restaurants = Restaurant::getRestaurantsByCategory($db,$category);

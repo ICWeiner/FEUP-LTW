@@ -21,6 +21,7 @@
     $restaurants = Restaurant::getRestaurantsByOwner($db, $_SESSION['id']);
 
     drawHeader($_SESSION['type']);
-    drawRestaurantDropDown($restaurants);
+    drawRestaurantsEdit($restaurants);
+
     drawFooter();
 ?>
