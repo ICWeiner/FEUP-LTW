@@ -64,15 +64,26 @@
         static function getDishById(PDO $db, string $id) : Dish {
             $stmt = $db->prepare('SELECT Name, Price, Category, RestaurantId FROM Dish WHERE DishId = ?');
 
-            $dish = $stmt->execute(array($id));
+            $stmt->execute(array($id));
 
+            if($dish = $stmt->fetch())
             return new Dish(
                 intval($id),
                 $dish['Name'],
-                $dish['Price'],
+                floatval($dish['Price']),
                 $dish['Category'],
-                $dish['RestaurantId']
+                intval($dish['RestaurantId'])
             );
         }
+        
+        static function updateDish(PDO $db, string $name, float $price, string $category, int $id) {
+
+			$stmt = $db->prepare('UPDATE Dish SET Name = ?, Price = ?, Category = ?  WHERE DishId = ?;
+			');
+
+			$stmt->execute(array($name, $price, $category, $id));
+			
+            return true;
+		}
     }
 ?>

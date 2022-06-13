@@ -124,19 +124,19 @@
 			<main>
 				<div id="">
 					<h2>Edit Dish</h2>
-					<form action="action_eidt_dish.php" method="post" enctype="multipart/form-data" class="register" >
-						<input type="text" name="dishName" placeholder="<?=$dish->Name?>" required>
-						<input type="number" name="price" placeholder="<?=$dish->Price?>" required>
-						<select type="text" name="category" placeholder="<?=$dish->Category?>" required>
+					<form action="action_edit_dish.php" method="post" enctype="multipart/form-data" class="register" >
+						<input type="text" name="dishName" placeholder="<?=$dish->name?>" required>
+						<input type="number" name="price" placeholder="<?=$dish->price?>" required>
+						<select type="text" name="category" required><!--TODO: add default category-->
 							<option value="Meat">Meat</option>
 							<option value="Fish">Fish</option>
 							<option value="Vegetarian">Vegetarian</option>
 							<option value="Diet">Diet</option>
 							<option value="Dessert">Dessert</option>
 						</select>
-						<input type="file" name="dishImage" required><!--TODO: Style this :^) -->
+						<input type="file" name="dishImage"><!--TODO: Style this :^) -->
 						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
-						<input type="number" name="restaurantId" value="<?= $restaurantId?>" hidden>
+						<input type="number" name="dishId" value="<?=$dish->id?>" hidden>
 					</form>
 				</div>
 			</main>
