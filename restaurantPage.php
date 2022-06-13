@@ -21,7 +21,7 @@
     $categories = Dish::getDishesCategories($db, $id);
     $reviews = Review::getRestaurantReviews($db, $id); 
 
-	drawHeader($_SESSION['name']);
+	drawHeader($_SESSION['type']);
 
 	//arranjar a query, esta so a retornar 1 restaurante :< TODO why the FUCK is this here????????????????????
 	$stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');

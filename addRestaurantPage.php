@@ -14,7 +14,7 @@
 
 	$db = getDatabaseConnection();
 
-    drawHeader($_SESSION['name']);
+    drawHeader($_SESSION['type']);
     drawRestaurantRegister();
     drawFooter();
 ?>
