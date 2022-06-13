@@ -58,17 +58,33 @@
 
 			$id = $db->lastInsertId();
 			
-			return $id;
-		  }
+		    return $id;
+		}
 
-        static function getDishByID(PDO $db,int $id){
-            $stmt = $db->prepare('SELECT DishId, Name, Price, RestaurantId FROM Dish WHERE DishId = ?');
+        static function getDishById(PDO $db, string $id) : Dish {
+            $stmt = $db->prepare('SELECT Name, Price, Category, RestaurantId FROM Dish WHERE DishId = ?');
+
             $stmt->execute(array($id));
 
-            $dish = $stmt->fetch();
-
-            return $dish; 
+            if($dish = $stmt->fetch())
+            return new Dish(
+                intval($id),
+                $dish['Name'],
+                floatval($dish['Price']),
+                $dish['Category'],
+                intval($dish['RestaurantId'])
+            );
         }
+        
+        static function updateDish(PDO $db, string $name, float $price, string $category, int $id) {
+
+			$stmt = $db->prepare('UPDATE Dish SET Name = ?, Price = ?, Category = ?  WHERE DishId = ?;
+			');
+
+			$stmt->execute(array($name, $price, $category, $id));
+			
+            return true;
+		}
 
         static function searchDishes(PDO $db, string $search) : array {
 			$stmt = $db->prepare('SELECT DishId, Name, Dish.RestaurantId, RestaurantName FROM Dish, Restaurant WHERE Restaurant.RestaurantId = Dish.RestaurantId AND Name LIKE ?');			
@@ -86,6 +102,5 @@
 			
 			return $dishes;
 		}
-
     }
 ?>

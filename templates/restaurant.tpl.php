@@ -2,7 +2,6 @@
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2 class="categoryName"><?=$category?></h2>
 		<section class="category">
-			<!-- TODO get category name and put it below this line-->
 			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
 			<section class="restaurants">
 				<?php if( !empty($restaurants)){
@@ -15,7 +14,6 @@
 							</a>
 						</section>
 						<p><?=$restaurant['name']?></p>
-					</div>
 					</div>
 				<?php } } ?>
 			</section>
