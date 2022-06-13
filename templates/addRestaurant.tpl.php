@@ -124,7 +124,7 @@
 	<main>
 		<div id="">
 			<h2>Edit Dish</h2>
-			<form action="action_edit_dish.php" method="post" enctype="multipart/form-data" class="register" >
+			<form action="actions/action_edit_dish.php" method="post" enctype="multipart/form-data" class="register" >
 				<input type="text" name="dishName" placeholder="<?=$dish->name?>" required>
 				<input type="number" name="price" placeholder="<?=$dish->price?>" required>
 				<select type="text" name="category" required><!--TODO: add default category-->
@@ -159,7 +159,7 @@
 	<main>
 		<div id="">
 			<h2>Edit Restaurant</h2>
-			<form action="action_edit_restaurant.php" method="post" enctype="multipart/form-data" class="register" >
+			<form action="actions/action_edit_restaurant.php" method="post" enctype="multipart/form-data" class="register" >
 				<input type="text" name="restauranthName" placeholder="<?=$restaurant->name?>" required>
 				<input type="text" name="restaurantCategory" placeholder="<?=$restaurant->category?>" required>
 				<input type="text" name="restaurantAddress" placeholder="<?=$restaurant->address?>" required>

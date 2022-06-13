@@ -25,7 +25,7 @@
 						<li><a class="menu__item" href="home.php">Home</a></li>
 						<li><a class="menu__item" href="profile.php">Profile</a></li>
 						<li><a class="menu__item" href="restaurantPickerPage.php">Manage Restaurants</a></li>
-						<li><a class="menu__item" href="action_logout.php">Logout</a></li>
+						<li><a class="menu__item" href="actions/action_logout.php">Logout</a></li>
 					</ul>
 				</div>
 				<h1>NEW UNTER EATS</h1>
