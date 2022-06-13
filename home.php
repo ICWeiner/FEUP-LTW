@@ -17,6 +17,7 @@
 	$categories = Restaurant::getRestaurantCategories($db);
 
 	drawHeader($_SESSION['name']);
+	drawHomeHeader();
 
 	foreach ($categories as $category) {
 		$restaurants = Restaurant::getRestaurantsByCategory($db,$category);

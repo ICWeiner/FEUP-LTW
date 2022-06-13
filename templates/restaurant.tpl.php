@@ -80,3 +80,15 @@
 
 		</section>
 <?php } ?>
+
+<?php function drawHomeHeader(){ ?>
+	<h1>Restaurants</h1>
+	<div>
+		<select name="searchOptions">
+				<option value="" disabled selected>Search restaurant based on</option>
+				<option value="restaurant" >Restaurant name</option>
+				<option value="dish">Dish name</option>
+		</select>
+		<input id="searchrestaurant" type="text" placeholder="search" disabled>
+	</div>
+<?php } ?>
