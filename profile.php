@@ -16,7 +16,7 @@
 
 	$customer = Customer::getCustomer($db, $_SESSION['id']);
 
-	drawHeader($_SESSION['name']);
+	drawHeader($_SESSION['type']);
 	drawProfile($customer);
 	drawFooter();
 ?>

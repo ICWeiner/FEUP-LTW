@@ -55,6 +55,8 @@
 						<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{9}" required>
 						<input type="file" name="userImage" required><!--TODO: Style this :^) -->
 						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+						<label for="isOwner"> I am a restaurant owner</label>
+						<input type="checkbox" name="isOwner" value="restaurantOwner">
 						<a href="login.php">Already have an account? Login here</a>
 					</form>
 				</div>

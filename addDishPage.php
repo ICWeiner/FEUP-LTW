@@ -15,7 +15,7 @@
 	$db = getDatabaseConnection();
     $restaurantId = $_POST['restaurantId'];
 
-    drawHeader($_SESSION['name']);
+    drawHeader($_SESSION['type']);
     drawDishRegister($restaurantId);
     drawFooter();
 ?>

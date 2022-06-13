@@ -13,6 +13,7 @@
 	if ($customer) {
 		$_SESSION['id'] = $customer->id;
 		$_SESSION['name'] = $customer->name;
+		$_SESSION['type'] = $customer->type;
 		header('Location: /../home.php');
 	}else{	//login failed
 		header('Location: /../login.php');

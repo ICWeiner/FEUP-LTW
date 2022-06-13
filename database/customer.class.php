@@ -66,14 +66,14 @@
 			$stmt->execute(array($this->UserName, $this->PhoneNumber, $this->email ,$this->id));
 		}
 
-		static function registerCustomer(PDO $db, string $name, string $password, string $email, string $address, string $phone) {
+		static function registerUser(PDO $db, string $name, string $password, string $email, string $address, string $phone, string $type) {
 
-			$stmt = $db->prepare('INSERT INTO User (UserName, Password, email, UserAddress, PhoneNumber) VALUES ( ?, ? ,? ,?, ?);
+			$stmt = $db->prepare('INSERT INTO User (Type, UserName, Password, email, UserAddress, PhoneNumber) VALUES (?, ?, ?, ?, ?, ?);
 			');
 
 			$options = [];
 
-			$stmt->execute(array($name, password_hash($password, PASSWORD_DEFAULT, $options), $email, $address, $phone));
+			$stmt->execute(array($type, $name, password_hash($password, PASSWORD_DEFAULT, $options), $email, $address, $phone));
 
 			$id = $db->lastInsertId();
 			

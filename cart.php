@@ -28,7 +28,7 @@
 
 	
 
-	drawHeader($_SESSION['name']);
+	drawHeader($_SESSION['type']);
 	drawCart($order,$rest);
 	drawFooter();
 ?>
