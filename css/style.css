@@ -66,7 +66,7 @@ input{
 	border-style: solid;
 }
 
-.category div {
+.category div, .restaurantBox {
 	border-color:#ffcfac ;
 	border-style: solid;
 	border-width: 1px;

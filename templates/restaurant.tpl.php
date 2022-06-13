@@ -1,14 +1,14 @@
 <?php function drawRestaurantsByCategory(array $restaurants,$category) { ?>
 		<!-- TODO get restaurant name and put it below this line-->
-		<h2><?=$category?></h2>
+		<h2 class="categoryName"><?=$category?></h2>
 		<section class="category">
 			<!-- TODO get category name and put it below this line-->
 			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
-			<section class="dishes">
+			<section class="restaurants">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
 					
-					<div> 
+					<div class="restaurantBox" > 
 						<section class="aspect-ratio-box">
 							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
 								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do restaurante">
@@ -79,4 +79,16 @@
 		
 
 		</section>
+<?php } ?>
+
+<?php function drawHomeHeader(){ ?>
+	<h1>Restaurants</h1>
+	<div>
+		<select name="searchOptions">
+				<option value="" disabled selected>Search restaurant based on</option>
+				<option value="restaurant" >Restaurant name</option>
+				<option value="dish">Dish name</option>
+		</select>
+		<input id="searchrestaurant" type="text" placeholder="search" disabled>
+	</div>
 <?php } ?>
