@@ -64,9 +64,10 @@
 	</html>
 <?php } ?>
 
-<?php function drawRestaurantsEditPage(array $restaurants) { ?>
+<?php function drawRestaurantsEdit(array $restaurants) { ?>
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2>Your Restaurants</h2>
+		<a class="button" href="addRestaurantPage.php">Add Restaurant</a>
 		<section class="category">
 			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
 			<section class="dishes">
@@ -78,11 +79,11 @@
 						</section>
 						<p><?=$restaurant['name']?></p>
 						
-						<form action="addDishPage.php" method="post">
-							<button type="submit">Edit Dish</button>
+						<form action="editRestaurantPage.php" method="post">
+							<button type="submit">Edit Restaurant</button>
 							<input type="number" name="restaurantId" value="<?=$restaurant['id']?>" hidden>
 						</form>
-						<form action="editDishPage.php" method="post">
+						<form action="addDishPage.php" method="post">
 							<button type="submit">Add Dish</button>
 							<input type="number" name="restaurantId" value="<?=$restaurant['id']?>" hidden>
 						</form>
@@ -90,4 +91,55 @@
 				<?php } } ?>
 			</section>
 		</section>
+<?php } ?>
+
+<?php function drawSelectedRestaurantEdit(array $dishes, $category) { ?>
+	<main>
+		<!-- TODO get restaurant name and put it below this line-->
+	   <section class="category">
+	   		<!-- TODO get category name and put it below this line-->
+			<h3><?=$category?></h3>
+			<section class="dishes">
+				<?php if( !empty($dishes)){
+					foreach ($dishes as $dish){ ?>
+					<div >
+						<section class="aspect-ratio-box">
+							<img src="images/dishes/originals/<?=$dish['id']?>.jpg" alt="foto do prato">
+						</section>
+						<p><?=$dish['name']?></p>
+						<p><?=$dish['price']?>&euro;</p>
+						<!--<a href="editDishPage.php?id=<?=$dish['id']?>$dishes" class="button">Edit Dish</a>-->
+						<form action="editDishPage.php" method="post">
+							<button type="submit">Edit Dish</button>
+							<input type="number" name="dishId" value="<?=$dish['id']?>" hidden>
+						</form>
+					</div>
+				<?php } } ?>
+			</section>
+		</section>
+	</main>
+<?php } ?>
+
+<?php function drawEditDish(Dish $dish) { ?>
+			<main>
+				<div id="">
+					<h2>Edit Dish</h2>
+					<form action="action_eidt_dish.php" method="post" enctype="multipart/form-data" class="register" >
+						<input type="text" name="dishName" placeholder="<?=$dish->Name?>" required>
+						<input type="number" name="price" placeholder="<?=$dish->Price?>" required>
+						<select type="text" name="category" placeholder="<?=$dish->Category?>" required>
+							<option value="Meat">Meat</option>
+							<option value="Fish">Fish</option>
+							<option value="Vegetarian">Vegetarian</option>
+							<option value="Diet">Diet</option>
+							<option value="Dessert">Dessert</option>
+						</select>
+						<input type="file" name="dishImage" required><!--TODO: Style this :^) -->
+						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+						<input type="number" name="restaurantId" value="<?= $restaurantId?>" hidden>
+					</form>
+				</div>
+			</main>
+		</body>
+	</html>
 <?php } ?>

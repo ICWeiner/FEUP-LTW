@@ -58,7 +58,21 @@
 
 			$id = $db->lastInsertId();
 			
-			return $id;
-		  }
+		    return $id;
+		}
+
+        static function getDishById(PDO $db, string $id) : Dish {
+            $stmt = $db->prepare('SELECT Name, Price, Category, RestaurantId FROM Dish WHERE DishId = ?');
+
+            $dish = $stmt->execute(array($id));
+
+            return new Dish(
+                intval($id),
+                $dish['Name'],
+                $dish['Price'],
+                $dish['Category'],
+                $dish['RestaurantId']
+            );
+        }
     }
 ?>

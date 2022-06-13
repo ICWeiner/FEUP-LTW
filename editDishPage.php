@@ -11,11 +11,13 @@
 	require_once('templates/common.tpl.php');
     require_once('templates/addRestaurant.tpl.php');
     require_once('database/restaurant.class.php');
+    require_once('database/dish.class.php');
 
 	$db = getDatabaseConnection();
-    $restaurantId = $_POST['restaurantId'];
+    $dishId = $_POST['dishId'];
+    $dish = Dish::getDishById($db, $dishId);
 
     drawHeader($_SESSION['name']);
-    drawDishRegister($restaurantId);
+    drawEditDish($dish);
     drawFooter();
 ?>

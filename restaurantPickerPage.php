@@ -17,6 +17,6 @@
     $restaurants = Restaurant::getRestaurantsByOwner($db, $_SESSION['id']);
 
     drawHeader($_SESSION['name']);
-    drawRestaurantsEditPage($restaurants);
+    drawRestaurantsEdit($restaurants);
     drawFooter();
 ?>

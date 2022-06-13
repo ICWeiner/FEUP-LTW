@@ -173,7 +173,7 @@ function stickStarRating(){
   
 
 }
-
+/*
 function unhidde(){
   const inputBox = document.querySelector("#restaurantSelector")
   const form = document.querySelector("#draw > form")
@@ -196,7 +196,7 @@ function unhidde(){
 if(window.location.pathname == "/restaurantPickerPage.php"){
   unhidde()
 }
-
+*/
 // Verifica se está na cart page antes de chamar essas funções: evita erros na consola
 if (window.location.pathname == "/cart.php"){
   updateTotal()
