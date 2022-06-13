@@ -1,30 +1,18 @@
 <?php
     declare(strict_types = 1);
-    /*
-    // Database connection
-    $dbh = new PDO('sqlite:upload.db');
-    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Insert image data into database
-    $stmt = $dbh->prepare("INSERT INTO images VALUES(NULL, ?)");
-    $stmt->execute(array($_POST['title']));
-
-    // Get image ID
-    $id = $dbh->lastInsertId();*/
 
     function uploadImage(PDO $db,string $folder,string $imgName){
         // Create folders if they don't exist
-        if (!is_dir("images")) mkdir("images");
-        if (!is_dir("images/$folder")) mkdir("images/$folder");
-        if (!is_dir("images/$folder/originals")) mkdir("images/$folder/originals");
-        if (!is_dir("images/$folder/thumbs_small")) mkdir("images/$folder/thumbs_small");
-        if (!is_dir("images/$folder/thumbs_medium")) mkdir("images/$folder/thumbs_medium");
+        if (!is_dir(__DIR__ . "/images")) mkdir(__DIR__ . "/images");
+        if (!is_dir(__DIR__ . "/images/$folder")) mkdir(__DIR__ . "/images/$folder");
+        if (!is_dir(__DIR__ . "/images/$folder/originals")) mkdir(__DIR__ . "/images/$folder/originals");
+        if (!is_dir(__DIR__ . "/images/$folder/thumbs_small")) mkdir(__DIR__ . "/images/$folder/thumbs_small");
+        if (!is_dir(__DIR__ . "/images/$folder/thumbs_medium")) mkdir(__DIR__ . "/images/$folder/thumbs_medium");
 
         // Generate filenames for original, small and medium files
-        $originalFileName = "images/$folder/originals/$imgName.jpg";
-        $smallFileName = "images/$folder/thumbs_small/$imgName.jpg";
-        $mediumFileName = "images/$folder/thumbs_medium/$imgName.jpg";
+        $originalFileName = __DIR__ . "/images/$folder/originals/$imgName.jpg";
+        $smallFileName = __DIR__ . "/images/$folder/thumbs_small/$imgName.jpg";
+        $mediumFileName = __DIR__ . "/images/$folder/thumbs_medium/$imgName.jpg";
 
         //this function moves the file from a to b... why is it called rename????
         rename( __DIR__ . "/temp/$folder.jpg", $originalFileName);

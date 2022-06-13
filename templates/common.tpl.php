@@ -9,7 +9,9 @@
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
 			<script src="https://kit.fontawesome.com/8a6a2935ab.js" crossorigin="anonymous"></script>
-			<script src="../script.js" defer></script>
+			<script src="../script_ajaxSearch.js" defer></script>
+			<script src="../script_cart.js" defer></script>
+			<script src="../script_reviews.js" defer></script>
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>
@@ -30,9 +32,12 @@
 				<a href="cart.php">Cart<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
 
 			</header>
+
+		<main id="mainBody">
 <?php } ?>
 
 <?php function drawFooter() { ?>
+	</main>
 		<footer>
 			<p>Copyright &copy; LTW Project, 2022</p>
 		</footer>

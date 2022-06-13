@@ -27,7 +27,7 @@
 				<div id="">
 					<h3>Discover amazing restaurants</h3>
 					<h2>Login</h2>
-					<form action="action_login.php" method="post" class="login">
+					<form action="actions/action_login.php" method="post" class="login">
 						<input type="text" name="email" placeholder="E-Mail" required>
 						<input type="password" name="password" placeholder="Password" required>
 						<button type="submit">Login</button>
@@ -46,7 +46,7 @@
 				<div id="">
 					<h3>Discover amazing restaurants</h3>
 					<h2>Register</h2>
-					<form action="action_register.php" method="post" enctype="multipart/form-data" class="register" >
+					<form action="actions/action_register.php" method="post" enctype="multipart/form-data" class="register" >
 						<input type="text" name="username" placeholder="Username" required>
 						<input type="email" name="email" placeholder="E-Mail" required>
 						<input type="password" name="password" placeholder="Password" required>

@@ -5,8 +5,8 @@
 
 	if (!isset($_SESSION['id'])) die(header('Location: /'));
 
-	require_once('database/connection.db.php');
-	require_once('database/customer.class.php');
+	require_once(__DIR__.'/../database/connection.db.php');
+	require_once(__DIR__.'/../database/customer.class.php');
 
 	$db = getDatabaseConnection();
 
@@ -23,5 +23,5 @@
 		$customer->updateCustomerInfo($db);
 	}
 
-	header('Location: profile.php');
+	header('Location: /../profile.php');
 ?>

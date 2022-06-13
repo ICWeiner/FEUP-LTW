@@ -3,8 +3,8 @@
 
 	session_start();
 
-	require_once('database/connection.db.php');
-	require_once('database/customer.class.php');
+	require_once(__DIR__ .'/../database/connection.db.php');
+	require_once(__DIR__ .'/../database/customer.class.php');
 
 	$db = getDatabaseConnection();
 
@@ -13,9 +13,9 @@
 	if ($customer) {
 		$_SESSION['id'] = $customer->id;
 		$_SESSION['name'] = $customer->name;
-		header('Location: home.php');
+		header('Location: /../home.php');
 	}else{	//login failed
-		header('Location: login.php');
+		header('Location: /../login.php');
 	}
 
 ?>

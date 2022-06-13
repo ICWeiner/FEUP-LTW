@@ -85,5 +85,22 @@
 			
             return true;
 		}
+
+        static function searchDishes(PDO $db, string $search) : array {
+			$stmt = $db->prepare('SELECT DishId, Name, Dish.RestaurantId, RestaurantName FROM Dish, Restaurant WHERE Restaurant.RestaurantId = Dish.RestaurantId AND Name LIKE ?');			
+			$stmt->execute(array($search . '%'));
+			
+			$dishes = [];
+			
+			while($dish = $stmt->fetch()){		
+				$dishes[] = array(
+				'id' => $dish['DishId'],
+				'name' => $dish['Name'],
+				'restaurant' => $dish['RestaurantId'],
+                'restaurantName' => $dish['RestaurantName']);
+				}
+			
+			return $dishes;
+		}
     }
 ?>

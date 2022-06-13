@@ -1,13 +1,13 @@
 <?php function drawRestaurantsByCategory(array $restaurants,$category) { ?>
 		<!-- TODO get restaurant name and put it below this line-->
-		<h2><?=$category?></h2>
+		<h2 class="categoryName"><?=$category?></h2>
 		<section class="category">
 			<!-- TODO Talvez mudar o nome dessa classe para restaurants em vez de dishes-->
-			<section class="dishes">
+			<section class="restaurants">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
 					
-					<div> 
+					<div class="restaurantBox" > 
 						<section class="aspect-ratio-box">
 							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
 								<img src="images/restaurants/originals/<?=$restaurant['id']?>.jpg" alt="foto do restaurante">
@@ -39,7 +39,7 @@
 						</section>
 						<p><?=$dish['name']?></p>
 						<p><?=$dish['price']?>&euro;</p>
-						<a href="action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
+						<a href="actions/action_add_to_cart.php?id=<?=$dish['id']?>$dishes" class="button">Add to cart</a>
 					</div>
 				<?php } } ?>
 			</section>
@@ -58,7 +58,7 @@
 			<?php }?>
 
 			<h2>Add your review</h2>
-			<form action="action_add_review.php" method="post" class="addReview">
+			<form action="actions/action_add_review.php" method="post" class="addReview">
 				Comment: <textarea name="comment" rows="5" cols="40" ></textarea>
 				<h3>Give your rating:</h3>
 				<div class="stars">
@@ -77,4 +77,16 @@
 		
 
 		</section>
+<?php } ?>
+
+<?php function drawHomeHeader(){ ?>
+	<h1>Restaurants</h1>
+	<div>
+		<select name="searchOptions">
+				<option value="" disabled selected>Search restaurant based on</option>
+				<option value="restaurant" >Restaurant name</option>
+				<option value="dish">Dish name</option>
+		</select>
+		<input id="searchrestaurant" type="text" placeholder="search" disabled>
+	</div>
 <?php } ?>
