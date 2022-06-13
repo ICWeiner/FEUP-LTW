@@ -19,5 +19,5 @@
         uploadImage($db,"dishes",$dishId);
     }
 
-    header('Location: restaurantPickerPage.php');    
+    header('Location: restaurantPickerPage.php');//TODO: redirecionar para a pagina do restaurante a editar
 ?>

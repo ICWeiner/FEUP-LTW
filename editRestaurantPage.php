@@ -29,7 +29,7 @@
 	$row = $stmt->fetch();
 
 	drawDishesRestaurantName($row['RestaurantName']);
-	
+	drawRestaurantEditButton($restaurantId);
 
 	foreach($categories as $category){
 		$dishes = Dish::getRestaurantDishesByCategory($db, $category['name'],$restaurantId);

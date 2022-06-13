@@ -108,5 +108,30 @@
 
 			return $restaurants;
 		}
+
+		static function getRestaurantById(PDO $db, string $id) : Restaurant {
+            $stmt = $db->prepare('SELECT RestaurantName, Category, RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
+
+            $stmt->execute(array($id));
+
+            if($restaurant = $stmt->fetch())
+            return new Restaurant(
+				$id,
+                $restaurant['RestaurantName'],
+                $restaurant['Category'],
+                $restaurant['RestaurantAddress'],
+				strval($restaurant['OwnerId'])
+            );
+        }
+        
+        static function updateRestaurant(PDO $db, string $name,  string $category, string $address, int $id) {
+
+			$stmt = $db->prepare('UPDATE Restaurant SET RestaurantName = ?, Category = ?, RestaurantAddress = ?  WHERE RestaurantId = ?;
+			');
+
+			$stmt->execute(array($name, $category, $address, $id));
+			
+            return true;
+		}
 	}
 ?>

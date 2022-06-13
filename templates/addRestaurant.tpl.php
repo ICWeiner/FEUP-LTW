@@ -1,44 +1,40 @@
 <?php declare(strict_types = 1); ?>
 
 <?php function drawRestaurantRegister() { ?>
-			<main>
-				<div id="">
-					<h2>Register Restaurant</h2>
-					<form action="action_addRestaurant.php" method="post" enctype="multipart/form-data" class="register" >
-						<input type="text" name="restaurantName" placeholder="Restaurant name" required>
-						<input type="text" name="category" placeholder="Category" required>
-						<input type="text" name="address" placeholder="Address" required>
-						<input type="file" name="restaurantImage" required><!--TODO: Style this :^) -->
-						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
-					</form>
-				</div>
-			</main>
-		</body>
-	</html>
+	<main>
+		<div id="">
+			<h2>Register Restaurant</h2>
+			<form action="action_addRestaurant.php" method="post" enctype="multipart/form-data" class="register" >
+				<input type="text" name="restaurantName" placeholder="Restaurant name" required>
+				<input type="text" name="category" placeholder="Category" required>
+				<input type="text" name="address" placeholder="Address" required>
+				<input type="file" name="restaurantImage" required><!--TODO: Style this :^) -->
+				<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+			</form>
+		</div>
+	</main>
 <?php } ?>
 
 <?php function drawDishRegister($restaurantId) { ?>
-			<main>
-				<div id="">
-					<h2>Register Dish</h2>
-					<form action="action_addDish.php" method="post" enctype="multipart/form-data" class="register" >
-						<input type="text" name="dishName" placeholder="Dish name" required>
-						<input type="number" name="price" placeholder="Price" required>
-						<select type="text" name="category" placeholder="category" required>
-							<option value="Meat">Meat</option>
-							<option value="Fish">Fish</option>
-							<option value="Vegetarian">Vegetarian</option>
-							<option value="Diet">Diet</option>
-							<option value="Dessert">Dessert</option>
-						</select>
-						<input type="file" name="dishImage" required><!--TODO: Style this :^) -->
-						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
-						<input type="number" name="restaurantId" value="<?= $restaurantId?>" hidden>
-					</form>
-				</div>
-			</main>
-		</body>
-	</html>
+	<main>
+		<div id="">
+			<h2>Register Dish</h2>
+			<form action="action_addDish.php" method="post" enctype="multipart/form-data" class="register" >
+				<input type="text" name="dishName" placeholder="Dish name" required>
+				<input type="number" name="price" placeholder="Price" required>
+				<select type="text" name="category" placeholder="category" required>
+					<option value="Meat">Meat</option>
+					<option value="Fish">Fish</option>
+					<option value="Vegetarian">Vegetarian</option>
+					<option value="Diet">Diet</option>
+					<option value="Dessert">Dessert</option>
+				</select>
+				<input type="file" name="dishImage" required><!--TODO: Style this :^) -->
+				<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+				<input type="number" name="restaurantId" value="<?= $restaurantId?>" hidden>
+			</form>
+		</div>
+	</main>
 <?php } ?>
 
 <?php function drawRestaurantDropDown($restaurants) { ?>
@@ -121,25 +117,52 @@
 <?php } ?>
 
 <?php function drawEditDish(Dish $dish) { ?>
-			<main>
-				<div id="">
-					<h2>Edit Dish</h2>
-					<form action="action_edit_dish.php" method="post" enctype="multipart/form-data" class="register" >
-						<input type="text" name="dishName" placeholder="<?=$dish->name?>" required>
-						<input type="number" name="price" placeholder="<?=$dish->price?>" required>
-						<select type="text" name="category" required><!--TODO: add default category-->
-							<option value="Meat">Meat</option>
-							<option value="Fish">Fish</option>
-							<option value="Vegetarian">Vegetarian</option>
-							<option value="Diet">Diet</option>
-							<option value="Dessert">Dessert</option>
-						</select>
-						<input type="file" name="dishImage"><!--TODO: Style this :^) -->
-						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
-						<input type="number" name="dishId" value="<?=$dish->id?>" hidden>
-					</form>
-				</div>
-			</main>
-		</body>
-	</html>
+	<main>
+		<div id="">
+			<h2>Edit Dish</h2>
+			<form action="action_edit_dish.php" method="post" enctype="multipart/form-data" class="register" >
+				<input type="text" name="dishName" placeholder="<?=$dish->name?>" required>
+				<input type="number" name="price" placeholder="<?=$dish->price?>" required>
+				<select type="text" name="category" required><!--TODO: add default category-->
+					<option value="Meat">Meat</option>
+					<option value="Fish">Fish</option>
+					<option value="Vegetarian">Vegetarian</option>
+					<option value="Diet">Diet</option>
+					<option value="Dessert">Dessert</option>
+				</select>
+				<input type="file" name="dishImage"><!--TODO: Style this :^) -->
+				<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+				<input type="number" name="dishId" value="<?=$dish->id?>" hidden>
+			</form>
+		</div>
+	</main>
+<?php } ?>
+
+<?php function drawRestaurantEditButton($restaurantId) { ?>
+	<main>
+		<section class="dishes">
+			<div> 
+				<form action="editRestaurantName.php" method="post">
+					<button type="submit">Edit Restaurant</button>
+					<input type="number" name="restaurantId" value="<?=$restaurantId?>" hidden>
+				</form>
+			</div>
+		</section>
+	</main>
+<?php } ?>
+
+<?php function drawEditRestaurantName(Restaurant $restaurant) { ?>
+	<main>
+		<div id="">
+			<h2>Edit Restaurant</h2>
+			<form action="action_edit_restaurant.php" method="post" enctype="multipart/form-data" class="register" >
+				<input type="text" name="restauranthName" placeholder="<?=$restaurant->name?>" required>
+				<input type="text" name="restaurantCategory" placeholder="<?=$restaurant->category?>" required>
+				<input type="text" name="restaurantAddress" placeholder="<?=$restaurant->address?>" required>
+				<input type="file" name="restaurantImage"><!--TODO: Style this :^) -->
+				<input type="submit" value="Upload"><!--TODO: AND this :^) -->
+				<input type="number" name="restaurantId" value="<?=$restaurant->id?>" hidden>
+			</form>
+		</div>
+	</main>
 <?php } ?>
