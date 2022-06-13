@@ -95,7 +95,6 @@ function getRestaurantAPI(){
 
 function getDishAPI(){
   searchRestaurant.addEventListener('input', async function() {
-
     const section = document.querySelector('#mainBody')
     const sectionCategory = document.querySelectorAll('#mainBody > section')
     const categoryName = document.querySelectorAll('#mainBody > .categoryName')
@@ -112,13 +111,6 @@ function getDishAPI(){
     const dishResponse = await fetch('api_dishes.php?search=' + this.value)
     const dishes = await dishResponse.json()
 
-    for (dish of dishes){
-      const restaurantDishDiv = createRestaurantDishDiv(dish)
-      restaurantSection.appendChild(restaurantDishDiv)
-      restaurantCategory.appendChild(restaurantSection)
-      section.appendChild(restaurantSection)
-    }
-
     for (cat of categoryName){
       cat.innerHTML = ''
     }
@@ -126,6 +118,12 @@ function getDishAPI(){
       sect.innerHTML = ''
     }
 
+    for (const dish of dishes){
+      const restaurantDishDiv = createRestaurantDishDiv(dish)
+      restaurantSection.appendChild(restaurantDishDiv)
+      restaurantCategory.appendChild(restaurantSection)
+      section.appendChild(restaurantSection)
+    }
     if (searchRestaurant.value.length == 0){
       location.reload();
     }
@@ -133,9 +131,6 @@ function getDishAPI(){
   })
 }
 
-/*function getScoreAPI(){
-  
-}*/
 
 function searchLogic(){
   const selectBox = document.querySelector('[name="searchOptions"]')
@@ -146,17 +141,12 @@ function searchLogic(){
     const selectedOption = selectBox.options[selectBox.selectedIndex].text
 
     if (selectedOption == 'Restaurant name'){
-        console.log('Anete and restaurant')
         searchRestaurant.disabled = false
         getRestaurantAPI()
     }else if(selectedOption == 'Dish name'){
         searchRestaurant.disabled = false
-        console.log('Anete and dish')
         getDishAPI()
-    }else if(selectedOption == 'Score'){
-        searchRestaurant.disabled = false
-        console.log('Anete and score')
-    }
+      }
   })
 }
 
