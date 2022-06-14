@@ -21,10 +21,12 @@
 	drawHeader($_SESSION['type']);
 	drawSearchBar();
 
+	tagOpen();
 	foreach ($categories as $category) {
 		$restaurants = Restaurant::getRestaurantsByCategory($db,$category);
 		drawRestaurantsByCategory($restaurants,$category, $favoriteRestaurants);
 	}
+	tagClose();
 		
-	drawFooter();
+	drawFooterPassword();
 ?>

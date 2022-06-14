@@ -134,7 +134,8 @@ function getDishAPI(){
 
 function searchLogic(){
   const selectBox = document.querySelector('[name="searchOptions"]')
-
+  const footer = document.querySelector('#password_footer')
+  footer.remove()
   selectBox.addEventListener('change', function(e){
 
     // Verifica qual é o input selecionado
