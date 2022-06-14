@@ -36,6 +36,14 @@
 			</header>
 <?php } ?>
 
+<?php function tagOpen() { ?>
+		<main id="mainBody">
+<?php } ?>
+
+<?php function tagClose() { ?>
+		<main>
+<?php } ?>
+
 <?php function drawFooter() { ?>
 		<footer>
 			<p>Copyright &copy; LTW Project, 2022</p>

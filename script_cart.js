@@ -19,8 +19,7 @@ function increase(inputBox, originalPrice){
   
   function updateDishPrice(quantity, originalPrice){
     const currentDiv = quantity.parentElement.parentElement  // <div id="dishBox_7"></div>
-    const currentPrice = currentDiv.querySelector('p:nth-of-type(2)')//<p>7.8€</p>
-    
+    const currentPrice = currentDiv.querySelector('p:nth-child(3)')//<p>7.8€</p>
     const newPrice = (quantity.value * originalPrice).toFixed(2)  // Novo preço de acordo com o preço original e e quantidade inserida
   
     currentPrice.innerHTML = newPrice + "€"
@@ -31,12 +30,12 @@ function increase(inputBox, originalPrice){
   
 
 function updateTotal(){
-    const totalHTML = document.querySelector('.orders > p > strong') //<strong>0</strong>
+    const totalHTML = document.querySelector('.orders > div:last-child > p > strong') //<strong>0</strong>
     newTotal = 0
   
-    const dishes = document.querySelectorAll('.orders > div')
+    const dishes = document.querySelectorAll('.orders > div:not(:last-child)')
     for (const dish of dishes){
-      dishPrice = dish.querySelector('p:nth-of-type(2)').textContent
+      dishPrice = dish.querySelector('p:nth-child(3)').textContent
       newTotal = newTotal + parseFloat(dishPrice)
     }
   
@@ -63,22 +62,18 @@ function updateTotal(){
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
+
   
-    const userId = document.querySelector('#cart p:first-of-type').textContent 
-  
-    const allDishesDiv = document.querySelectorAll('.orders > div')
+    const allDishesDiv = document.querySelectorAll('.orders > div:not(:last-child)')
       for (const dish of allDishesDiv){  //Para cada prato
         dishjsonId += 1  //ids diferentes para cada prato na string json
-        //const dishName = dish.querySelector('p:first-of-type').textContent   //Pizza Margarita
-        //const dishPrice = dish.querySelector('p:nth-of-type(2)').textContent  // 39.00€
-        const dishQuantity = dish.querySelector('div input').value  // 4
-        const dishId = dish.querySelector('p:nth-of-type(3)').textContent  // 4
-        console.log(dishId)
+        const dishQuantity = dish.querySelector('div:nth-child(2) > input').value  // 4
+        const dishId = dish.querySelector('p:nth-child(4)').textContent  // 4
         const jsonDish = encodeToJSONHelper(dishId, dishQuantity)
         dishArray.push(jsonDish)
       }
       toSend["items"] = dishArray
-      const dishTotal = document.querySelector('.orders > p > strong').textContent
+      const dishTotal = document.querySelector('.orders > div:last-child > p > strong').textContent
       toSend["total"] = dishTotal
       toSend["date"] = dateTime // data em que se fez a compra
       toSend["status"] = "Preparing" 
@@ -87,38 +82,11 @@ function updateTotal(){
       return jsonToSend;
   }
 
-
-  
-function encodeReviewToJSON(){
-    const toSend = {}
-    const dishArray = []
-    dishjsonId = 0 
-  
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date+' '+time;
-  
-    const userId = document.querySelector('#cart p:first-of-type').textContent 
-  
-    const reviewDiv = document.querySelectorAll('.orders > div')
-  
-    toSend["items"] = dishArray
-    const dishTotal = document.querySelector('.orders > p > strong').textContent
-    toSend["total"] = dishTotal
-    toSend["date"] = dateTime // data em que se fez a compra
-    toSend["status"] = "Preparing" 
-    const jsonToSend = JSON.stringify(toSend)
-  
-    return jsonToSend;
-  }
   
   function removeElements(){
-    const removeButtons = document.querySelectorAll('#cart .orders > div > button')
+    const removeButtons = document.querySelectorAll('#dish_name_remove button')
     for (btn of removeButtons){
-      console.log(btn)
-      const dishBox = btn.parentElement
-      console.log(dishBox)
+      const dishBox = btn.parentElement.parentElement
       btn.addEventListener('click', function(e){
         dishBox.remove()
         updateTotal()
@@ -126,6 +94,7 @@ function encodeReviewToJSON(){
       })
     }
   }
+  
 
 
   function finalizeCart(){
@@ -146,7 +115,6 @@ function encodeReviewToJSON(){
        }
       }
     })
-  
   }
 
 
