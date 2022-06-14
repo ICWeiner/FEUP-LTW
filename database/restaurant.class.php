@@ -168,5 +168,19 @@
 				strval($restaurant['OwnerId'])
 			);
 		}
-	}
+    
+		static function getFavoriteRestaurantsOfUser(PDO $db, int $userId) : Array{
+			$stmt = $db->prepare('SELECT RestaurantId FROM Favorite WHERE UserId = ?;
+			');
+			$stmt->execute(array($userId));
+
+			$favoriteRestaurants = array();
+
+			while($fav = $stmt->fetch()){
+				$favoriteRestaurants[] = $fav['RestaurantId'];
+			}
+
+            return $favoriteRestaurants;
+		}
+
 ?>

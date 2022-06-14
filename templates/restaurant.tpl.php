@@ -93,3 +93,19 @@
 		<input id="searchrestaurant" type="text" placeholder="search" disabled>
 	</div>
 <?php } ?>
+
+<?php function drawFavorites(array $restaurants) { ?>
+		<section class="restaurants">
+			<?php if( !empty($restaurants)){
+				foreach ($restaurants as $restaurant){ ?>
+				<div class="restaurantBox" > 
+					<section class="aspect-ratio-box">
+						<a href="restaurantPage.php?id=<?=$restaurant->id?>">
+							<img src="images/restaurants/originals/<?=$restaurant->id?>.jpg" alt="foto do restaurante">
+						</a>
+					</section>
+					<p><?=$restaurant->name?></p>
+				</div>
+			<?php } } ?>
+		</section>
+<?php } ?>

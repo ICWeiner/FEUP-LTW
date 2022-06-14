@@ -25,6 +25,7 @@
 					<ul class="menu__box">
 						<li><a class="menu__item" href="home.php">Home</a></li>
 						<li><a class="menu__item" href="profile.php">Profile</a></li>
+						<li><a class="menu__item" href="favorites.php">Favorites</a></li>
 						<li><a class="menu__item" href="orderHistory.php">Order History</a></li>
 						<li <?php if($type != "restaurantOwner") {?> hidden <?php } ?>><a class="menu__item" href="restaurantPickerPage.php">Manage Restaurants</a></li>
 						<li><a class="menu__item" href="actions/action_logout.php">Logout</a></li>
@@ -79,12 +80,7 @@
 					<button>Remove</button>
 				</div>
 				<!--<label>Quantity: </label>-->
-<<<<<<< HEAD
-				
 				<div id="quantity_buttons">
-=======
-				<div>
->>>>>>> main
 					<button onclick="decrease(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >-</button>
 					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish->id?> disabled>
 					<button onclick="increase(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >+</button>
