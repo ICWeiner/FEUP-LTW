@@ -153,3 +153,14 @@ footer{
 .fa-times:hover{
 	color: rgb(65, 65, 65);
 }
+
+.review_box{
+	border: 1px solid #ffcfac;
+	background-color:#dcf5ff;
+}
+
+.score{
+	font-size: 1.5em;
+	color: #ffcfac;
+	text-shadow: 4px 4px 7px black;
+}

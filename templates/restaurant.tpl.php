@@ -51,11 +51,14 @@
 
 
 <?php function drawReviewSection(array $reviews,int $id) { ?>
-	   <section class="review">
-		<?php foreach($reviews as $review) {?>
-			<p><?= $review['text'] ?></p>
-			<p><?= $review['score'] ?></p>
+		<section class="review">
+			<?php foreach($reviews as $review) {?>
+				<div class="review_box">
+					<p><?= $review['text'] ?></p>
+					<p class="score">Score: <?= $review['score'] ?></p>
+				</div>
 			<?php }?>
+			</div>
 			<button>Add your review</button>
 			<div class="popupReview">
 			<form action="actions/action_add_review.php" method="post" class="addReview">

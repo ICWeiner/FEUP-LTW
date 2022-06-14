@@ -337,6 +337,16 @@ hr{
 	font-size: 2em;
 }
 
+.review_box{
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	gap: .2em;
+	margin-top: .2em;
+	margin-bottom: .2em;
+	padding: .2em;
+}
+
 @media only screen and (max-width: 360px) {
 	/*@media only screen and (max-width: 532px*/
 	html{
@@ -499,6 +509,16 @@ hr{
 
 	#checkout_box button{
 		width: 43%;
+	}
+
+	.review_box{
+		display: flex;
+		flex-direction: column;
+		width: 94%;
+		gap: .2em;
+		margin-top: .2em;
+		margin-bottom: .2em;
+		padding: .2em;
 	}
 }
 
