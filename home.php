@@ -28,5 +28,5 @@
 	}
 	tagClose();
 		
-	drawFooterPassword();
+	drawFooter();
 ?>

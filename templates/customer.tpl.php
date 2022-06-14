@@ -77,24 +77,31 @@
 <?php } ?>
 
 <?php function drawOrderHistory(array $orders) { ?>
+	<h2>Your last orders</h2>
+	<section class="dishes">
 		<?php if( !empty($orders)){
 			foreach ($orders as $order){
 				$total = 0 ?>
 				<div class = "orderHistoryItem">
-					<img src="images/restaurants/originals/<?=$order->contents[0]['restaurantId']?>.jpg" alt="foto do restaurante">
-					<h2><?=$order->contents[0]['restaurantName']?></h2>
-					<?php foreach ($order->contents as $dish){ 
-						$total += $dish['quantity'] * $dish['dishPrice']?>
-						<p><?=$dish['quantity']?></p>
-						<p><?=$dish['dishName']?></p>
-					<?php } ?>
-					<a href="restaurantPage.php?id=<?=$order->contents[0]['restaurantId']?>">Ver estabelecimento</a>
-					<form action="rateRestaurant.php" method="post"><!-- TODO: Create this page -->
+					<section class="aspect-ratio-box">
+						<img src="images/restaurants/originals/<?=$order->contents[0]['restaurantId']?>.jpg" alt="foto do restaurante">
+					</section>
+						<h2><?=$order->contents[0]['restaurantName']?></h2>
+						<?php foreach ($order->contents as $dish){ 
+							$total += $dish['quantity'] * $dish['dishPrice']?>
+							<div class="name_and_score">
+								<p><?=$dish['quantity']?></p>
+								<p><?=$dish['dishName']?></p>
+							</div>
+						<?php } ?>
+					<a class="button" href="restaurantPage.php?id=<?=$order->contents[0]['restaurantId']?>">Checkout Restaurant</a>
+					<!--<form action="rateRestaurant.php" method="post"> //TODO: Create this page 
 						<input type="number" value="<?=$order->contents[0]['restaurantId']?>" name="restaurantId" hidden>
-						<input type="submit" value="Classifique este pedido">
-					</form>
+						<input type="submit" value="Add Score">
+					</form>-->
 					<p>Total = <?=$total?></p>
 				</div>
 			<?php } } ?>
+	</section>
 <?php } ?>
 

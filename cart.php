@@ -29,5 +29,5 @@
 		drawFunnyDog();
 	}
 
-	drawFooter();
+	drawFooterPassword();
 ?>

@@ -18,7 +18,7 @@
     $restaurants = array();
 
     foreach($restaurantIds as $restaurantId){
-        $restaurants[] = Restaurant::getRestaurantById($db,$restaurantId);
+        $restaurants[] = Restaurant::getRestaurantById($db, strval($restaurantId));
     }
 	
 
@@ -26,5 +26,5 @@
 
     drawFavorites($restaurants);
 
-	drawFooter();
+	drawFooterPassword();
 ?>

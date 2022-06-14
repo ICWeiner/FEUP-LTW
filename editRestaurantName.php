@@ -15,7 +15,7 @@
 	$db = getDatabaseConnection();
 
     $restaurantId = $_POST['restaurantId'];
-    $restaurant = Restaurant::getRestaurantById($db, $restaurantId);
+    $restaurant = Restaurant::getRestaurantById($db, strval($restaurantId));
 
     drawHeader($_SESSION['name']);
     drawEditRestaurantName($restaurant);

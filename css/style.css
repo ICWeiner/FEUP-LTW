@@ -112,7 +112,7 @@ footer{
 }
 
 .popupReview{
-	position: absolute;
+	position: fixed;
     overflow: hidden;
     display: -moz-box;
     display: -webkit-box;
@@ -168,4 +168,23 @@ footer{
 	font-size: 1.2em;
 	color: #ff9a52;
 	font-weight: bold;
+}
+
+.orderHistoryItem{
+	border-color:#ffcfac ;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	margin: 5px;
+	width: 6em;
+}
+
+.orderHistoryItem .button{
+	height: 3.8em;
+}
+
+.name_and_score{
+	display: flex;
+	flex-direction: row;
+	gap: .7em;
 }
