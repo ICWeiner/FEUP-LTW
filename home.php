@@ -19,7 +19,7 @@
 	$favoriteRestaurants = Customer::getUserFavoriteRestaurants($db, $_SESSION['id']);
 
 	drawHeader($_SESSION['type']);
-	drawHomeHeader();
+	drawSearchBar();
 
 
 	foreach ($categories as $category) {

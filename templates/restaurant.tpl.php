@@ -82,9 +82,9 @@
 		</section>
 <?php } ?>
 
-<?php function drawHomeHeader(){ ?>
+<?php function drawSearchBar() { ?>
 	<h1>Restaurants</h1>
-	<div>
+	<div id="search_bar">
 		<select name="searchOptions">
 				<option value="" disabled selected>Search restaurant based on</option>
 				<option value="restaurant" >Restaurant name</option>

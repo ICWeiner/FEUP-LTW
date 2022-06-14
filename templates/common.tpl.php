@@ -5,7 +5,7 @@
 	<html lang="en">
 		<head>
 			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
 			<script src="https://kit.fontawesome.com/8a6a2935ab.js" crossorigin="anonymous"></script>
@@ -33,13 +33,18 @@
 				<h1>NEW UNTER EATS</h1>
 				<a href="cart.php">Cart<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
 			</header>
-
-		<main id="mainBody">
 <?php } ?>
 
 <?php function drawFooter() { ?>
-	</main>
 		<footer>
+			<p>Copyright &copy; LTW Project, 2022</p>
+		</footer>
+		</body>
+	</html>
+<?php } ?>
+
+<?php function drawFooterPassword() { ?>
+		<footer id="password_footer">
 			<p>Copyright &copy; LTW Project, 2022</p>
 		</footer>
 		</body>
@@ -53,7 +58,7 @@
 
         <section class="shipping">
         <h4>Shipping information</h4>
-        <div>
+        <div id="cart_address">
             <label>Address:
                     <input type="text" name="name" value="<?=$restaurant->address?>" required disabled>
 
@@ -69,23 +74,31 @@
 		<?php if( !empty($order)){
 			foreach ($order as $dish){ ?>
 			<div class="dishBox_<?=$dish->id?>">
-				<p><?=$dish->name?></p>
+				<div id="dish_name_remove">	
+					<p><?=$dish->name?></p>
+					<button>Remove</button>
+				</div>
 				<!--<label>Quantity: </label>-->
+<<<<<<< HEAD
+				
+				<div id="quantity_buttons">
+=======
 				<div>
+>>>>>>> main
 					<button onclick="decrease(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >-</button>
 					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish->id?> disabled>
 					<button onclick="increase(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >+</button>
 				</div>
 				<p><?=$dish->price?>&euro;</p>
 				<p hidden><?=$dish->id?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
-				<button>Remove</button>
 			</div>
 		<?php } } ?>
 
         <hr>
-        <p>Total price: <strong>0&euro;</strong></p>
-
-		<button id="cartCheckout">Checkout</button>
+		<div id="checkout_box">
+			<p>Total price: <strong>0&euro;</strong></p>
+			<button id="cartCheckout">Checkout</button>
+		</div>
         </section>
     </main>
 
