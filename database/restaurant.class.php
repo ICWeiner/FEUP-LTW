@@ -125,9 +125,10 @@
             );
         }
         
-        static function updateRestaurant(PDO $db, string $name,  string $category, string $address, int $id) {
+		static function updateRestaurant(PDO $db, string $name,  string $category, string $address, int $id) {
 
-			$stmt = $db->prepare('SELECT RestaurantName, Category, RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
+			$stmt = $db->prepare('UPDATE Restaurant SET RestaurantName = ?, Category = ?, RestaurantAddress = ?  WHERE RestaurantId = ?;
+			');
 
 			$stmt->execute(array($name, $category, $address, $id));
 			
@@ -153,7 +154,14 @@
 				strval($restaurant['OwnerId'])
 			);
 		}
-    
+
+		static function getRestaurantNameFromRestaurantId(PDO $db, int $restaurantId) {//TODO UNFUCK THIS
+			$stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');
+			$stmt->execute(array($restaurantId));
+			$row = $stmt->fetch();
+
+			return $row;
+
 		static function getFavoriteRestaurantsOfUser(PDO $db, int $userId) : Array{
 			$stmt = $db->prepare('SELECT RestaurantId FROM Favorite WHERE UserId = ?;
 			');

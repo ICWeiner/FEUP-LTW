@@ -18,15 +18,21 @@
         }
 
         static function getRestaurantReviews(PDO $db, int $id) : array {
-            $stmt = $db->prepare('SELECT ReviewText, ReviewScore FROM Review WHERE RestaurantId = ?');
+            $stmt = $db->prepare('SELECT ReviewText, ReviewScore, User FROM Review WHERE RestaurantId = ?');
             $stmt->execute(array($id));
 
             $reviews = array();
 
             while ($review = $stmt->fetch()) {
+                $name = $db->prepare('SELECT UserName FROM User WHERE UserId = ?');
+                $name->execute(array($review['User']));
+
+                $temp = $name->fetch();
+
                 $reviews[] = array(
                     'text' => $review['ReviewText'],
-                    'score' =>  $review['ReviewScore']
+                    'score' =>  $review['ReviewScore'],
+                    'user' => $temp['UserName']
                 );
             }
             return $reviews;

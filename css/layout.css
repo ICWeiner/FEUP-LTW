@@ -332,6 +332,21 @@ hr{
 	margin-top: -5em;
 }
 
+#empty_cart h3{
+	margin-top: -5em;
+	font-size: 2em;
+}
+
+.review_box{
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	gap: .2em;
+	margin-top: .2em;
+	margin-bottom: .2em;
+	padding: .2em;
+}
+
 @media only screen and (max-width: 360px) {
 	/*@media only screen and (max-width: 532px*/
 	html{
@@ -495,6 +510,16 @@ hr{
 	#checkout_box button{
 		width: 43%;
 	}
+
+	.review_box{
+		display: flex;
+		flex-direction: column;
+		width: 91%;
+		gap: .2em;
+		margin-top: .3em;
+		margin-bottom: 1em;
+		padding: .5em;
+	}
 }
 
 #menu__toggle {
@@ -548,7 +573,7 @@ hr{
 	position: fixed;
 	top: 0;
 	left: -100%;
-	width: 350px;
+	width: 360px;
 	height: 100%;
 	margin: 0;
 	padding: 80px 0;

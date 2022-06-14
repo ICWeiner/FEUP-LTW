@@ -26,9 +26,7 @@
 
 <?php function drawDishesByCategory(array $dishes, $category) { ?>
 	<main>
-		<!-- TODO get restaurant name and put it below this line-->
 	   <section class="category">
-	   		<!-- TODO get category name and put it below this line-->
 			<h3><?=$category?></h3>
 			<section class="dishes">
 				<?php if( !empty($dishes)){
@@ -45,17 +43,20 @@
 			</section>
 		</section>
 	</main>
-
 <?php } ?>
 
 
 
 <?php function drawReviewSection(array $reviews,int $id) { ?>
-	   <section class="review">
-		<?php foreach($reviews as $review) {?>
-			<p><?= $review['text'] ?></p>
-			<p><?= $review['score'] ?></p>
+		<section class="review">
+			<?php foreach($reviews as $review) {?>
+				<div class="review_box">
+					<p class="user_name"><?=$review['user']?>-</p>
+					<p><?= $review['text'] ?></p>
+					<p class="score">Score: <?= $review['score'] ?></p>
+				</div>
 			<?php }?>
+			</div>
 			<button>Add your review</button>
 			<div class="popupReview">
 			<form action="actions/action_add_review.php" method="post" class="addReview">

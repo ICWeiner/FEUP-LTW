@@ -12,6 +12,7 @@
     require_once(__DIR__.'/templates/common.tpl.php');
     require_once(__DIR__.'/templates/restaurant.tpl.php');
     require_once(__DIR__.'/database/review.class.php');
+	require_once(__DIR__.'/database/restaurant.class.php');
 
 
 
@@ -23,12 +24,10 @@
 
 	drawHeader($_SESSION['type']);
 
-	//arranjar a query, esta so a retornar 1 restaurante :< TODO why the FUCK is this here????????????????????
-	$stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');
-	$stmt->execute(array($id));
-	$row = $stmt->fetch();
 
-	drawDishesRestaurantName($row['RestaurantName']);
+	$restaurantName = Restaurant::getRestaurantNameFromRestaurantId($db, $id);
+
+	drawDishesRestaurantName($restaurantName['RestaurantName']);
 	
 	foreach($categories as $category){
 		$dishes = Dish::getRestaurantDishesByCategory($db, $category['name'],$id);

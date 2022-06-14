@@ -15,5 +15,5 @@
     move_uploaded_file($_FILES['dishImage']['tmp_name'], __DIR__ . "/../temp/dishes.jpg");//move picture into temporary folder
     uploadImage($db,"dishes",$id);
 
-    header('Location: /../home.php');    
+    header('Location: /../restaurantPickerPage.php');    
 ?>
