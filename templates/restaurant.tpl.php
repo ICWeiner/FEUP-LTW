@@ -56,9 +56,11 @@
 			<p><?= $review['text'] ?></p>
 			<p><?= $review['score'] ?></p>
 			<?php }?>
-
-			<h2>Add your review</h2>
+			<button>Add your review</button>
+			<div class="popupReview">
 			<form action="actions/action_add_review.php" method="post" class="addReview">
+			<i class="fa fa-times" aria-hidden="true"></i>
+				<h2>Add your review</h2>
 				Comment: <textarea name="comment" rows="5" cols="40" ></textarea>
 				<h3>Give your rating:</h3>
 				<div class="stars">
@@ -74,14 +76,15 @@
 				 <input type="number" name="restaurantid" value="<?=$id ?>" hidden>
 				<button type="submit">Submit review</button>
 			</form>
+		</div>
 		
 
 		</section>
 <?php } ?>
 
-<?php function drawHomeHeader(){ ?>
+<?php function drawSearchBar() { ?>
 	<h1>Restaurants</h1>
-	<div>
+	<div id="search_bar">
 		<select name="searchOptions">
 				<option value="" disabled selected>Search restaurant based on</option>
 				<option value="restaurant" >Restaurant name</option>

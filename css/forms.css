@@ -2,6 +2,7 @@
 
 
 body{
+    font-family: "Poppins", sans-serif;
     background-color: #9BDAF4;
 }
 
@@ -80,10 +81,49 @@ body > main form *{
     margin-left: 3em;
 }
 
+body > main form label{
+    margin-left: 40px;
+}
 
+label{
+    display: inline-block;
+    font-family: sans-serif;
+    cursor: pointer;
 
+    background-color: #FFFFFF;
+    border: 1px solid #CD5E0E;
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 7em;
+    margin-top: 1em;
+    margin-left: 401em;
+    color: #808080;
+    left: 50%;
+  }
 
-/* ====================== Layout =====================*/
+  #ownership{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    margin-left: 0px;
+  }
+
+  #ownership p{
+    color: #FFFFFF;
+    text-shadow: 4px 4px 7px black;
+  }
+
+  body > main form input[type=checkbox]{
+    width: 60px;
+    height: 2.5em;
+    border-radius: 10px;
+    border: 1px solid #CD5E0E;
+    outline: none;
+  }
+
+  /* ====================== Layout =====================*/
 
 /*grid, separates the header area from the rest*/
 html{
@@ -131,6 +171,18 @@ main form{
     min-width: 0;
 }
 
-@media only screen and (max-width: 532px) {
-    
+@media only screen and (max-width: 360px) {
+    img{
+       display: none;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    body header h1{
+        padding: 0;
+    }
 }

@@ -18,5 +18,5 @@
 
 	drawHeader($_SESSION['type']);
 	drawEditPassword();
-	drawFooter();
+	drawFooterPassword();
 ?>

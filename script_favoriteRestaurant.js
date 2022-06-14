@@ -27,5 +27,8 @@ function addFavorite(){
     })
 }
 
+
+if (window.location.pathname == "/home.php"){
+    addFavorite()
+}
     
-addFavorite()
