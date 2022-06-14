@@ -23,7 +23,7 @@
 			$dish = Dish::getDishByID($db,$id);
 			array_push($order, $dish);
 		}
-		$rest = Restaurant::getRestaurant($db,$order[0]->restaurant);
+		$rest = Restaurant::getRestaurantById($db,strval($order[0]->restaurant));
 		drawCart($order,$rest);
 	}else{
 		drawFunnyDog();
