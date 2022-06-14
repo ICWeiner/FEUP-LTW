@@ -53,10 +53,17 @@
 						<input type="password" name="confirmPassword" placeholder="Confirm password" required>
 						<input type="text" name="address" placeholder="Address" required>
 						<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{9}" required>
-						<input type="file" name="userImage" required><!--TODO: Style this :^) -->
-						<input type="submit" value="Upload"><!--TODO: AND this :^) -->
-						<label for="isOwner"> I am a restaurant owner</label>
-						<input type="checkbox" name="isOwner" value="restaurantOwner">
+						
+
+						<input type="file" id="userImage" requires hidden/><!--TODO: Style this :^) -->
+						<label for="userImage">Choose picture</label>
+
+						<div id="ownership">
+							<p> I am a restaurant owner</p>
+							<input type="checkbox" name="isOwner" value="restaurantOwner">
+						</div>
+
+						<button type="submit">Register</button><!--TODO: AND this :^) -->
 						<a href="login.php">Already have an account? Login here</a>
 					</form>
 				</div>
