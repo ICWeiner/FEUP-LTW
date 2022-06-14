@@ -25,8 +25,8 @@
 		}
 		$rest = Restaurant::getRestaurant($db,$order[0]->restaurant);
 		drawCart($order,$rest);
-	}else{//TODO: draw something if cart is empty
-		
+	}else{
+		drawFunnyDog();
 	}
 
 	drawFooter();

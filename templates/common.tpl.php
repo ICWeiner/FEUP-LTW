@@ -99,3 +99,12 @@
     </main>
 
 <?php } ?> 
+
+<?php function drawFunnyDog() { ?>
+	<main id="empty_cart">
+		<h3>Cart Empty :^(</h3>
+		<picture>
+		<img src="images/miscellaneous/funnydog.jpeg">
+		</picture>
+	</main>
+<?php } ?>
