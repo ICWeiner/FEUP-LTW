@@ -29,5 +29,5 @@
 		
 	}
 
-	drawFooter();
+	drawFooterPassword();
 ?>

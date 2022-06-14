@@ -31,13 +31,18 @@
 				<h1>NEW UNTER EATS</h1>
 				<a href="cart.php">Cart<img src="./TestImages/cartIcon.png" alt="cart icon"></a>
 			</header>
-
-		<main id="mainBody">
 <?php } ?>
 
 <?php function drawFooter() { ?>
-	</main>
 		<footer>
+			<p>Copyright &copy; LTW Project, 2022</p>
+		</footer>
+		</body>
+	</html>
+<?php } ?>
+
+<?php function drawFooterPassword() { ?>
+		<footer id="password_footer">
 			<p>Copyright &copy; LTW Project, 2022</p>
 		</footer>
 		</body>
@@ -51,7 +56,7 @@
 
         <section class="shipping">
         <h4>Shipping information</h4>
-        <div>
+        <div id="cart_address">
             <label>Address:
                     <input type="text" name="name" value="<?=$restaurant->address?>" required disabled>
 
@@ -67,10 +72,13 @@
 		<?php if( !empty($order)){
 			foreach ($order as $dish){ ?>
 			<div class="dishBox_<?=$dish->id?>">
-				<p><?=$dish->name?></p>
+				<div id="dish_name_remove">	
+					<p><?=$dish->name?></p>
+					<button>Remove</button>
+				</div>
 				<!--<label>Quantity: </label>-->
 				
-				<div>
+				<div id="quantity_buttons">
 					<button onclick="decrease(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >-</button>
 					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish->id?> disabled>
 					<button onclick="increase(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >+</button>
@@ -78,7 +86,6 @@
 
 				<p><?=$dish->price?>&euro;</p>
 				<p hidden><?=$dish->id?></p>  <!--TODO: security encontrar melhor forma de acessar a isso--> 
-				<button>Remove</button>
 			</div>
 		<?php } } ?>
 

@@ -18,7 +18,7 @@
 
 
 	drawHeader($_SESSION['type']);
-	drawHomeHeader();
+	drawSearchBar();
 
 
 	foreach ($categories as $category) {
