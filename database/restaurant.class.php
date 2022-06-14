@@ -65,21 +65,6 @@
 			return $restaurants;
 		}
 
-		static function getRestaurant(PDO $db, $id) : Restaurant {//TODO: swap this with getRestaurantById
-			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName,Category,RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
-			$stmt->execute(array($id));
-
-			$restaurant = $stmt->fetch();
-
-			return new Restaurant(
-				strval($id),
-				$restaurant['RestaurantName'],
-				$restaurant['Category'],
-				$restaurant['RestaurantAddress'],
-				strval($restaurant['OwnerId'])
-			);
-		}
-
 		static function searchRestaurants(PDO $db, string $search) : array {
 			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName, Category FROM Restaurant WHERE RestaurantName LIKE ?');			
 			$stmt->execute(array($search . '%'));

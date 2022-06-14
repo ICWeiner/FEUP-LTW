@@ -20,6 +20,7 @@
     foreach($restaurantIds as $restaurantId){
         $restaurants[] = Restaurant::getRestaurantById($db,$restaurantId);
     }
+	
 
 	drawHeader($_SESSION['type']);
 
