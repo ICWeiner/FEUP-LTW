@@ -16,11 +16,10 @@
 
 	$db = getDatabaseConnection();
 	$categories = Restaurant::getRestaurantCategories($db);
-	$favoriteRestaurants = Customer::getUserFavoriteRestaurants($db, $_SESSION['id']);
+	$favoriteRestaurants = Restaurant::getFavoriteRestaurantsOfUser($db, $_SESSION['id']);
 
 	drawHeader($_SESSION['type']);
 	drawSearchBar();
-
 
 	foreach ($categories as $category) {
 		$restaurants = Restaurant::getRestaurantsByCategory($db,$category);

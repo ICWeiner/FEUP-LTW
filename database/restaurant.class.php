@@ -170,12 +170,26 @@
 			);
 		}
 
-		static function getRestaurantNameFromRestaurantId(PDO $db, int $restaurantId) {
+		static function getRestaurantNameFromRestaurantId(PDO $db, int $restaurantId) {//TODO UNFUCK THIS
 			$stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');
 			$stmt->execute(array($restaurantId));
 			$row = $stmt->fetch();
 
 			return $row;
+
+		static function getFavoriteRestaurantsOfUser(PDO $db, int $userId) : Array{
+			$stmt = $db->prepare('SELECT RestaurantId FROM Favorite WHERE UserId = ?;
+			');
+			$stmt->execute(array($userId));
+
+			$favoriteRestaurants = array();
+
+			while($fav = $stmt->fetch()){
+				$favoriteRestaurants[] = $fav['RestaurantId'];
+			}
+
+            return $favoriteRestaurants;
 		}
 	}
+
 ?>
