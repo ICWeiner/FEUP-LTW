@@ -9,7 +9,6 @@
 		public string $ownerid;
 
 		public function __construct(string $id, string $name, string $category,string $address, string $ownerid){
-
 			$this->id = $id;
 			$this->name = $name;
 			$this->category = $category;
@@ -36,22 +35,6 @@
 			return $restaurants;
 		}
 
-		// O outro get restaurants não funciona não sei porquê
-
-	static function newGetRestaurants(PDO $db) : array {
-		$stmt = $db->prepare('SELECT RestaurantId, RestaurantName FROM Restaurant');
-		$stmt->execute(array());
-
-		$restaurants = [];
-
-		while($restaurant = $stmt->fetch()){
-			$restaurants[] = array(
-			'id' => $restaurant['RestaurantId'],
-			'name' => $restaurant['RestaurantName']);
-		}
-		
-		return $restaurants;
-	}
 
 		static function getRestaurantCategories(PDO $db) : array {
 			$stmt = $db->prepare('SELECT DISTINCT Category  FROM Restaurant LIMIT 10');
@@ -82,16 +65,14 @@
 			return $restaurants;
 		}
 
-
-
-		static function getRestaurant(PDO $db, $id) : Restaurant {
+		static function getRestaurant(PDO $db, $id) : Restaurant {//TODO: swap this with getRestaurantById
 			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName,Category,RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
 			$stmt->execute(array($id));
 
 			$restaurant = $stmt->fetch();
 
 			return new Restaurant(
-				strval($restaurant['RestaurantId']),
+				$id,
 				$restaurant['RestaurantName'],
 				$restaurant['Category'],
 				$restaurant['RestaurantAddress'],
@@ -142,6 +123,7 @@
 
 			return $restaurants;
 		}
+		
 
 		static function getRestaurantById(PDO $db, string $id) : Restaurant {
             $stmt = $db->prepare('SELECT RestaurantName, Category, RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
@@ -160,12 +142,31 @@
         
         static function updateRestaurant(PDO $db, string $name,  string $category, string $address, int $id) {
 
-			$stmt = $db->prepare('UPDATE Restaurant SET RestaurantName = ?, Category = ?, RestaurantAddress = ?  WHERE RestaurantId = ?;
-			');
+			$stmt = $db->prepare('SELECT RestaurantName, Category, RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
 
 			$stmt->execute(array($name, $category, $address, $id));
 			
             return true;
+		}
+
+		static function getRestaurantByDishId(PDO $db, int $dishId) : Restaurant{
+			$stmt = $db->prepare('SELECT RestaurantId FROM Dish WHERE DishId = ?');
+			$stmt->execute(array($dishId));
+
+			$restaurantId = $stmt->fetch();
+
+			$stmt = $db->prepare('SELECT RestaurantId, RestaurantName,Category,RestaurantAddress, OwnerId FROM Restaurant WHERE RestaurantId = ?');
+			$stmt->execute(array($restaurantId['RestaurantId']));
+
+			$restaurant = $stmt->fetch();
+
+			return new Restaurant(
+				strval($restaurant['RestaurantId']),
+				$restaurant['RestaurantName'],
+				$restaurant['Category'],
+				$restaurant['RestaurantAddress'],
+				strval($restaurant['OwnerId'])
+			);
 		}
 	}
 ?>

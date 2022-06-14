@@ -63,24 +63,43 @@
   					<!--Concluir ediçao -->
 				</form>
 			</main>
-
 <?php } ?>
 
-<?php function drawEditPassword() { ?>
-				
-				<form action="actions/action_edit_password.php" method="post">
-					<h2>Mudar password</h2>
-					
-					<label for="password">Username:</label>
-  					<input type="password" name="password">
+<?php function drawEditPassword() { ?>	
+		<form action="actions/action_edit_password.php" method="post">
+			<h2>Mudar password</h2>
+			
+			<label for="password">Username:</label>
+			<input type="password" name="password" required>
 
-					<label for="confirmPassword">Username:</label>
-  					<input type="password" name="confirmPassword">
+			<label for="confirmPassword">Username:</label>
+			<input type="password" name="confirmPassword" required>
 
-  					<button type="submit">Concluir</button>
+			<button type="submit">Concluir</button>
 
-  					<!--Concluir ediçao -->
-				</form>
-			</main>
+			<!--Concluir ediçao -->
+		</form>
+	</main>
+<?php } ?>
 
+<?php function drawOrderHistory(array $orders) { ?>
+		<?php if( !empty($orders)){
+			foreach ($orders as $order){
+				$total = 0 ?>
+				<div class = "orderHistoryItem">
+					<img src="images/restaurants/originals/<?=$order->contents[0]['restaurantId']?>.jpg" alt="foto do restaurante">
+					<h2><?=$order->contents[0]['restaurantName']?></h2>
+					<?php foreach ($order->contents as $dish){ 
+						$total += $dish['quantity'] * $dish['dishPrice']?>
+						<p><?=$dish['quantity']?></p>
+						<p><?=$dish['dishName']?></p>
+					<?php } ?>
+					<a href="restaurantPage.php?id=<?=$order->contents[0]['restaurantId']?>">Ver estabelecimento</a>
+					<form action="rateRestaurant.php" method="post"><!-- TODO: Create this page -->
+						<input type="number" value="<?=$order->contents[0]['restaurantId']?>" name="restaurantId" hidden>
+						<input type="submit" value="Classifique este pedido">
+					</form>
+					<p>Total = <?=$total?></p>
+				</div>
+			<?php } } ?>
 <?php } ?>
