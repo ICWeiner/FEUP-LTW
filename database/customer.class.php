@@ -87,6 +87,20 @@
 
 			$stmt->execute(array(password_hash($password, PASSWORD_DEFAULT, $options), $this->id));
 		}
+
+		function getUserFavoriteRestaurants(PDO $db, int $user){
+			$stmt = $db->prepare('SELECT RestaurantId FROM Favorite WHERE UserId = ?;
+			');
+			$stmt->execute(array($user));
+
+			$favoriteRestaurant = array();
+
+			while($fav = $stmt->fetch()){
+				$favoriteRestaurant[] = $fav['RestaurantId'];
+			}
+			
+            return $favoriteRestaurant;
+		}
 	}
 
 ?>
