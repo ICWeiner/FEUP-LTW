@@ -17,5 +17,5 @@
 
     drawHeader($_SESSION['type']);
     drawDishRegister($restaurantId);
-    drawFooter();
+    drawFooterPassword();
 ?>

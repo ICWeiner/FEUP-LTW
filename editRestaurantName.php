@@ -19,5 +19,5 @@
 
     drawHeader($_SESSION['name']);
     drawEditRestaurantName($restaurant);
-    drawFooter();
+    drawFooterPassword();
 ?>

@@ -18,7 +18,7 @@
 		</div>
 		<div>
 			<h2>Default address</h2>
-			<label for="first_name">First Name:</label>
+			<label for="first_name">Address</Address></Address>:</label>
 			<input id="first_name" type="text" name="first_name" value="<?=$user->address?>">
 
 			<a href="profile_edit.php" class="button">Editar</a>

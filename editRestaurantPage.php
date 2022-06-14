@@ -36,5 +36,5 @@
 		drawSelectedRestaurantEdit($dishes,$category['name']);
 	}
 
-    drawFooter();
+    drawFooterPassword();
 ?>

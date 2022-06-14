@@ -5,7 +5,7 @@
 	<html lang="en">
 		<head>
 			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 			<link href="css/style.css" rel="stylesheet">
 			<link href="css/layout.css" rel="stylesheet">
 			<script src="https://kit.fontawesome.com/8a6a2935ab.js" crossorigin="anonymous"></script>
@@ -90,9 +90,10 @@
 		<?php } } ?>
 
         <hr>
-        <p>Total price: <strong>0&euro;</strong></p>
-
-		<button id="cartCheckout">Checkout</button>
+		<div id="checkout_box">
+			<p>Total price: <strong>0&euro;</strong></p>
+			<button id="cartCheckout">Checkout</button>
+		</div>
         </section>
     </main>
 

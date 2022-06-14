@@ -20,5 +20,5 @@
 
     drawHeader($_SESSION['name']);
     drawEditDish($dish);
-    drawFooter();
+    drawFooterPassword();
 ?>
