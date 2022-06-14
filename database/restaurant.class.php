@@ -72,7 +72,7 @@
 			$restaurant = $stmt->fetch();
 
 			return new Restaurant(
-				$id,
+				strval($id),
 				$restaurant['RestaurantName'],
 				$restaurant['Category'],
 				$restaurant['RestaurantAddress'],
