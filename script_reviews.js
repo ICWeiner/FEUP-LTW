@@ -26,7 +26,29 @@ function stickStarRating(){
   }
 
 
-  
+function reviewScreen(){
+  const screen = document.querySelector(".popupReview")
+  const closeBtn = document.querySelector(".review i")
+  const openBtn = document.querySelector(".review > button")
+  console.log("openBtn")
+  console.log("closeBtn")
+ 
+  openBtn.addEventListener("click", function(){
+    setTimeout(() =>{
+      screen.classList.add("activeReview")
+    }, 2)
+  })
+
+  closeBtn.addEventListener("click", function(){  
+      screen.classList.remove("activeReview")  // fecha a review
+  })
+
+}
+
+
+
+
 if (window.location.pathname == "/restaurantPage.php"){
     stickStarRating()
+    reviewScreen()
   }
