@@ -151,4 +151,6 @@ function searchLogic(){
 }
 
 
-searchLogic();
+if (window.location.pathname == "/home.php"){
+  searchLogic();
+}
