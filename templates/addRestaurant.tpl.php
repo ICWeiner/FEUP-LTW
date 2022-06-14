@@ -144,7 +144,7 @@
 			<h2>Edit Restaurant</h2>
 			<form action="actions/action_edit_restaurant.php" method="post" enctype="multipart/form-data" class="register" >
 				<div id="edit_restaurant_info">
-					<input type="text" name="restauranthName" placeholder="<?=$restaurant->name?>" required>
+					<input type="text" name="restaurantName" placeholder="<?=$restaurant->name?>" required>
 					<input type="text" name="restaurantCategory" placeholder="<?=$restaurant->category?>" required>
 					<input type="text" name="restaurantAddress" placeholder="<?=$restaurant->address?>" required>
 					<input type="file" name="restaurantImage"><!--TODO: Style this :^) -->

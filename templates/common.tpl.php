@@ -79,12 +79,8 @@
 					<button>Remove</button>
 				</div>
 				<!--<label>Quantity: </label>-->
-<<<<<<< HEAD
 				
 				<div id="quantity_buttons">
-=======
-				<div>
->>>>>>> main
 					<button onclick="decrease(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >-</button>
 					<input type="number" value="1" name="quantity" placeholder="quantity" id=<?="qtyBox_".$dish->id?> disabled>
 					<button onclick="increase(<?='qtyBox_'.$dish->id?>, <?=$dish->price?>)" >+</button>
@@ -103,3 +99,12 @@
     </main>
 
 <?php } ?> 
+
+<?php function drawFunnyDog() { ?>
+	<main id="empty_cart">
+		<h3>Cart Empty :^(</h3>
+		<picture>
+		<img src="images/miscellaneous/funnydog.jpeg">
+		</picture>
+	</main>
+<?php } ?>

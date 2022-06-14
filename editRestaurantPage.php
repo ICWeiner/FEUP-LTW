@@ -13,6 +13,7 @@
     require_once('templates/restaurant.tpl.php');
     require_once('database/review.class.php');
     require_once('templates/addRestaurant.tpl.php');
+	require_once('database/restaurant.class.php');
 
 
 
@@ -23,12 +24,9 @@
 
 	drawHeader($_SESSION['name']);
 
-	//arranjar a query, esta so a retornar 1 restaurante :< TODO why the FUCK is this here????????????????????
-	$stmt = $db->prepare('SELECT DISTINCT RestaurantName FROM Restaurant WHERE RestaurantId = ?');
-	$stmt->execute(array($restaurantId));
-	$row = $stmt->fetch();
+	$restaurantName = Restaurant::getRestaurantNameFromRestaurantId($db, $restaurantId);
 
-	drawDishesRestaurantName($row['RestaurantName']);
+	drawDishesRestaurantName($restaurantName['RestaurantName']);
 	drawRestaurantEditButton($restaurantId);
 
 	foreach($categories as $category){
