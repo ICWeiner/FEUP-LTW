@@ -182,5 +182,6 @@
 
             return $favoriteRestaurants;
 		}
+	}
 
 ?>
