@@ -13,7 +13,8 @@ function addFavorite(){
 
             request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                heart.className = "fas fa-heart "  + restaurantId
+                alert("Favorite restaurants list updated")
+                location.reload()
             }
             }
             console.log(heart) 

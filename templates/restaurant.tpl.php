@@ -1,4 +1,4 @@
-<?php function drawRestaurantsByCategory(array $restaurants,$category) { ?>
+<?php function drawRestaurantsByCategory(array $restaurants,$category, array $favoriteRestaurants) { ?>
 		<!-- TODO get restaurant name and put it below this line-->
 		<h2 class="categoryName"><?=$category?></h2>
 		<section class="category">
@@ -13,7 +13,7 @@
 							</a>
 						</section>
 						<p><?=$restaurant['name']?></p>
-						<i class="far fa-heart <?=$restaurant['id']?>"></i>	<!--Está a pegar o id errado???-->			
+						<i <?php if (in_array($restaurant['id'], $favoriteRestaurants)) {?> class="fas fa-heart <?=$restaurant['id']?>" <?php } else { ?> class="far fa-heart <?=$restaurant['id']?>" <?php } ?>></i>
 					</div>
 				<?php } } ?>
 			</section>
