@@ -51,7 +51,7 @@
 		<section class="review">
 			<?php foreach($reviews as $review) {?>
 				<div class="review_box">
-					<p class="user_name"><?=$review['user']?>-</p>
+					<p class="user_name"><?=$review['user']?></p>
 					<p><?= $review['text'] ?></p>
 					<p class="score">Score: <?= $review['score'] ?></p>
 				</div>
