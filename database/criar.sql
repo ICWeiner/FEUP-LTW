@@ -65,3 +65,9 @@ CREATE TABLE DishOrder(
     quantity INTEGER NOT NULL,
     PRIMARY KEY (OrderId, DishId)
 );
+
+CREATE TABLE Favorite(
+    UserId INTEGER REFERENCES User,
+    RestaurantId INTEGER REFERENCES Restaurant,
+    PRIMARY KEY (UserId, RestaurantId)
+);
