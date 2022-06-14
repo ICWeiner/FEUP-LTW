@@ -26,9 +26,7 @@
 
 <?php function drawDishesByCategory(array $dishes, $category) { ?>
 	<main>
-		<!-- TODO get restaurant name and put it below this line-->
 	   <section class="category">
-	   		<!-- TODO get category name and put it below this line-->
 			<h3><?=$category?></h3>
 			<section class="dishes">
 				<?php if( !empty($dishes)){
@@ -45,7 +43,6 @@
 			</section>
 		</section>
 	</main>
-
 <?php } ?>
 
 
@@ -54,6 +51,7 @@
 		<section class="review">
 			<?php foreach($reviews as $review) {?>
 				<div class="review_box">
+					<p class="user_name"><?=$review['user']?>-</p>
 					<p><?= $review['text'] ?></p>
 					<p class="score">Score: <?= $review['score'] ?></p>
 				</div>

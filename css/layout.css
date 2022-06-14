@@ -514,11 +514,11 @@ hr{
 	.review_box{
 		display: flex;
 		flex-direction: column;
-		width: 94%;
+		width: 91%;
 		gap: .2em;
-		margin-top: .2em;
-		margin-bottom: .2em;
-		padding: .2em;
+		margin-top: .3em;
+		margin-bottom: 1em;
+		padding: .5em;
 	}
 }
 
@@ -573,7 +573,7 @@ hr{
 	position: fixed;
 	top: 0;
 	left: -100%;
-	width: 350px;
+	width: 360px;
 	height: 100%;
 	margin: 0;
 	padding: 80px 0;

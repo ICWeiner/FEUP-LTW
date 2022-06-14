@@ -160,7 +160,12 @@ footer{
 }
 
 .score{
-	font-size: 1.5em;
-	color: #ffcfac;
-	text-shadow: 4px 4px 7px black;
+	font-size: 1em;
+	color: #ff9a52;
+}
+
+.user_name{
+	font-size: 1.2em;
+	color: #ff9a52;
+	font-weight: bold;
 }
