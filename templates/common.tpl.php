@@ -12,6 +12,7 @@
 			<script src="../script_ajaxSearch.js" defer></script>
 			<script src="../script_cart.js" defer></script>
 			<script src="../script_reviews.js" defer></script>
+			<script src="../script_favoriteRestaurant.js" defer></script>
 			<title>Brand Spanking NEW Unter Eats</title>
 		</head>
 		<body>

@@ -6,7 +6,6 @@
 			<section class="restaurants">
 				<?php if( !empty($restaurants)){
 					foreach ($restaurants as $restaurant){ ?>
-					
 					<div class="restaurantBox" > 
 						<section class="aspect-ratio-box">
 							<a href="restaurantPage.php?id=<?=$restaurant['id']?>">
@@ -14,6 +13,7 @@
 							</a>
 						</section>
 						<p><?=$restaurant['name']?></p>
+						<i class="far fa-heart <?=$restaurant['id']?>"></i>	<!--Está a pegar o id errado???-->			
 					</div>
 				<?php } } ?>
 			</section>
